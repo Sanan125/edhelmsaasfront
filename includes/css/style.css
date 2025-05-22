@@ -748,3 +748,153 @@ th.sorting_desc .sort-icon::before {
 .add-student-btn:hover i {
   transform: rotate(90deg);
 }
+
+/* Today's Schedule Styles */
+.schedule-list {
+  padding: 20px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #3498db;
+}
+
+.schedule-item:last-child {
+  margin-bottom: 0;
+}
+
+.schedule-item:hover {
+  transform: translateX(5px);
+  background: #fff;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.schedule-item .time {
+  min-width: 120px;
+  font-weight: 600;
+  color: #3498db;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-item .time::before {
+  content: '\f017';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 8px;
+  color: #3498db;
+}
+
+.schedule-item .subject {
+  flex: 1;
+  font-weight: 500;
+  color: #2c3e50;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.schedule-item .room {
+  min-width: 100px;
+  text-align: right;
+  color: #7f8c8d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.schedule-item .room::before {
+  content: '\f3c5';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 8px;
+  color: #95a5a6;
+}
+
+/* Schedule Status Indicators */
+.schedule-item.current {
+  border-left-color: #2ecc71;
+  background: #f0fff4;
+}
+
+.schedule-item.upcoming {
+  border-left-color: #f39c12;
+  background: #fff9f0;
+}
+
+.schedule-item.completed {
+  border-left-color: #95a5a6;
+  background: #f8f9fa;
+  opacity: 0.8;
+}
+
+/* Responsive Schedule */
+@media (max-width: 768px) {
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .schedule-item .time {
+    min-width: auto;
+    font-size: 13px;
+  }
+
+  .schedule-item .subject {
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .schedule-item .room {
+    min-width: auto;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 13px;
+  }
+}
+
+/* Empty Schedule State */
+.schedule-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.schedule-empty i {
+  font-size: 48px;
+  color: #bdc3c7;
+  margin-bottom: 15px;
+}
+
+.schedule-empty p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Schedule Header Actions */
+.schedule-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.schedule-header-actions .btn {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.schedule-header-actions .date-picker {
+  width: 130px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}

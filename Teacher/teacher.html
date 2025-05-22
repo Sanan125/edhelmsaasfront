@@ -161,20 +161,26 @@
       <!-- Today's Schedule -->
       <div class="chart-card">
         <div class="chart-header">
-          <h5>Today's Schedule</h5>
+          <h5><i class="fas fa-calendar-day"></i> Today's Schedule</h5>
+          <div class="schedule-header-actions">
+            <input type="date" class="date-picker" value="2025-05-24">
+            <button class="btn btn-sm btn-outline-primary">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+          </div>
         </div>
         <div class="schedule-list">
-          <div class="schedule-item">
+          <div class="schedule-item completed">
             <div class="time">09:00 - 10:00</div>
             <div class="subject">Mathematics - Class 10A</div>
             <div class="room">Room 101</div>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item current">
             <div class="time">10:30 - 11:30</div>
             <div class="subject">Mathematics - Class 10B</div>
             <div class="room">Room 102</div>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item upcoming">
             <div class="time">12:00 - 13:00</div>
             <div class="subject">Algebra - Class 9A</div>
             <div class="room">Room 103</div>
@@ -365,42 +371,172 @@
     <div id="assignments-section" class="content-section">
       <div class="section-header">
         <h3><i class="fas fa-tasks"></i> Assignments</h3>
-        <button class="btn btn-primary">
-          <i class="fas fa-plus"></i> Create Assignment
-        </button>
+        <div class="header-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-plus"></i> Create Assignment
+          </button>
+        </div>
       </div>
 
-      <div class="assignments-grid">
-        <div class="assignment-card">
-          <div class="chart-header">
-            <h5>Mathematics Assignment 1</h5>
-            <span class="badge bg-warning">Due Tomorrow</span>
+      <!-- Assignment Stats -->
+      <div class="stats-section">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+              <div class="stat-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="stat-content">
+                <h3>12</h3>
+                <p>Total Assignments</p>
+              </div>
+            </div>
           </div>
-          <div class="assignment-details">
-            <p><strong>Class:</strong> 10A</p>
-            <p><strong>Due Date:</strong> May 25, 2025</p>
-            <p><strong>Submitted:</strong> 15/25 students</p>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+              <div class="stat-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="stat-content">
+                <h3>5</h3>
+                <p>Pending Review</p>
+              </div>
+            </div>
           </div>
-          <div class="assignment-actions">
-            <button class="btn btn-sm btn-primary">View Submissions</button>
-            <button class="btn btn-sm btn-secondary">Edit</button>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+              <div class="stat-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="stat-content">
+                <h3>45</h3>
+                <p>Submitted</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+              <div class="stat-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                <i class="fas fa-exclamation-circle"></i>
+              </div>
+              <div class="stat-content">
+                <h3>8</h3>
+                <p>Late Submissions</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="assignment-card">
-          <div class="chart-header">
-            <h5>Mathematics Quiz 2</h5>
-            <span class="badge bg-success">Completed</span>
+      <!-- Active Assignments -->
+      <div class="chart-card mb-4">
+        <div class="chart-header">
+          <h5>Active Assignments</h5>
+          <div class="header-actions">
+            <select class="form-select">
+              <option>All Classes</option>
+              <option>Class 10A</option>
+              <option>Class 10B</option>
+              <option>Class 9A</option>
+            </select>
           </div>
-          <div class="assignment-details">
-            <p><strong>Class:</strong> 10B</p>
-            <p><strong>Due Date:</strong> May 20, 2025</p>
-            <p><strong>Submitted:</strong> 20/20 students</p>
-          </div>
-          <div class="assignment-actions">
-            <button class="btn btn-sm btn-primary">View Results</button>
-            <button class="btn btn-sm btn-secondary">Edit</button>
-          </div>
+        </div>
+        <div class="table-container">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Assignment Title</th>
+                <th>Class</th>
+                <th>Due Date</th>
+                <th>Submitted</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mathematics Assignment 1</td>
+                <td>Class 10A</td>
+                <td>May 25, 2025</td>
+                <td>15/25</td>
+                <td><span class="badge bg-warning">Due Tomorrow</span></td>
+                <td>
+                  <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                  <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mathematics Quiz 2</td>
+                <td>Class 10B</td>
+                <td>May 20, 2025</td>
+                <td>20/20</td>
+                <td><span class="badge bg-success">Completed</span></td>
+                <td>
+                  <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                  <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Algebra Practice Set</td>
+                <td>Class 9A</td>
+                <td>May 28, 2025</td>
+                <td>5/30</td>
+                <td><span class="badge bg-info">New</span></td>
+                <td>
+                  <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                  <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Recent Submissions -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <h5>Recent Submissions</h5>
+        </div>
+        <div class="table-container">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Assignment</th>
+                <th>Class</th>
+                <th>Submitted Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Smith</td>
+                <td>Mathematics Assignment 1</td>
+                <td>Class 10A</td>
+                <td>May 24, 2025</td>
+                <td><span class="badge bg-warning">Pending Review</span></td>
+                <td>
+                  <button class="btn btn-sm btn-primary">Grade</button>
+                  <button class="btn btn-sm btn-info">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Emma Johnson</td>
+                <td>Mathematics Quiz 2</td>
+                <td>Class 10B</td>
+                <td>May 20, 2025</td>
+                <td><span class="badge bg-success">Graded</span></td>
+                <td>
+                  <button class="btn btn-sm btn-primary">View</button>
+                  <button class="btn btn-sm btn-info">Download</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
