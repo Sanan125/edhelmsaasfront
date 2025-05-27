@@ -1,71 +1,64 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Fees Collection - Bar Chart
-  new Chart(document.getElementById('barChart').getContext('2d'), {
-    type: 'bar',
+const ctx = document.getElementById('siteStatsChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
     data: {
-      labels: ['May 1', 'May 5', 'May 10', 'May 15', 'May 20'],
-      datasets: [{
-        label: 'Fees Collected',
-        data: [500, 700, 400, 800, 1000],
-        backgroundColor: 'rgba(13, 110, 253, 0.6)'
-      }]
-    },
-    options: { responsive: true }
-  });
-
-  // Class-wise Fees Collection
-  new Chart(document.getElementById('classFeeChart').getContext('2d'), {
-    type: 'bar',
-    data: {
-      labels: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5'],
-      datasets: [{
-        label: 'Collected ($)',
-        data: [1200, 1500, 900, 1300, 1100],
-        backgroundColor: 'rgba(25, 135, 84, 0.6)'
-      }]
+        labels: ['21 May', '22 May', '23 May', '24 May', '25 May', '26 May', '27 May'],
+        datasets: [{
+            label: 'Daily Visitors',
+            data: [4, 7, 5, 8, 6, 9, 11],
+            fill: true,
+            borderColor: 'rgba(0, 123, 255, 1)',
+            backgroundColor: 'rgba(0, 123, 255, 0.2)',
+            pointBackgroundColor: 'rgba(0, 123, 255, 1)',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            tension: 0.4
+        }]
     },
     options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        title: { display: false }
-      }
+        responsive: true,
+        plugins: {
+            tooltip: {
+                mode: 'index',
+                intersect: false,
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                titleColor: '#fff',
+                bodyColor: '#fff'
+            },
+            legend: {
+                display: true,
+                labels: {
+                    color: '#333',
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        },
+        interaction: {
+            mode: 'nearest',
+            axis: 'x',
+            intersect: false
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: '#333'
+                }
+            },
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 2,
+                    color: '#333'
+                },
+                grid: {
+                    color: 'rgba(0,0,0,0.05)'
+                }
+            }
+        }
     }
-  });
-
-  // Doughnut Chart - Income vs Expense
-  new Chart(document.getElementById('doughnutChart').getContext('2d'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Income', 'Expense'],
-      datasets: [{
-        data: [8305, 1150],
-        backgroundColor: ['#198754', '#dc3545']
-      }]
-    },
-    options: { responsive: true }
-  });
-
-  // Calendar 1 - Weekly Schedule
-  const calendar1 = new FullCalendar.Calendar(document.getElementById('calendar1'), {
-    initialView: 'timeGridWeek',
-    height: 400,
-    events: [
-      { title: 'Vacation', start: '2025-05-19', end: '2025-05-21', color: 'green' },
-      { title: 'Online Course Test', start: '2025-05-21T10:30:00', end: '2025-05-21T12:00:00', color: 'red' }
-    ]
-  });
-  calendar1.render();
-
-  // Calendar 2 - Exam Schedule
-  const calendar2 = new FullCalendar.Calendar(document.getElementById('calendar2'), {
-    initialView: 'dayGridWeek',
-    height: 400,
-    events: [
-      { title: 'Exam - Math', start: '2025-05-22' },
-      { title: 'Exam - Science', start: '2025-05-23' },
-      { title: 'Exam - English', start: '2025-05-24' }
-    ]
-  });
-  calendar2.render();
 });
