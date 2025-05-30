@@ -153,7 +153,7 @@
 
         
         <!-- Row 1: Summary Cards -->
-    <div class="row mb-4 pt-4">
+    <div class="row mb-4 pt-4 mx-5">
   <div class="col-md-3">
     <div class="info-card student-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
       <div>
@@ -188,13 +188,13 @@
         <p>Subject</p>
       </div>
       <i class="fas fa-book fa-2x"></i>
-    </div>
+    </div>  
   </div>
 </div>
 
     
 <!-- Teachers Table -->
-<div class="card pt-2 pb-2">
+<div class="card pt-4 pb-4" style="margin-left: 62px; margin-right: 62px;">
 <div class="card-header d-flex justify-content-between align-items-center bg-white">
     <!-- Left Side: Section Title and Suboptions -->
     <div>
@@ -231,7 +231,7 @@
 
 
 <!-- Filter Section with two sections: Left for Search and Right for Filters -->
-<div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-3 pe-3">
+<div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-4 pe-4">
     <!-- Left: Search Bar -->
     <div class="d-flex w-25">
         <input type="text" id="search" class="form-control w-100" placeholder="Search in all columns" onkeyup="filterTable()" />
@@ -267,50 +267,50 @@
 <table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
     <thead>
       <tr class="custom-header">
-        <th class="ps-1 pe-3"><input type="checkbox" id="selectAll" /></th> <!-- Checkbox for Select All -->
-        <th class="ps-3 pe-3">Photo</th>
-        <th class="ps-3 pe-3" data-sortable="true">Name</th>
-        <th class="ps-3 pe-3" data-sortable="true">Subject</th>
-        <th class="ps-3 pe-3" data-sortable="true">Email</th>
-        <th class="ps-3 pe-3">Status</th>
-        <th class="ps-3 pe-3">Action</th>
+        <th class="ps-3 pe-4"><input type="checkbox" id="selectAll" /></th> <!-- Checkbox for Select All -->
+        <th class="ps-4 pe-4">Photo</th>
+        <th class="ps-4 pe-4" data-sortable="true">Name</th>
+        <th class="ps-4 pe-4" data-sortable="true">Subject</th>
+        <th class="ps-4 pe-4" data-sortable="true">Email</th>
+        <th class="ps-4 pe-4">Status</th>
+        <th class="ps-4 pe-4">Action</th>
       </tr>
     </thead>
     <tbody id="TableBody">
       <tr>
-        <td class="ps-3 pe-3"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
-        <td class="ps-3 pe-3"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-        <td class="ps-3 pe-3">Sarah Johnson</td>
-        <td class="ps-3 pe-3">Mathematics</td>
-        <td class="ps-3 pe-3">sarah.johnson@example.com</td>
-        <td class="ps-3 pe-3"><span class="badge bg-success">Active</span></td>
-        <td class="ps-3 pe-3">
+        <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+        <td class="ps-4 pe-4"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+        <td class="ps-4 pe-4">Sarah Johnson</td>
+        <td class="ps-4 pe-4">Mathematics</td>
+        <td class="ps-4 pe-4">sarah.johnson@example.com</td>
+        <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+        <td class="ps-4 pe-4">
           <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
           <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
           <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
         </td>
       </tr>
       <tr>
-        <td class="ps-3 pe-3"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
-        <td class="ps-3 pe-3"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-        <td class="ps-3 pe-3">Mark Lee</td>
-        <td class="ps-3 pe-3">History</td>
-        <td class="ps-3 pe-3">mark.lee@example.com</td>
-        <td class="ps-3 pe-3"><span class="badge bg-warning">On Leave</span></td>
-        <td class="ps-3 pe-3">
+        <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+        <td class="ps-4 pe-4"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+        <td class="ps-4 pe-4">Mark Lee</td>
+        <td class="ps-4 pe-4">History</td>
+        <td class="ps-4 pe-4">mark.lee@example.com</td>
+        <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
+        <td class="ps-4 pe-4">
           <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
           <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
           <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
         </td>
       </tr>
       <tr>
-        <td class="ps-3 pe-3"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
-        <td class="ps-3 pe-3"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-        <td class="ps-3 pe-3">Emma Williams</td>
-        <td class="ps-3 pe-3">Physics</td>
-        <td class="ps-3 pe-3">emma.williams@example.com</td>
-        <td class="ps-3 pe-3"><span class="badge bg-success">Active</span></td>
-        <td class="ps-3 pe-3">
+        <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+        <td class="ps-4 pe-4"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+        <td class="ps-4 pe-4">Emma Williams</td>
+        <td class="ps-4 pe-4">Physics</td>
+        <td class="ps-4 pe-4">emma.williams@example.com</td>
+        <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+        <td class="ps-4 pe-4">
           <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
           <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
           <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -323,18 +323,30 @@
 
 
 <!-- Pagination Controls -->
-   <div class="d-flex justify-content-between 
-        pt-4 pe-3 ps-3">
-            <div>Showing 1 to 3 of 3 entries</div>
-            <div>
-                <button class="btn btn-outline-primary">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-                <button class="btn btn-outline-primary">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+   <div class="d-flex justify-content-between pt-4 pe-4 ps-4">
+    <!-- Showing results text -->
+    <div>Showing 1 to 3 of 3 entries</div>
+    
+    <!-- Pagination with Previous, Next, and page numbers -->
+    <div>
+        <button class="btn btn-outline-primary">
+            <i class="bi bi-chevron-left"></i>Previous
+        </button>
+        
+        <!-- Pagination Page Numbers -->
+        <button class="btn btn-outline-primary">
+            <span>1</span>
+        </button>
+        <button class="btn btn-outline-primary">
+            <span>2</span>
+        </button>
+        
+        <button class="btn btn-outline-primary">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
   </div>
 </div>
 
