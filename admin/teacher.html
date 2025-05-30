@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+   
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS CDN -->
+    <link rel="stylesheet" href="/includes/css/style.css">
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- DataTables CSS / JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light bg-white border-bottom px-4 py-2 shadow-sm sticky-top">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        
+        <!-- Left: Site Logo/Title -->
+        <span class="navbar-brand mb-0 h5 fw-bold text-dark">EDUHELM</span>
+        
+        <!-- Right: Icons -->
+        <div class="d-flex align-items-center gap-4">
+          
+          <!-- Bell Icon with Badge -->
+          <div class="position-relative">
+            <i class="fas fa-bell fs-5 text-dark"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              3
+            </span>
+          </div>
+
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/assests/images/default.png" alt="Profile" class="rounded-circle me-2" width="30" height="30">
+              <span>Mr. Admin</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>School Admin</h3>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/student.html">
+                    <i class="fas fa-users"></i> Students
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/teacher.html">
+                    <i class="fas fa-chalkboard-teacher"></i> Teachers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/class.html">
+                    <i class="fas fa-school"></i> Classes
+                </a>
+            </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/admin/syllabus.html">
+                    <i class="fas fa-calendar-alt"></i> Syllabus
+                </a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/subject.html">
+                    <i class="fas fa-calendar-alt"></i> Subject
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-calendar-alt"></i> Attendance
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-money-bill-wave"></i> Fees
+                    <!-- <span class="badge bg-danger badge-notification">12</span> -->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-book"></i> Exams
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">       
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+          <!-- Sidebar Toggle Button -->
+            <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
+                <i class="fas fa-bars"></i>
+            </button>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>School Management Dashboard</h2>
+        </div> -->
+        
+        <!-- Row 1: Summary Cards -->
+    <div class="row mb-4">
+  <div class="col-md-3">
+    <div class="info-card student-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+      <div>
+        <h2>44</h2>
+        <p>Student</p>
+      </div>
+      <i class="fas fa-user-graduate fa-2x"></i>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="info-card parent-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+      <div>
+        <h2>10</h2>
+        <p>Parents</p>
+      </div>
+      <i class="fas fa-user fa-2x"></i>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="info-card teacher-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+      <div>
+        <h2>12</h2>
+        <p>Teacher</p>
+      </div>
+      <i class="fas fa-chalkboard-teacher fa-2x"></i>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="info-card subject-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+      <div>
+        <h2>35</h2>
+        <p>Subject</p>
+      </div>
+      <i class="fas fa-book fa-2x"></i>
+    </div>
+  </div>
+</div>
+    
+<!-- Teachers Table -->
+<div class="card pt-2 pb-2">
+<div class="card-header d-flex justify-content-between align-items-center bg-white">
+    <!-- Left Side: Section Title and Suboptions -->
+    <div>
+        <h5 class="mb-0 fw-bold">All Teachers</h5>
+        <small class="fw-normal">Manage your teachers from start to finish with complete control.</small>
+        <ul class="list-unstyled mt-2">
+        
+        </ul>
+    </div>
+
+    <!-- Right Side: Download and Add Buttons -->
+    <div class="d-flex gap-2">
+      <div class="add-container">
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
+            <i class="fas fa-plus"></i>
+            <span class="btn-text">Add New Teacher</span>
+        </button>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle download-btn " type="button" id="fileOptionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi-download"></i>
+            <span class="btn-text">Download</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="fileOptionsDropdown">
+                <li><a class="dropdown-item" href="#">Excel</a></li>
+                <li><a class="dropdown-item" href="#">CSV</a></li>
+                <li><a class="dropdown-item" href="#">PDF</a></li>
+            </ul>
+        </div>
+
+    </div>
+  </div>
+
+
+<!-- Filter Section with two sections: Left for Search and Right for Filters -->
+<div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-3 pe-3">
+    <!-- Left: Search Bar -->
+    <div class="d-flex w-25">
+        <input type="text" id="search" class="form-control w-100" placeholder="Search in all columns" onkeyup="filterTable()" />
+    </div>
+
+    <!-- Right: Filter Date, Status, and Select Department -->
+    <div class="d-flex  w-50 gap-3 justify-content-end">
+        <!-- Filter Date Select Dropdown -->
+        <select class="form-select w-25" aria-label="Filter Date Select">
+            <option selected>Filter Date Select</option>
+            <option value="1">Weekly</option>
+            <option value="2">Monthly</option>
+            <option value="3">Yearly</option>
+        </select>
+
+        <!-- Status Select Dropdown -->
+        <select class="form-select w-25" aria-label="Status Select">
+            <option selected>Status Select</option>
+            <option value="1">Active</option>
+            <option value="2">On Hold</option>
+            <option value="3">Pending</option>
+            <option value="4">Completed</option>
+        </select>
+
+        <!-- Select Department Dropdown -->
+        <select class="form-select w-25" aria-label="Select Department">
+            <option selected>Select Department</option>
+            <option value="1">Science</option>
+            <option value="2">Arts</option>
+        </select>
+    </div>
+</div>
+<table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
+    <thead>
+      <tr class="custom-header">
+        <th class="ps-1 pe-3"><input type="checkbox" id="selectAll" /></th> <!-- Checkbox for Select All -->
+        <th class="ps-3 pe-3">Photo</th>
+        <th class="ps-3 pe-3" data-sortable="true">Name</th>
+        <th class="ps-3 pe-3" data-sortable="true">Subject</th>
+        <th class="ps-3 pe-3" data-sortable="true">Email</th>
+        <th class="ps-3 pe-3">Status</th>
+        <th class="ps-3 pe-3">Action</th>
+      </tr>
+    </thead>
+    <tbody id="searchBody">
+      <tr>
+        <td class="ps-3 pe-3"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+        <td class="ps-3 pe-3"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+        <td class="ps-3 pe-3">Sarah Johnson</td>
+        <td class="ps-3 pe-3">Mathematics</td>
+        <td class="ps-3 pe-3">sarah.johnson@example.com</td>
+        <td class="ps-3 pe-3"><span class="badge bg-success">Active</span></td>
+        <td class="ps-3 pe-3">
+          <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
+          <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
+          <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td class="ps-3 pe-3"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+        <td class="ps-3 pe-3"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+        <td class="ps-3 pe-3">Mark Lee</td>
+        <td class="ps-3 pe-3">History</td>
+        <td class="ps-3 pe-3">mark.lee@example.com</td>
+        <td class="ps-3 pe-3"><span class="badge bg-warning">On Leave</span></td>
+        <td class="ps-3 pe-3">
+          <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
+          <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
+          <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td class="ps-3 pe-3"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+        <td class="ps-3 pe-3"><img src="/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+        <td class="ps-3 pe-3">Emma Williams</td>
+        <td class="ps-3 pe-3">Physics</td>
+        <td class="ps-3 pe-3">emma.williams@example.com</td>
+        <td class="ps-3 pe-3"><span class="badge bg-success">Active</span></td>
+        <td class="ps-3 pe-3">
+          <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
+          <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
+          <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+
+<!-- Pagination Controls -->
+   <div class="d-flex justify-content-between 
+        pt-4 pe-3 ps-3">
+            <div>Showing 1 to 3 of 3 entries</div>
+            <div>
+                <button class="btn btn-outline-primary">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-outline-primary">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+  </div>
+</div>
+
+  <!-- Add New Teacher Modal -->
+  <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addTeacherModalLabel">Add New Teacher</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="teacherName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="teacherName" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacherSubject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="teacherSubject" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacherEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="teacherEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacherStatus" class="form-label">Status</label>
+            <select class="form-select" id="teacherStatus" required>
+              <option value="Active">Active</option>
+              <option value="On Leave">On Leave</option>
+              <option value="Retired">Retired</option>
+            </select>
+          </div>
+            <div class="mb-3 text-center">
+              <input type="file" class="form-control" id="teacherPhoto" accept="image/*" onchange="previewTeacherPhoto(event)">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Add Teacher</button>
+        </div>
+      </form>
+    </div>
+  </div>     
+
+    <!-- Bootstrap JS + Popper (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome JS (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="/includes/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.js"></script>
+    <!-- Include Bootstrap Drop Down -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

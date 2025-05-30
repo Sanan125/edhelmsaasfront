@@ -2,17 +2,40 @@
     --sidebar-width: 250px;
     --sidebar-bg: #343a40;
     --sidebar-color: #fff;
-    --primary-color: #007bff;
-    --success-color: #28a745;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
-    --info-color: #17a2b8;
+    --primary-color: #0977d6;
+    --success-color: #4CAF50;
+    --danger-color: #F1630F;
+    --warning-color: #FFC107;
+    --info-color: #4DB6AC;
+}
+
+button.btn.btn-success.btn-sm {
+    background-color: var(--sidebar-color);
+    border: solid 1px var(--primary-color);
+}
+
+button.btn.btn-info.btn-sm {
+    background-color: var(--sidebar-color);
+    border: solid 1px var(--primary-color);
+}
+
+button.btn.btn-danger.btn-sm {
+    background-color: var(--sidebar-color);
+    border: solid 1px var(--primary-color);
+}
+
+.btn-success i, .btn-info i, .btn-danger i {
+    color: var(--primary-color); 
+}
+
+.bg-success {
+    background-color: var(--success-color) !important;
 }
 
 body {
-    background-color: #f8f9fa;
+    background-color: #F8F9FA;
     overflow-x: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Public', sans-serif;  /* Inter font applied here */
 }
 
 .sidebar {
@@ -48,6 +71,7 @@ body {
 .sidebar ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
     border-left: 3px solid var(--primary-color);
+    color: #d3d3d3;
 }
 
 .sidebar ul li a i {
@@ -85,20 +109,21 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     font-weight: 600;
 }
+
 .student-card {
-    background-color: #FF8C61;
+    background-color: var(--danger-color);
 }
 
 .parent-card {
-    background-color: #4DB6AC;
+    background-color: var(--info-color);
 }
 
 .teacher-card {
-    background-color: #EC407A;
+    background-color: var(--primary-color);
 }
 
 .subject-card {
-    background-color: #9575CD;
+    background-color: var(--success-color);
 }
 
 .info-card {
@@ -129,89 +154,105 @@ body {
     padding: 3px 6px;
 }
 
-/* Additional Utility Classes */
 .no-gutters {
     margin-right: 0;
     margin-left: 0;
 }
+
+button#fileOptionsDropdown {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+button.btn.btn-outline-primary {
+    border-color: var(--primary-color);
+}
+
+button.btn.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 .no-gutters > .col,
 .no-gutters > [class*="col-"] {
     padding-right: 0;
     padding-left: 0;
 }
 
-.btn-group .btn {
-  position: relative;
-  overflow: hidden;
-  color: #003844;
-  background: #fff;
-  border: none;
-  padding: 8px 16px;
-  /* margin-right: 10px; */
-  font-size: 16px;
-  cursor: pointer;
-  transition: color 0.3s ease;
+/* Add Button */
+.add-btn,.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    width: 40px;
+    height: 40px;
+    padding: 0; /* Make it a perfect circle */
+    position: relative;
 }
 
-/* First button - outline style */
-.btn-group .btn:first-child {
-  border-top: 2px solid #6699aa;
-    border-bottom: 2px solid #6699aa;
-    border-left: 2px solid #6699aa;
-    border-right: none;
-    background: transparent;
-    color: #003844;
-}
-.btn-group .btn:first-child:hover {
-  border-color: #000; /* border turns black on hover */
+.add-btn i,.download-btn i {
+    font-size: 18px;
+    transition: margin 0.3s ease;
 }
 
-
-.btn-group .btn:first-child i {
-  color: #003844;
-  transition: color 0.3s ease;
+.btn-text {
+    margin-left: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    position: absolute;
+    left: 50px; /* Start appearing just after the + */
 }
 
-/* Second button - lighter filled style */
-.btn-group .btn:last-child {
-  background: #6699aa; /* light blue-gray */
-  color: #fff;
-  border: none;
+.add-btn:hover {
+    width: 200px;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
-.btn-group .btn:last-child i {
-  color: #fff;
-  transition: color 0.3s ease;
+.add-btn:hover .btn-text {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.btn-group .btn i {
-  /* margin-right: 6px; */
-  color: #003844;
-  transition: color 0.3s ease;
+.add-btn:hover .btn-text,.download-btn .btn-text{
+    opacity: 1;
 }
 
-.btn-group .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  transition: left 0.3s ease;
-  z-index: -1;
+.download-btn:hover{
+    width: 150px;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
-.btn-group .btn:hover::before {
-  left: 0;
+.custom-header {
+    background-color: #F8F8F8; /* Light gray background */
 }
 
-.btn-group .btn:hover {
-  color: #fff;
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-style: dashed !important;
+    border-width: 0px 0px 1px 0px !important;
 }
 
-.btn-group .btn:hover i {
-  color: #fff !important;
+.table>:not(caption)>*>* {
+    background-color: transparent !important;
 }
 
 .card.dashboard-card h5 {
@@ -225,26 +266,75 @@ body {
     border-radius: 8px;
     padding: 0px;
 }
-.site-stats{
-    width:67%;
+
+.site-stats {
+    width: 67%;
     margin-top: -92px;
 }
-.events{
- width:33%;
+
+.events {
+    width: 33%;
 }
 
+/* Sorting Styles */
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.sortable:hover {
+    background-color: #F8F9FA;
+}
+
+.sort-icon {
+    margin-left: 5px;
+    color: #6C757D;
+    font-size: 0.8em;
+}
+
+.sort-asc {
+    color: #007BFF;
+}
+
+.sort-desc {
+    color: #007BFF;
+}
+
+.table th {
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: 0.75em;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .sidebar {
-        margin-left: -250px;
+        transform: translateX(-100%);
     }
+
     .sidebar.active {
-        margin-left: 0;
+        transform: translateX(0);
     }
+
     .main-content {
         width: 100%;
         margin-left: 0;
     }
+
+    .site-stats {
+        width: 100%;
+        margin-top: -11px;
+    }
+
+    .events {
+        width: 100%;
+    }
 }
 
+.small-image {
+    width: 3rem; /* Custom width for even smaller image */
+    height: 3rem;
+}

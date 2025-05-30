@@ -62,3 +62,69 @@ new Chart(ctx, {
         }
     }
 });
+
+
+// add search bar filter for syllabus
+
+function filterTable() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("TableBody");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        var matchFound = false;
+        
+        // Loop through all columns in each row (td)
+        td = tr[i].getElementsByTagName("td");
+        for (var j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    matchFound = true; // Match found in at least one column
+                    break;
+                }
+            }
+        }
+
+        if (matchFound) {
+            tr[i].style.display = "";  // Show row if match found
+        } else {
+            tr[i].style.display = "none";  // Hide row if no match found
+        }
+    }
+}
+
+
+// table sorting syllabus
+//Sorting in table
+$(document).ready(function() {
+            $('#myTable').bootstrapTable({
+                sortable: true,
+                classes: 'table table-striped table-bordered'
+            });
+        });
+
+// JavaScript to handle the checkbox selection functionality
+
+ document.addEventListener('DOMContentLoaded', function() {
+      const selectAllCheckbox = document.getElementById('selectAll');
+      const rowCheckboxes = document.querySelectorAll('.selectRow');
+
+      // Handle "Select All" checkbox
+      selectAllCheckbox.addEventListener('change', function() {
+        rowCheckboxes.forEach(checkbox => {
+          checkbox.checked = this.checked;
+        });
+      });
+
+      // Handle individual row checkboxes
+      rowCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          const allChecked = Array.from(rowCheckboxes).every(cb => cb.checked);
+          selectAllCheckbox.checked = allChecked;
+        });
+      });
+    });
+  
