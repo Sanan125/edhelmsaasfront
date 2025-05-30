@@ -141,78 +141,54 @@ body {
     padding-left: 0;
 }
 
-.btn-group .btn {
-  position: relative;
-  overflow: hidden;
-  color: #003844;
-  background: #fff;
+/* Add Button */
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  padding: 8px 16px;
-  /* margin-right: 10px; */
+  border-radius: 7px;
   font-size: 16px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  width: 50px;
+  height: 50px;
+  padding: 0; /* Make it a perfect circle */
+  position: relative;
 }
 
-/* First button - outline style */
-.btn-group .btn:first-child {
-  border-top: 2px solid #6699aa;
-    border-bottom: 2px solid #6699aa;
-    border-left: 2px solid #6699aa;
-    border-right: none;
-    background: transparent;
-    color: #003844;
-}
-.btn-group .btn:first-child:hover {
-  border-color: #000; /* border turns black on hover */
+.add-btn i {
+  font-size: 18px;
+  transition: margin 0.3s ease;
 }
 
-
-.btn-group .btn:first-child i {
-  color: #003844;
-  transition: color 0.3s ease;
-}
-
-/* Second button - lighter filled style */
-.btn-group .btn:last-child {
-  background: #6699aa; /* light blue-gray */
-  color: #fff;
-  border: none;
-}
-
-.btn-group .btn:last-child i {
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.btn-group .btn i {
-  /* margin-right: 6px; */
-  color: #003844;
-  transition: color 0.3s ease;
-}
-
-.btn-group .btn::before {
-  content: '';
+.btn-text {
+  margin-left: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  transition: left 0.3s ease;
-  z-index: -1;
+  left: 50px; /* Start appearing just after the + */
 }
 
-.btn-group .btn:hover::before {
-  left: 0;
+.add-btn:hover {
+  width: 200px;
+  justify-content: flex-start;
+  padding-left: 20px;
 }
 
-.btn-group .btn:hover {
-  color: #fff;
+.add-btn:hover .btn-text {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.btn-group .btn:hover i {
-  color: #fff !important;
+
+.add-btn:hover .btn-text {
+  opacity: 1;
 }
 
 .card.dashboard-card h5 {
@@ -266,6 +242,8 @@ body {
             font-size: 0.75em;
         }
 
+
+        
 /* Responsive Styles */
 @media (max-width: 768px) {
     .sidebar {
@@ -286,4 +264,5 @@ body {
         width:100%;
     }
 }
+
 
