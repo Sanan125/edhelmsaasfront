@@ -334,6 +334,17 @@ tr {
     }
 }
 
+/* row 1 css */
+
+
+/* Hover Effects */
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+
 .small-image {
     width: 3rem; /* Custom width for even smaller image */
     height: 3rem;
