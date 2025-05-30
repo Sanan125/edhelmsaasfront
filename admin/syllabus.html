@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Management Dashboard</title>
+<!-- Bootstrap 5 CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome Icons CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- CSS CDN -->
+<link rel="stylesheet" href="/includes/css/style.css">
+<!-- Chart JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<!-- DataTables CSS / JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Bootstrap Icons CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>School Admin</h3>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/student.html">
+                    <i class="fas fa-users"></i> Students
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/teacher.html">
+                    <i class="fas fa-chalkboard-teacher"></i> Teachers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/class.html">
+                    <i class="fas fa-school"></i> Classes
+                </a>
+            </li>
+               <li class="nav-item active">
+                <a class="nav-link" href="/admin/syllabus.html">
+                    <i class="fas fa-calendar-alt"></i> Syllabus
+                </a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/subject.html">
+                    <i class="fas fa-calendar-alt"></i> Subject
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-calendar-alt"></i> Attendance
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-money-bill-wave"></i> Fees
+                    <!-- <span class="badge bg-danger badge-notification">12</span> -->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-book"></i> Exams
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">       
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+<!-- Main Content -->
+<!-- Main Content -->
+<div class="main-content">
+<div class="d-flex justify-content-between align-items-center mb-4">
+<h2>School Management Dashboard</h2>
+<div class="btn-group">
+    <button class="btn"><i class="fas fa-download"></i> <span>Report</span></button>
+    <!-- Button to Trigger Add New Subject Modal -->
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSyllabusModal">
+<i class="fas fa-plus"></i> <span>Add New Syllabus</span>
+</button>
+
+</div>
+</div>
+
+<!-- Row 1: Summary Cards -->
+<div class="row mb-4">
+<div class="col-md-3">
+<div class="info-card student-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+<div>
+<h2>44</h2>
+<p>Student</p>
+</div>
+<i class="fas fa-user-graduate fa-2x"></i>
+</div>
+</div>
+<div class="col-md-3">
+<div class="info-card parent-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+<div>
+<h2>10</h2>
+<p>Parents</p>
+</div>
+<i class="fas fa-user fa-2x"></i>
+</div>
+</div>
+<div class="col-md-3">
+<div class="info-card teacher-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+<div>
+<h2>12</h2>
+<p>Teacher</p>
+</div>
+<i class="fas fa-chalkboard-teacher fa-2x"></i>
+</div>
+</div>
+<div class="col-md-3">
+<div class="info-card subject-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
+<div>
+<h2>35</h2>
+<p>Subject</p>
+</div>
+<i class="fas fa-book fa-2x"></i>
+</div>
+</div>
+</div>
+
+
+<!-- Table Section -->
+<!-- Table Section for Syllabus -->
+ <div class="card p-3">
+ <div class="card-header text-end">
+        <h5>All Syllabus</h5>
+    </div>
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <!-- Dropdown for the file options (Copy, Excel, CSV, PDF) -->
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="fileOptionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Share
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="fileOptionsDropdown">
+                    <li><a class="dropdown-item" href="#">Excel</a></li>
+                    <li><a class="dropdown-item" href="#">CSV</a></li>
+                    <li><a class="dropdown-item" href="#">PDF</a></li>
+                </ul>
+            </div>
+            
+            <!-- Select Class Dropdown -->
+         <div>
+                <select class="form-select" aria-label="Select Class">
+                    <option selected>Select Class</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="4">Four</option>
+                    <option value="5">Five</option>
+                    <option value="6">Graduate</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Add a new syllabus button -->
+        <div class="d-flex justify-content-between align-items-center mb-3 mt-3 flex-row">
+          <div class="add-container">
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
+              <i class="fas fa-plus"></i>
+              <span class="btn-text">Add New Teacher</span>
+            </button>
+          </div>
+          <!-- Search Bar Added -->
+          <input type="text" id="search" class="form-control w-25" placeholder="Search in all columns" onkeyup="filterTable()" />
+        </div>
+
+        <!-- Table with Teacher Data -->
+        <table class="table table-striped table-bordered" id="myTable"
+               data-toggle="table"
+               data-sortable="true"
+               data-classes="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th data-sortable="true">#</th>
+                    <th>Title</th>
+                    <th data-sortable="true">Description</th>
+                    <th data-sortable="true">Date</th>
+                    <th data-sortable="true">Uploader</th>
+                    <th>File</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="TableBody">
+                <!-- Teacher Data Rows -->
+                <tr>
+                    <td>1</td>
+                    <td>English</td>
+                    <td>English syllabus</td>
+                    <td>2025-01-06</td>
+                    <td>Admin</td>
+                    <td><a href="syllabus.pdf" download>syllabus.pdf</a></td>
+                    <td>
+                        <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bangla</td>
+                    <td>Bangla syllabus</td>
+                    <td>2024-01-06</td>
+                    <td>Mr. </td>
+                    <td><a href="syllabus.pdf" download>syllabus.pdf</a></td>
+                    <td>
+                        <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Math</td>
+                    <td>Math syllabus</td>
+                    <td>2025-01-06</td>
+                    <td>Mr. Admin</td>
+                    <td><a href="syllabus.pdf" download>syllabus.pdf</a></td>
+                    <td>
+                        <button class="btn btn-success btn-sm"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination Controls -->
+        <div class="d-flex justify-content-between 
+        pt-4">
+            <div>Showing 1 to 3 of 3 entries</div>
+            <div>
+                <button class="btn btn-primary">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-primary">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Add New Class Modal -->
+<!-- Add New Class Modal popup form -->
+<div class="modal fade" id="addSyllabusModal" tabindex="-1" aria-labelledby="addSyllabusModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+    <h5 class="modal-title" id="addSyllabusModalLabel">Add New Syllabus</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form id="addSyllabusForm">
+        <div class="mb-3">
+            <label for="syllabusTitle" class="form-label">Syllabus Title</label>
+            <input type="text" class="form-control" id="syllabusTitle" required>
+        </div>
+        <div class="mb-3">
+            <label for="syllabusDescription" class="form-label">Syllabus Description</label>
+            <input type="text" class="form-control" id="syllabusDescription" required>
+        </div>
+        <div class="mb-3">
+            <label for="syllabusDate" class="form-label">Date</label>
+            <input type="date" class="form-control" id="syllabusDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="syllabusUploader" class="form-label">Uploader</label>
+            <input type="text" class="form-control" id="syllabusUploader" required>
+        </div>
+        <div class="mb-3">
+            <label for="syllabusFile" class="form-label">Upload Syllabus File</label>
+            <input type="file" class="form-control" id="syllabusFile" accept=".pdf,.doc,.docx" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Syllabus</button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!-- Bootstrap JS + Popper (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Font Awesome JS (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="/includes/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.js"></script>
+<!-- Include Bootstrap Drop Down -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
