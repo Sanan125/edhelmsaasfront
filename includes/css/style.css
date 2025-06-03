@@ -5,23 +5,29 @@
     --primary-color: #0977d6;
     --success-color: #4CAF50;
     --danger-color: #F1630F;
-    --warning-color: #FFC107;
+    --warning-color: #ffc107;
     --info-color: #4DB6AC;
 }
 
 button.btn.btn-success.btn-sm {
     background-color: var(--sidebar-color);
     border: solid 1px var(--primary-color);
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 button.btn.btn-info.btn-sm {
     background-color: var(--sidebar-color);
     border: solid 1px var(--primary-color);
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 button.btn.btn-danger.btn-sm {
     background-color: var(--sidebar-color);
     border: solid 1px var(--primary-color);
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .btn-success i, .btn-info i, .btn-danger i {
@@ -35,7 +41,8 @@ button.btn.btn-danger.btn-sm {
 body {
     background-color: #F4F7FA;
     overflow-x: hidden;
-    font-family: 'Public', sans-serif;  /* Inter font applied here */
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px; /* Default font size */
 }
 
 .sidebar {
@@ -47,12 +54,16 @@ body {
     transition: all 0.3s ease;
     z-index: 1000;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .sidebar-header {
     padding: 20px;
     background: rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .sidebar ul.components {
@@ -66,6 +77,8 @@ body {
     text-decoration: none;
     transition: all 0.3s;
     border-left: 3px solid transparent;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .sidebar ul li a:hover {
@@ -90,6 +103,8 @@ body {
     width: calc(100% - var(--sidebar-width));
     min-height: 100vh;
     transition: all 0.3s;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .dashboard-card {
@@ -98,6 +113,8 @@ body {
     transition: all 0.3s ease;
     margin-bottom: 20px;
     border: none;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .dashboard-card:hover {
@@ -108,6 +125,8 @@ body {
 .card-header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     font-weight: 600;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .student-card {
@@ -130,6 +149,8 @@ body {
     border-radius: 8px;
     min-height: 100px;
     transition: transform 0.2s ease-in-out;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .info-card:hover {
@@ -139,11 +160,15 @@ body {
 .info-card h2 {
     margin: 0;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 30px;
 }
 
 .info-card p {
     margin: 0;
     font-size: 1rem;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .badge-notification {
@@ -152,6 +177,8 @@ body {
     right: 5px;
     font-size: 0.6rem;
     padding: 3px 6px;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .no-gutters {
@@ -162,10 +189,14 @@ body {
 button#fileOptionsDropdown {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    font-family: 'Inter', sans-serif !important;  /* Inter font applied */
+    font-size: 14px!important;
 }
 
 button.btn.btn-outline-primary {
     border-color: var(--primary-color);
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 button.btn.btn-outline-primary:hover {
@@ -173,6 +204,7 @@ button.btn.btn-outline-primary:hover {
     color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
 }
+
 button.btn.btn-outline-primary:active {
     background-color:  var(--primary-color) !important;
     color: white !important;
@@ -198,7 +230,7 @@ button.btn.btn-outline-primary:active {
     color: white;
     border: none;
     border-radius: 7px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     overflow: hidden;
     transition: width 0.3s ease;
@@ -206,11 +238,14 @@ button.btn.btn-outline-primary:active {
     height: 40px;
     padding: 0; /* Make it a perfect circle */
     position: relative;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
 }
 
 .add-btn i,.download-btn i {
     font-size: 18px;
     transition: margin 0.3s ease;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .btn-text {
@@ -246,17 +281,85 @@ button.btn.btn-outline-primary:active {
 
 .custom-header {
     background-color: #F8F8F8; /* Light gray background */
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
+
+
+tbody td tr thead tfoot{
     border-style: dashed !important;
     border-width: 0px 0px 1px 0px !important;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
+
+th {
+    border-style: dashed !important;
+    border-width: 0px 0px 1px 0px !important;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px!important;
+}
+
+.badge{
+    font-size: 12px!important;
+    font-weight: 400!important;
+    --bs-badge-padding-x:5px;
+    --bs-badge-padding-y:5px;
+    border-color: #6C757D;
+    box-shadow: #6C757D;
+}
+.badge ,bg-warning{
+
+    background-color: #ffbf002f!important;
+    color:#ffbf00;
+}
+
+.bg-success{
+    background-color: #4caf4f34 !important;
+    color:#4CAF50;
+}
+
+/* table edit delete section */
+
+/* Adjust the button style and hover effect */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+i.bi.bi-three-dots-vertical{
+
+        color: #6b757d;
+
+}
+i.bi.bi-three-dots-vertical:hover{
+
+        color: var(--primary-color);
+
+}
+
+.dropdown-menu {
+    min-width: 120px;
+}
+
+.dropdown-menu .dropdown-item {
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-item.text-danger {
+    color: #dc3545;
+}
+
+
+
+
 
 .table>:not(caption)>*>* {
     background-color: transparent !important;
@@ -265,6 +368,8 @@ tr {
 .card.dashboard-card h5 {
     font-size: 1.1rem;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 #siteStatsChart {
@@ -272,6 +377,8 @@ tr {
     background-color: #fff;
     border-radius: 8px;
     padding: 0px;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .site-stats {
@@ -288,6 +395,8 @@ tr {
     cursor: pointer;
     user-select: none;
     transition: background-color 0.2s;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .sortable:hover {
@@ -298,6 +407,8 @@ tr {
     margin-left: 5px;
     color: #6C757D;
     font-size: 0.8em;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
 .sort-asc {
@@ -310,11 +421,10 @@ tr {
 
 .table th {
     vertical-align: middle;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
 
-.badge {
-    font-size: 0.75em;
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -350,9 +460,201 @@ tr {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-
-
 .small-image {
     width: 3rem; /* Custom width for even smaller image */
     height: 3rem;
+    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    font-size: 14px;
 }
+
+
+/* Search font size */
+input[type="search"] {
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+}
+.form-control{
+    font-size: 14px!important;
+}
+
+
+
+
+
+
+/* /* Profile Cover Image */
+/* Profile Cover Image */
+.profile-cover {
+    width: 100%;
+    height: 250px;
+    background-image: url('/assests/images/cover.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Profile Picture Styling */
+.profile-picture-wrapper {
+    position: relative;
+    margin-top: -60px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #f1f1f1;
+}
+
+/* Status Indicator Styling */
+.status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 715px;
+    width: 16px;
+    height: 16px;
+    background-color: #28a745; /* Green for online */
+    border-radius: 50%;
+    border: 3px solid #fff; /* White border */
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background-color: white;
+    padding: 30px 20px;
+    
+    border-radius: 10px;
+    margin-top: -50px;
+}
+
+/* User Info Styling */
+h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.profile-actions a {
+    margin: 5px;
+}
+
+.profile-actions .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.profile-actions .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Styling for Profile Update Form */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+/* Personal Information Section Styling */
+h5 {
+    font-weight: bold;
+}
+
+.text-center button {
+    margin-top: 20px;
+}
+
+/* Row Layout for Two Columns */
+.row {
+    margin-top: 20px;
+}
+
+.col-md-6 {
+    margin-bottom: 20px;
+}
+
+
+/* tab css  */
+/* Personal Information */
+.personal-info {
+  text-align: left;  /* Align text to the left */
+}
+
+.personal-info h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.personal-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.personal-info strong {
+  font-weight: 600;
+}
+
+/* Profile Picture */
+.profile-picture-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 5px solid #f1f1f1;
+}
+
+/* Status Indicator */
+.status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background-color: #28a745; /* Green for online */
+    border-radius: 50%;
+    border: 2px solid #fff; /* White border */
+}
+
+/* Form Styling */
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+label {
+    font-weight: 600;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.text-center{
+    text-align: left!important;
+}
+
+ 
+.row {
+    border-radius: 4px;
+    border: solid 1px;
+    color: #6a6b6d;
+    padding-left: 20px!important;
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+    padding-right: 20px!important;
+   
+
+}
+
+.profile-card{
+    box-shadow: 0px!important;
+}
+
