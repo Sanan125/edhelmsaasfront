@@ -128,3 +128,45 @@ $(document).ready(function() {
       });
     });
   
+//Password Show on eye button click
+  function togglePasswordVisibility(fieldId) {
+    var passwordField = document.getElementById(fieldId);
+    var passwordType = passwordField.type;
+    
+    if (passwordType === "password") {
+      passwordField.type = "text"; // Show password
+    } else {
+      passwordField.type = "password"; // Hide password
+    }
+  }
+// Function to filter activity based on type and contributor
+function filterActivities() {
+  var activityType = document.getElementById('activityType').value;
+  var contributor = document.getElementById('contributor').value;
+
+  // Get all activity cards
+  var activityCards = document.querySelectorAll('.activity-card');
+
+  activityCards.forEach(function(card) {
+    var type = card.getAttribute('data-type');
+    var cardContributor = card.getAttribute('data-contributor');
+
+    // Check if the card matches the selected filters
+    if ((activityType === 'all' || activityType === type) && 
+        (contributor === 'all' || contributor === cardContributor)) {
+      card.style.display = 'block'; // Show the card
+    } else {
+      card.style.display = 'none'; // Hide the card
+    }
+  });
+}
+
+//Update Profile Pic
+function previewImage(event) {
+  var reader = new FileReader();
+  reader.onload = function() {
+    var output = document.querySelector('.profile-picture');
+    output.src = reader.result;
+  };
+  reader.readAsDataURL(event.target.files[0]);
+}
