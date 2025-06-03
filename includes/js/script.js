@@ -65,33 +65,64 @@ new Chart(ctx, {
 
 
 // add search bar filter for syllabus
-
 function filterTable() {
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("search");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("TableBody");
-    tr = table.getElementsByTagName("tr");
+    input = document.getElementById("search"); // Search input field
+    filter = input.value.toUpperCase(); // Convert to uppercase for case-insensitive search
+    table = document.getElementById("tableBody"); // Correct table ID (should be 'myTable')
+    tr = table.getElementsByTagName("tr"); // Get all rows (including header row)
 
-    for (i = 0; i < tr.length; i++) {
+    // Loop through all rows
+    for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        td = tr[i].getElementsByTagName("td"); // Get all td (columns) in the row
         var matchFound = false;
-        
-        // Loop through all columns in each row (td)
-        td = tr[i].getElementsByTagName("td");
+
+        // Loop through all columns in the row
         for (var j = 0; j < td.length; j++) {
             if (td[j]) {
-                txtValue = td[j].textContent || td[j].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    matchFound = true; // Match found in at least one column
-                    break;
+                txtValue = td[j].textContent || td[j].innerText; // Get text content
+                if (txtValue.toUpperCase().indexOf(filter) > -1) { // Check if search matches text
+                    matchFound = true;
+                    break; // Stop once a match is found in any column
                 }
             }
         }
 
+        // If a match is found, show the row, else hide it
         if (matchFound) {
             tr[i].style.display = "";  // Show row if match found
         } else {
             tr[i].style.display = "none";  // Hide row if no match found
+        }
+    }
+}
+
+
+
+
+
+// select department, status teacher dashboard filter
+function filterTableSelect() {
+    var statusSelect = document.getElementById('statusSelect').value;
+    var departmentSelect = document.getElementById('departmentSelect').value;
+    var table = document.getElementById("myTable");
+    var rows = table.getElementsByTagName("tr");
+
+    // Loop through each row and check if it matches the filters
+    for (var i = 1; i < rows.length; i++) { // Start from 1 to skip the header row
+        var row = rows[i];
+        var status = row.cells[5].textContent.trim();  // Status column
+        var department = row.cells[3].textContent.trim();  // Department/Subject column
+
+        // Check if the row matches the filters
+        var matchesStatus = (statusSelect === "Status Select" || status === statusSelect);
+        var matchesDepartment = (departmentSelect === "Select Department" || department === departmentSelect);
+
+        // Show or hide the row based on the filters
+        if (matchesStatus && matchesDepartment) {
+            row.style.display = ""; // Show the row if it matches the filters
+        } else {
+            row.style.display = "none"; // Hide the row if it does not match the filters
         }
     }
 }
@@ -106,25 +137,15 @@ $(document).ready(function() {
             });
         });
 
-// JavaScript to handle the checkbox selection functionality
 
- document.addEventListener('DOMContentLoaded', function() {
-      const selectAllCheckbox = document.getElementById('selectAll');
-      const rowCheckboxes = document.querySelectorAll('.selectRow');
 
-      // Handle "Select All" checkbox
-      selectAllCheckbox.addEventListener('change', function() {
-        rowCheckboxes.forEach(checkbox => {
-          checkbox.checked = this.checked;
-        });
-      });
+// Function to toggle "Select All" checkbox
+function toggleSelectAll() {
+    var selectAllCheckbox = document.getElementById("selectAll");
+    var checkboxes = document.getElementsByClassName("selectRow");
 
-      // Handle individual row checkboxes
-      rowCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-          const allChecked = Array.from(rowCheckboxes).every(cb => cb.checked);
-          selectAllCheckbox.checked = allChecked;
-        });
-      });
-    });
-  
+    // Loop through all checkboxes and set their checked status based on the "Select All" checkbox
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = selectAllCheckbox.checked;
+    }
+}

@@ -487,17 +487,17 @@ input[type="search"] {
 .profile-cover {
     width: 100%;
     height: 250px;
-    background-image: url('/assests/images/cover.jpg'); /* Replace with your image */
+    background-image: url('/assests/images/cover.jpg'); /* background cover image*/
     background-size: cover;
     background-position: center;
     position: relative;
 }
-
+/* 
 /* Profile Picture Styling */
 .profile-picture-wrapper {
     position: relative;
     margin-top: -60px;
-}
+} */
 
 .profile-picture {
     width: 150px;
@@ -509,8 +509,8 @@ input[type="search"] {
 /* Status Indicator Styling */
 .status-indicator {
     position: absolute;
-    bottom: 10px;
-    right: 715px;
+    bottom: 28px;
+    right: 733px;
     width: 16px;
     height: 16px;
     background-color: #28a745; /* Green for online */
@@ -611,17 +611,6 @@ h5 {
     border: 5px solid #f1f1f1;
 }
 
-/* Status Indicator */
-.status-indicator {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 15px;
-    height: 15px;
-    background-color: #28a745; /* Green for online */
-    border-radius: 50%;
-    border: 2px solid #fff; /* White border */
-}
 
 /* Form Styling */
 h4 {
@@ -642,7 +631,7 @@ button {
 }
 
  
-.row {
+.tab-pane .row {
     border-radius: 4px;
     border: solid 1px;
     color: #6a6b6d;
@@ -656,5 +645,17 @@ button {
 
 .profile-card{
     box-shadow: 0px!important;
+}
+
+/* Custom width for the notification dropdown */
+.custom-dropdown-width {
+  width: 350px; 
+}
+
+
+.dropdown-menu .text-center {
+  text-align: center!important;
+  width: 100%; 
+  padding: 0; 
 }
 
