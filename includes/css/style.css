@@ -477,27 +477,207 @@ input[type="search"] {
     font-size: 14px!important;
 }
 
+/* tab-nav css */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: var(--sidebar-color);
+    background-color: var(--primary-color);
+}
+
+/* Apply border-radius and shadow to tab-pane */
+.tab-pane {
+   box-shadow: 0px 0px 8px 1px rgb(0 0 0 / 8%); /* Soft shadow */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px 50px; /* Add padding inside the tab content */
+}
+
+/* Optional: Active Tab Styling */
+.tab-pane.show.active {
+    box-shadow: 0px 0px 8px 1px rgb(0 0 0 / 9%); /* Stronger shadow for active tab */
+    border-radius: 12px;
+}
+
+/* Style for the input group and the eye icon */
+.input-group {
+    position: relative;
+}
+
+.input-group .form-control {
+    height: calc(2.25rem + 2px); /* Make sure the input height is consistent */
+    border-radius: 12px; /* Rounded corners for the input */
+}
+
+.input-group .input-group-text {
+    cursor: pointer;
+    background-color: #fff; /* Ensure the background matches the input field */
+    border-left: none; /* Remove the border between the input and icon */
+    height: calc(2.25rem + 2px); /* Match the height of the input field */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Adjust padding to make it look centered */
+}
+
+/* Style the eye icon */
+.input-group .input-group-text i {
+    font-size: 1.2em; /* Increase the size of the eye icon */
+    color: #555; /* Color of the eye icon */
+}
+
+/* Optional: Add hover effect */
+.input-group .input-group-text:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+/* Make the cursor pointer on hover */
+.input-group .input-group-text:hover i {
+    cursor: pointer; /* Change cursor to pointer when hovered */
+}
+
+/* Activity Tab Styling */
+#pills-activity .filter-activity {
+  border: 1px solid #ddd; /* Add border */
+  background-color: #f8f9fa; /* Light background color */
+  padding: 20px;
+  border-radius: 12px;
+  position: sticky; /* Make the filter sticky */
+  top: 20px; /* Distance from the top of the viewport */
+}
+
+#pills-activity .filter-activity h4 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#pills-activity .filter-activity .form-label {
+  font-weight: 500;
+}
+
+/* Activity Stream */
+.activity-stream {
+  padding-left: 20px;
+}
+
+.activity-stream h4 {
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
+.activity-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  /* display: none; Initially hide all activity cards */
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  color: #007bff; /* Blue color for the icon */
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-details span {
+  font-weight: bold;
+}
+
+.activity-card small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Add hover effect for the activity cards */
+.activity-card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
 
+/* Add hover effect for the activity cards */
+.activity-card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
 
+/* Ensures inactive tabs don't take up space */
+.tab-pane {
+  display: none;
+}
+
+/* Only show the active tab's content */
+.tab-pane.show {
+  display: block;
+}
+
+/* Profile picture wrapper to position the pencil icon */
+.profile-picture-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.pencil-icon {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    right: 743px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 5px;
+    border-radius: 78%;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+.profile-picture-wrapper:hover .pencil-icon {
+  display: block;  /* Display the pencil icon */
+  transform: scale(1.2);  /* Slight zoom effect on hover */
+}
+/* Hover effect for pencil icon */
+.pencil-icon:hover {
+    display: block;
+  transform: scale(1.2);  /* Slight zoom effect on hover */
+}
+
+/* Style the profile image */
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+/* .profile-picture-wrapper:hover .profile-picture {
+  transform: scale(1.1);  Slight zoom effect on hover
+} */
 
 /* /* Profile Cover Image */
 /* Profile Cover Image */
 .profile-cover {
     width: 100%;
+    border-radius: 10px 10px 0px 0px;
     height: 250px;
     background-image: url('/assests/images/cover.jpg'); /* background cover image*/
     background-size: cover;
     background-position: center;
     position: relative;
 }
-/* 
-/* Profile Picture Styling */
+
 .profile-picture-wrapper {
     position: relative;
-    margin-top: -60px;
-} */
+  display: inline-block;
+}
+
+
+
 
 .profile-picture {
     width: 150px;
@@ -506,17 +686,6 @@ input[type="search"] {
     border: 5px solid #f1f1f1;
 }
 
-/* Status Indicator Styling */
-.status-indicator {
-    position: absolute;
-    bottom: 28px;
-    right: 733px;
-    width: 16px;
-    height: 16px;
-    background-color: #28a745; /* Green for online */
-    border-radius: 50%;
-    border: 3px solid #fff; /* White border */
-}
 
 /* Profile Card Styling */
 .profile-card {
@@ -601,7 +770,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 105px;
 }
 
 .profile-picture {
