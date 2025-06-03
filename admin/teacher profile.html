@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+   
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS CDN -->
+    <link rel="stylesheet" href="../includes/css/style.css">
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- DataTables CSS / JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    
+
+
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3><b>EDUHELM</b></h3>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="../admin/dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../admin/student.html">
+                    <i class="fas fa-users"></i> Students
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../admin/teacher.html">
+                    <i class="fas fa-chalkboard-teacher"></i> Teachers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../admin/class.html">
+                    <i class="fas fa-school"></i> Classes
+                </a>
+            </li>
+               <li class="nav-item">
+                <a class="nav-link" href="../admin/syllabus.html">
+                    <i class="fas fa-calendar-alt"></i> Syllabus
+                </a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../admin/subject.html">
+                    <i class="fas fa-calendar-alt"></i> Subject
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-calendar-alt"></i> Attendance
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-money-bill-wave"></i> Fees
+                    <!-- <span class="badge bg-danger badge-notification">12</span> -->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-book"></i> Exams
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">       
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+          <!-- Sidebar Toggle Button for mobile -->
+            <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+    <!-- Row1 Main Content -->
+    <div class="main-content px-5 ">
+        <!-- <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>School Management Dashboard</h2>
+        </div> -->
+
+        
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light  py-2 ">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Left: Site Logo/Title -->
+        <span class="navbar-brand mb-0 h3 text-dark">Dashboard / Teacher</span>
+        <!-- Right: Icons -->
+        <div class="d-flex align-items-center gap-4">
+          <!-- Bell Icon with Badge -->
+          <div class="position-relative">
+            <i class="fas fa-bell fs-5 text-dark"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              3
+            </span>
+          </div>
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="../assests/images/default.png" alt="Profile" class="rounded-circle me-2" width="30" height="30">
+              <span>Mr. Admin</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<!-- teacher Profile Section  -->
+<div class="teacher-profile">
+    <div class="profile-cover">
+        <!-- Cover image (background) -->
+    </div>
+    <div class="profile-card text-center">
+        <!-- Profile Picture -->
+        <div class="profile-picture-wrapper">
+            <img src="../assests/images/default.png" alt="Profile Picture" class="rounded-circle profile-picture">
+            <!-- Status Indicator -->
+            <div class="status-indicator">
+                <span class="status-online"></span>
+            </div>
+        </div>
+
+        <!-- User Info -->
+        <h3>Lucas Ethan <i class="bi bi-check-circle-fill text-primary"></i></h3>
+        
+        <!-- Information in a single row -->
+        <div class="d-flex justify-content-center align-items-center text-muted mb-3">
+            <span class="me-3">
+                <i class="bi bi-laptop"></i> UI / UX Designer
+            </span>
+            <span class="me-3">
+                <i class="bi bi-geo-alt"></i> Argentina
+            </span>
+            <span>
+                <i class="bi bi-calendar"></i> 24 April, 2024
+            </span>
+        </div>
+</div>
+
+
+
+<!-- Account Tab Navigation -->
+<ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="pills-account-tab" data-bs-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="true">
+      <i class="bi bi-person"></i> Account
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-security-tab" data-bs-toggle="pill" href="#pills-security" role="tab" aria-controls="pills-security" aria-selected="false">
+      <i class="bi bi-shield-lock"></i> Security
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-billing-tab" data-bs-toggle="pill" href="#pills-billing" role="tab" aria-controls="pills-billing" aria-selected="false">
+      <i class="bi bi-credit-card"></i> Billing & Plans
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-notifications-tab" data-bs-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">
+      <i class="bi bi-bell"></i> Notification
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-statements-tab" data-bs-toggle="pill" href="#pills-statements" role="tab" aria-controls="pills-statements" aria-selected="false">
+      <i class="bi bi-file-earmark-text"></i> Statements
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-logs-tab" data-bs-toggle="pill" href="#pills-logs" role="tab" aria-controls="pills-logs" aria-selected="false">
+      <i class="bi bi-clipboard"></i> Logs
+    </a>
+  </li>
+</ul>
+
+<!-- tab 1 -->
+<!-- Account Tab Content -->
+<div class="tab-content pt-2" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+    <div class="row pt-3 pb-3">
+      <!-- Left Column: 40% width (Personal Information) -->
+      <div class="col-4">
+        <div class="personal-info">
+          <h4>Personal Information</h4>
+          <p><strong>First Name:</strong> Lucas</p>
+          <p><strong>Last Name:</strong> Ethan</p>
+          <p><strong>Email Address:</strong> lucas@domiex.com</p>
+          <p><strong>Phone Number:</strong> (+00) 00000 00000</p>
+          <p><strong>Location:</strong> Argentina</p>
+          <p><strong>Role:</strong> UI / UX Designer</p>
+        </div>
+      </div>
+
+      <!-- Right Column: 60% width (Profile Update Form) -->
+      <div class="col-8">
+        <h4>Update Your Information</h4>
+        <form>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" value="Lucas">
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" value="Ethan">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" value="lucas@domiex.com">
+          </div>
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" value="(+00) 00000 00000">
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" value="Argentina">
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <input type="text" class="form-control" id="role" value="UI / UX Designer">
+          </div>
+          <div class="mb-3">
+            <label for="objective" class="form-label">Objective</label>
+            <textarea class="form-control" id="objective" rows="3">Write your objective</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary ms-auto d-block">Update Profile</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- tab-2 -->
+  <div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab">
+    <!-- Security Content Here -->
+    <p>Your security settings...</p>
+  </div>
+  <div class="tab-pane fade" id="pills-billing" role="tabpanel" aria-labelledby="pills-billing-tab">
+    <!-- Billing Content Here -->
+    <p>Your billing details...</p>
+  </div>
+  <div class="tab-pane fade" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
+    <!-- Notification Content Here -->
+    <p>Your notifications...</p>
+  </div>
+  <div class="tab-pane fade" id="pills-statements" role="tabpanel" aria-labelledby="pills-statements-tab">
+    <!-- Statements Content Here -->
+    <p>Your statements...</p>
+  </div>
+  <div class="tab-pane fade" id="pills-logs" role="tabpanel" aria-labelledby="pills-logs-tab">
+    <!-- Logs Content Here -->
+    <p>Your logs...</p>
+  </div>
+</div>
+
+
+
+
+      
+    
+
+
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="/includes/js/script.js"></script>
+
+</body>
+</html>
