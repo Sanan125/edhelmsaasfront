@@ -105,6 +105,7 @@ function filterTable() {
 function filterTableSelect() {
     var statusSelect = document.getElementById('statusSelect').value;
     var departmentSelect = document.getElementById('departmentSelect').value;
+    
     var table = document.getElementById("myTable");
     var rows = table.getElementsByTagName("tr");
 

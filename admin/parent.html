@@ -30,7 +30,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     
@@ -38,7 +37,7 @@
 
 
     <!-- Sidebar -->
-    <<div class="sidebar">
+    <div class="sidebar">
         <div class="sidebar-header">
             <h3><b>EDHELM</b></h3>
         </div>
@@ -53,7 +52,7 @@
                     <i class="fas fa-users"></i> Students
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="../admin/parent.html">
                     <i class="fas fa-users"></i> Parents
                 </a>
@@ -63,7 +62,7 @@
                     <i class="fas fa-chalkboard-teacher"></i> Teachers
                 </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="../admin/class.html">
                     <i class="fas fa-school"></i> Classes
                 </a>
@@ -112,7 +111,6 @@
         </ul>
     </div>
 
-
     
           <!-- Sidebar Toggle Button for mobile -->
             <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
@@ -131,7 +129,7 @@
     <nav class="navbar navbar-light  py-2 ">
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <!-- Left: Site Logo/Title -->
-        <span class="navbar-brand mb-0 h3 text-dark">Dashboard /Classes</span>
+        <span class="navbar-brand mb-0 h3 text-dark">Dashboard / Parents</span>
         <!-- Right: Icons -->
         <div class="d-flex align-items-center gap-4">
           <!-- Bell Icon with Badge -->
@@ -148,7 +146,6 @@
             <!-- Dropdown for notifications -->
           <!-- Notification Dropdown -->
   <!-- Include Font Awesome CDN for icons -->
-
 
 <ul class="dropdown-menu dropdown-menu-end custom-dropdown-width" aria-labelledby="notificationDropdown">
     <!-- Notification Header -->
@@ -232,24 +229,22 @@
 </div>
 
     
-<!-- Students Table -->
+<!-- Parent Table -->
 <div class="card pt-4 pb-4" style="margin-left: 62px; margin-right: 62px;">
-<div class="card-header d-flex justify-content-between align-items-center bg-white">
+  <div class="card-header d-flex justify-content-between align-items-center bg-white">
     <!-- Left Side: Section Title and Suboptions -->
     <div>
-        <h5 class="mb-0 fw-bold">All Classes</h5>
-        <small class="fw-normal">Manage your Classes from start to finish with complete control.</small>
-        <ul class="list-unstyled mt-2">
-        
-        </ul>
+        <h5 class="mb-0 fw-bold">All Parents</h5>
+        <small class="fw-normal">Manage your parents from start to finish with complete control.</small>
+        <ul class="list-unstyled mt-2"></ul>
     </div>
 
     <!-- Right Side: Download and Add Buttons -->
     <div class="d-flex gap-2">
       <div class="add-container">
-            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addParentModal">
             <i class="fas fa-plus"></i>
-            <span class="btn-text">Add New Class</span>
+            <span class="btn-text">Add New Parent</span>
         </button>
         </div>
 
@@ -268,14 +263,11 @@
     </div>
   </div>
 
-
-
-  
 <!-- Filter Section with two sections: Left for Search and Right for Filters -->
 <div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-4 pe-4">
     <!-- Left: Search Bar -->
     <div class="d-flex w-25">
-        <input type="text" id="search" class="form-control w-100" placeholder="Search" onkeyup=" filterTable()" />
+        <input type="text" id="search" class="form-control w-100" placeholder="Search" onkeyup="filterTable()" />
     </div>
 
     <!-- Right: Filter Date, Status, and Select Department -->
@@ -289,7 +281,7 @@
     </select>
 
     <!-- Status Select Dropdown -->
-    <select class="form-select w-25" id="statusSelect" aria-label="Status Select" style="font-size: 14px!important;" onchange=" filterTableSelect()">
+    <select class="form-select w-25" id="statusSelect" aria-label="Status Select" style="font-size: 14px!important;" onchange="filterTableSelect()">
         <option selected>Status Select</option>
         <option value="Active">Active</option>
         <option value="On Leave">On Leave</option>
@@ -298,8 +290,8 @@
     </select>
 
     <!-- Select Department Dropdown -->
-    <select class="form-select w-25" id="departmentSelect" aria-label="Select Department" style="font-size: 14px!important;" onchange=" filterTableSelect()">
-        <option selected>Select Class</option>
+    <select class="form-select w-25" id="departmentSelect" aria-label="Select Department" style="font-size: 14px!important;" onchange="filterTableSelect()">
+         <option selected>Select Class</option>
         <option value="Physics">One</option>
         <option value="Computer Science">Two</option>
         <option value="Chemistry">Three</option>
@@ -310,39 +302,29 @@
 </div>
 </div>
 
-
-
-
-
 <!-- table data -->
 <table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
     <thead>
         <tr class="custom-header">
             <!-- Checkbox for Select All -->
-            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll"onclick="toggleSelectAll()" /></th> 
-            <th class="ps-4 pe-4">Class </th>
-            <th class="ps-4 pe-4" data-sortable="true">Teachers</th>
-             <th class="ps-4 pe-4">	No. of Students</th>
-            <th class="ps-4 pe-4" data-sortable="true">Schedule</th>
-            <th class="ps-4 pe-4" data-sortable="true">	Subject</th>
-               <th class="ps-4 pe-4" data-sortable="true">Attendance</th>
-            <th class="ps-4 pe-4">Status</th>
-            <th class="ps-4 pe-4">Action</th>
-           
-
+            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()" /></th> 
+            <th class="ps-3 pe-4" data-sortable="true">Parent Name</th>
+            <th class="ps-3 pe-4" data-sortable="true">Student Name</th>
+            <th class="ps-3 pe-4" data-sortable="true">Student Class</th>
+            <th class="ps-3 pe-4" data-sortable="true">Phone Number</th> <!-- Added Phone Number -->
+            <th class="ps-3 pe-4" data-sortable="true">Email</th>
+            <th class="ps-3 pe-4">Action</th>
         </tr>
     </thead>
     <tbody id="tableBody">
         <!-- Row 1 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+            <td class="ps-4 pe-4">Mr. Zain</td>
+            <td class="ps-4 pe-4">Ali Zain</td>
             <td class="ps-4 pe-4">One</td>
-            <td class="ps-4 pe-4">Mr. Ahmed</td>
-            <td class="ps-4 pe-4">65</td>
-            <td class="ps-4 pe-4">Mon & Wed, 9-10am	</td>
-            <td class="ps-4 pe-4">Mathematics</td>
-            <td class="ps-4 pe-4">80%</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+            <td class="ps-4 pe-4">+923 456 7890</td> <!-- Added phone number -->
+            <td class="ps-4 pe-4">sarah.johnson@example.com</td>
             <td class="ps-4 pe-4">
                 <!-- Dropdown with 3 dots -->
                 <div class="dropdown">
@@ -360,13 +342,11 @@
         <!-- Row 2 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+            <td class="ps-4 pe-4">Mr. Ahmed</td>
+            <td class="ps-4 pe-4">Sara Ahmed</td>
             <td class="ps-4 pe-4">Two</td>
-            <td class="ps-4 pe-4">Ms. Fatima</td>
-            <td class="ps-4 pe-4">40</td>
-            <td class="ps-4 pe-4">Mon & Wed, 9-10am</td>
-            <td class="ps-4 pe-4">History</td>
-            <td class="ps-4 pe-4">70%</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
+            <td class="ps-4 pe-4">+923 876 4321</td> <!-- Added phone number -->
+            <td class="ps-4 pe-4">mark.lee@example.com</td>
             <td class="ps-4 pe-4">
                 <!-- Dropdown with 3 dots -->
                 <div class="dropdown">
@@ -384,13 +364,11 @@
         <!-- Row 3 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+            <td class="ps-4 pe-4">Mrs. Laura</td>
+            <td class="ps-4 pe-4">John Laura</td>
             <td class="ps-4 pe-4">Three</td>
-            <td class="ps-4 pe-4">Mr. Hassan</td>
-            <td class="ps-4 pe-4">60</td>
-            <td class="ps-4 pe-4">Mon & Wed, 9-10am</td>
-            <td class="ps-4 pe-4">Physics</td>
-            <td class="ps-4 pe-4">90%</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+            <td class="ps-4 pe-4">+923 233 4455</td> <!-- Added phone number -->
+            <td class="ps-4 pe-4">laura.smith@example.com</td>
             <td class="ps-4 pe-4">
                 <!-- Dropdown with 3 dots -->
                 <div class="dropdown">
@@ -406,91 +384,85 @@
             </td>
         </tr>
         <!-- Row 4 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" /></td>
-            <td class="ps-4 pe-4">Four</td>
-            <td class="ps-4 pe-4">Ms. Sarah</td>
-            <td class="ps-4 pe-4">50</td>
-            <td class="ps-4 pe-4">Mon & Wed, 9-10am</td>
-            <td class="ps-4 pe-4">Chemistry</td>
-             <td class="ps-4 pe-4">80%</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 5 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5" /></td>
-            <td class="ps-4 pe-4">Five</td>
-            <td class="ps-4 pe-4">Mr. Imran</td>
-            <td class="ps-4 pe-4">40</td>
-            <td class="ps-4 pe-4">Mon & Wed, 9-10am</td>
-            <td class="ps-4 pe-4">Biology</td>
-            <td class="ps-4 pe-4">85%</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 6 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" /></td>
-            <td class="ps-4 pe-4">Six</td>
-            <td class="ps-4 pe-4">Mr. Zain</td>
-            <td class="ps-4 pe-4">30</td>
-            <td class="ps-4 pe-4">Mon & Wed, 9-10am</td>
-            <td class="ps-4 pe-4">Computer Science</td>
-            <td class="ps-4 pe-4">98%</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+<tr>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" /></td>
+    <td class="ps-4 pe-4">Mr. Daniel</td>
+    <td class="ps-4 pe-4">Sophia Daniel</td>
+    <td class="ps-4 pe-4">Four</td>
+    <td class="ps-4 pe-4">+923 887 7665</td> <!-- Added phone number -->
+    <td class="ps-4 pe-4">daniel.jones@example.com</td>
+    <td class="ps-4 pe-4">
+        <!-- Dropdown with 3 dots -->
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
 
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
+<!-- Row 5 -->
+<tr>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5" /></td>
+    <td class="ps-4 pe-4">Mrs. Emily</td>
+    <td class="ps-4 pe-4">James Emily</td>
+    <td class="ps-4 pe-4">Five</td>
+    <td class="ps-4 pe-4">+923 332 2110</td> <!-- Added phone number -->
+    <td class="ps-4 pe-4">emily.clark@example.com</td>
+    <td class="ps-4 pe-4">
+        <!-- Dropdown with 3 dots -->
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 6 -->
+<tr>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" /></td>
+    <td class="ps-4 pe-4">Mr. Michael</td>
+    <td class="ps-4 pe-4">Sophia Michael</td>
+    <td class="ps-4 pe-4">Six</td>
+    <td class="ps-4 pe-4">+923 667 7889</td> <!-- Added phone number -->
+    <td class="ps-4 pe-4">michael.brown@example.com</td>
+    <td class="ps-4 pe-4">
+        <!-- Dropdown with 3 dots -->
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
+
     </tbody>
 </table>
-
-
 <!-- Pagination Controls -->
-   <div class="d-flex justify-content-between pt-4 pe-4 ps-4">
+<div class="d-flex justify-content-between pt-4 pe-4 ps-4">
     <!-- Showing results text -->
     <div>Showing 1 to 3 of 3 entries</div>
     
     <!-- Pagination with Previous, Next, and page numbers -->
     <div>
         <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <i class="bi bi-chevron-left"></i>Previous
+            <i class="bi bi-chevron-left"></i> Previous
         </button>
         
         <!-- Pagination Page Numbers -->
@@ -498,57 +470,65 @@
             <span>1</span>
         </button>
         <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <span >2</span>
+            <span>2</span>
         </button>
         
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;" >Next
-            <i class="bi bi-chevron-right"></i>
+        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+            Next <i class="bi bi-chevron-right"></i>
         </button>
     </div>
 </div>
 
+</div>
+</div>
+
+
+<!-- Add New Parent Modal -->
+<!-- Add New Parent Modal -->
+<div class="modal fade" id="addParentModal" tabindex="-1" aria-labelledby="addParentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addParentModalLabel">Add New Parent</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="parentName" class="form-label">Parent Name</label>
+          <input type="text" class="form-control" id="parentName" required>
+        </div>
+        <div class="mb-3">
+          <label for="StudentName" class="form-label">Student Name</label>
+          <input type="text" class="form-control" id="StudentName" required>
+        </div>
+        <div class="mb-3">
+          <label for="StudentClass" class="form-label">Student Class</label>
+          <input type="text" class="form-control" id="StudentClass" required>
+        </div>
+        <div class="mb-3">
+          <label for="parentPhone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="parentPhone" required>
+        </div>
+        <div class="mb-3">
+          <label for="parentEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="parentEmail" required>
+        </div>
+        <div class="mb-3 text-center">
+          <label for="parentPhoto" class="form-label">Upload Photo</label>
+          <input type="file" class="form-control" id="parentPhoto" accept="image/*" onchange="previewParentPhoto(event)">
+        </div>
+        <!-- Image preview -->
+        <div class="text-center">
+          <img id="parentPhotoPreview" src="#" alt="Parent Photo Preview" style="max-width: 100px; display: none;">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Add Parent</button>
+      </div>
+    </form>
   </div>
 </div>
 
-  <!-- Add New Student Modal -->
-  <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <form class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addTeacherModalLabel">Add New Teacher</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="teacherName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="teacherName" required>
-          </div>
-          <div class="mb-3">
-            <label for="teacherSubject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="teacherSubject" required>
-          </div>
-          <div class="mb-3">
-            <label for="teacherEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="teacherEmail" required>
-          </div>
-          <div class="mb-3">
-            <label for="teacherStatus" class="form-label">Status</label>
-            <select class="form-select" id="teacherStatus" required>
-              <option value="Active">Active</option>
-              <option value="On Leave">On Leave</option>
-              <option value="Retired">Retired</option>
-            </select>
-          </div>
-            <div class="mb-3 text-center">
-              <input type="file" class="form-control" id="teacherPhoto" accept="image/*" onchange="previewTeacherPhoto(event)">
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Add Teacher</button>
-        </div>
-      </form>
-    </div>
-  </div>     
 
     <!-- Bootstrap JS + Popper (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
