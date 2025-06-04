@@ -320,7 +320,38 @@ th {
     color:#4CAF50;
 }
 
-/* table edit delete section */
+/* Notification Dropdown*/
+
+.markallread:hover{
+color: var(--primary-color) !important;
+}
+ .dropdown-item {
+        transition: background-color 0.3s ease;
+    }
+.dropdown-item:hover {
+        background-color: #f0f0f0; /* Change the color when hovered */
+        border-radius: 8px; /* Optional: ensure rounded corners on hover */
+    }
+    .dropdown-item:active{
+        color: var(--primary-color);
+    }
+
+.dropdown-item.text-danger {
+    color: #dc3545;
+}
+/* Custom width for the notification dropdown */
+.custom-dropdown-width {
+  width: 300px; 
+}
+
+.dropdown-menu .text-center {
+  text-align: center!important;
+  width: 100%; 
+  padding: 0; 
+}
+.dropdown-menu .dropdown-item{
+    font-size: 12px;
+}
 
 /* Adjust the button style and hover effect */
 .dropdown-toggle {
@@ -340,26 +371,6 @@ i.bi.bi-three-dots-vertical:hover{
         color: var(--primary-color);
 
 }
-
-.dropdown-menu {
-    min-width: 120px;
-}
-
-.dropdown-menu .dropdown-item {
-    font-size: 14px;
-}
-
-.dropdown-item:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown-item.text-danger {
-    color: #dc3545;
-}
-
-
-
-
 
 .table>:not(caption)>*>* {
     background-color: transparent !important;
@@ -383,7 +394,7 @@ i.bi.bi-three-dots-vertical:hover{
 
 .site-stats {
     width: 67%;
-    margin-top: -92px;
+  
 }
 
 .events {
@@ -715,9 +726,9 @@ h3 {
     font-weight: bold;
 }
 
-.form-control {
+/* .form-control {
     margin-bottom: 10px;
-}
+} */
 
 /* Personal Information Section Styling */
 h5 {
@@ -737,6 +748,14 @@ h5 {
     margin-bottom: 20px;
 }
 
+.progress-bar {
+    height: 14px !important; /* Controls the height of the progress bar */
+    border-radius: 5px; /* Optional: adds rounded corners to the progress bar */
+}
+.progress {
+    height: 14px; /* Thin progress bar */
+    border-radius: 5px; /* Optional: rounded corners for the progress bar */
+}
 
 /* tab css  */
 /* Personal Information */
@@ -792,16 +811,4 @@ button {
 
  
 
-/* Custom width for the notification dropdown */
-.custom-dropdown-width {
-  width: 300px; 
-}
 
-.dropdown-menu .text-center {
-  text-align: center!important;
-  width: 100%; 
-  padding: 0; 
-}
-.dropdown-menu .dropdown-item{
-    font-size: 12px;
-}
