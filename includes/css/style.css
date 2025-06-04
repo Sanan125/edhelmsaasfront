@@ -618,16 +618,16 @@ input[type="search"] {
 }
 
 /* Profile picture wrapper to position the pencil icon */
-.profile-picture-wrapper {
+/* .profile-picture-wrapper {
   position: relative;
   display: inline-block;
-}
+} */
 
 .pencil-icon {
     display: none;
     position: absolute;
-    bottom: 30px;
-    right: 743px;
+    bottom: 30%;
+    right: 24%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     padding: 5px;
     border-radius: 78%;
@@ -645,7 +645,6 @@ input[type="search"] {
     display: block;
   transform: scale(1.2);  /* Slight zoom effect on hover */
 }
-
 /* Style the profile image */
 .profile-picture {
   width: 120px;
@@ -659,13 +658,13 @@ input[type="search"] {
   transform: scale(1.1);  Slight zoom effect on hover
 } */
 
-/* /* Profile Cover Image */
+
 /* Profile Cover Image */
 .profile-cover {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
     height: 250px;
-    background-image: url('/assests/images/cover.jpg'); /* Replace with your image */
+    background-image: url('../../assests/images/cover.jpg'); /* Replace with your image */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -678,21 +677,11 @@ input[type="search"] {
 
 
 
-
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 5px solid #f1f1f1;
-}
-
-
-
 /* Profile Card Styling */
 .profile-card {
     background-color: white;
     padding: 30px 20px;
-    
+    box-shadow: 0px!important;
     border-radius: 10px;
     margin-top: -50px;
 }
@@ -771,6 +760,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 4%;
     height: 105px;
 }
 
@@ -797,13 +787,6 @@ button {
     margin-top: 20px;
 }
 
-.text-center{
-    text-align: left!important;
-}
 
  
-
-.profile-card{
-    box-shadow: 0px!important;
-}
 
