@@ -677,6 +677,15 @@ input[type="search"] {
 
 
 
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #f1f1f1;
+}
+
+
 /* Profile Card Styling */
 .profile-card {
     background-color: white;
@@ -772,7 +781,6 @@ h5 {
 }
 
 
-
 /* Form Styling */
 h4 {
     font-size: 16px;
@@ -789,4 +797,31 @@ button {
 
 
  
+.tab-pane .row {
+    border-radius: 4px;
+    border: solid 1px;
+    color: #6a6b6d;
+    padding-left: 20px!important;
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+    padding-right: 20px!important;
+   
+
+}
+
+
+
+
+/* Custom width for the notification dropdown */
+.custom-dropdown-width {
+  width: 350px; 
+}
+
+
+.dropdown-menu .text-center {
+  text-align: center!important;
+  width: 100%; 
+  padding: 0; 
+}
+
 
