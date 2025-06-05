@@ -20,12 +20,16 @@
   <!-- Include Font Awesome CDN for icons -->
 
     <!-- Dropdown for notifications -->
-    <ul class="dropdown-menu dropdown-menu-end custom-dropdown-width fade" aria-labelledby="notificationDropdown" style="border-radius: 10px; padding: 10px;" id="notificationDropdownMenu">
+    <ul class="dropdown-menu dropdown-menu-end custom-dropdown-width fade" aria-label ledby="notificationDropdown" style="border-radius: 10px; padding: 10px;" id="notificationDropdownMenu">
         <!-- Notification Header -->
-        <li class="dropdown-item text-dark d-flex justify-content-between align-items-center" style="border-radius: 8px; padding: 10px;" onmouseover="this.style.backgroundColor='#ffffff'">
-            <span><b>Notification (4)</b></span>
-            <a href="#" class="markallread text-primary">Mark All as Read</a>
-        </li>
+     <li class="dropdown-item text-dark d-flex justify-content-between align-items-center" style="border-radius: 8px; padding: 10px;" onmouseover="this.style.backgroundColor='#ffffff'">
+    <span><b>Notification (4)</b></span>
+    
+    <!-- Mark All as Read Link with Icon -->
+    <a href="#" class="markallread text-primary" style="text-decoration: none; ">
+        Mark All as Read &nbsp<i class="fas fa-check-circle me-2"></i>
+    </a>
+</li>
         <li><hr class="dropdown-divider"></li>
 
         <!-- Notification Items -->
@@ -72,12 +76,14 @@
         <li><hr class="dropdown-divider"></li>
 
         <li class="text-center w-100">
-            <a class="dropdown-item view" href="#" onmouseover="this.style.color='#0977d6'; this.style.backgroundColor='#ffffff'"  onmouseout="this.style.color=''; this.style.backgroundColor=''"><b>View all notifications</b></a>
-        </li>
+    <a class="dropdown-item view d-flex justify-content-center align-items-center" href="#" onmouseover="this.style.color='#0977d6'; this.style.backgroundColor='#ffffff'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
+        <b>View all notifications</b>
+        <!-- Arrow icon -->
+        <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+</li>
     </ul>
 </div>
-
-
           <!-- Profile Dropdown -->
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">

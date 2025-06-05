@@ -14,9 +14,7 @@
 </head>
 <body>
     
-       <!-- side bar call  php function -->
-
-
+    <!-- side bar call  php function -->
    <?php include('../sidebar.php');?>
     
           <!-- Sidebar Toggle Button for mobile -->
@@ -37,235 +35,138 @@
          <?php include('../topbar.php');?>
 
     
-
-    
 <!-- Teachers Table -->
 <div class="card pt-4 pb-4" style="margin-left: 62px; margin-right: 62px;">
-<div class="card-header d-flex justify-content-between align-items-center bg-white">
-    <!-- Left Side: Section Title and Suboptions -->
-    <div>
-        <h5 class="mb-0 fw-bold">All Teachers</h5>
-        <small class="fw-normal">Manage your teachers from start to finish with complete control.</small>
-        <ul class="list-unstyled mt-2">
-        
-        </ul>
-    </div>
-
-    <!-- Right Side: Download and Add Buttons -->
-    <div class="d-flex gap-2">
-      <div class="add-container">
-            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
-            <i class="fas fa-plus"></i>
-            <span class="btn-text">Add New Teacher</span>
-        </button>
-        </div>
-
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle download-btn " type="button" id="fileOptionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi-download"></i>
-            <span class="btn-text">Download</span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="fileOptionsDropdown">
-                <li><a class="dropdown-item" href="#">Excel</a></li>
-                <li><a class="dropdown-item" href="#">CSV</a></li>
-                <li><a class="dropdown-item" href="#">PDF</a></li>
+ <div class="card-header d-flex justify-content-between align-items-center bg-white">
+        <!-- Left Side: Section Title and Suboptions -->
+        <div>
+            <h5 class="mb-0 fw-bold">All Teachers</h5>
+            <small class="fw-normal">Manage your teachers from start to finish with complete control.</small>
+            <ul class="list-unstyled mt-2">
             </ul>
         </div>
 
+        <!-- Right Side: Download, Add, and Delete Buttons -->
+        <div class="d-flex gap-2">
+            <div class="add-container">
+                <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
+                    <i class="fas fa-plus"></i>
+                    <span class="btn-text">Add New Teacher</span>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle download-btn" type="button" id="fileOptionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi-download"></i>
+                    <span class="btn-text">Download</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="fileOptionsDropdown">
+                    <li><a class="dropdown-item" href="#">Excel</a></li>
+                    <li><a class="dropdown-item" href="#">CSV</a></li>
+                    <li><a class="dropdown-item" href="#">PDF</a></li>
+                </ul>
+            </div>
+            
+            <!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>
+           
+        </div>
     </div>
-  </div>
 
-
-<!-- Filter Section with two sections: Left for Search and Right for Filters -->
-<div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-4 pe-4">
-    <!-- Left: Search Bar -->
-    <div class="d-flex w-25">
-        <input type="text" id="search" class="form-control w-100" placeholder="Search" onkeyup=" filterTable()" />
+    <!-- Filter Section and Table -->
+    <div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-4 pe-4">
+        <!-- Filter Section (Search, Status, Department) -->
+        <div class="d-flex w-25">
+            <input type="text" id="search" class="form-control w-100" placeholder="Search" onkeyup="filterTable()"/>
+        </div>
+        <div class="d-flex w-50 gap-3 justify-content-end">
+            <!-- Filters (Date, Status, Department) -->
+        </div>
     </div>
 
-    <!-- Right: Filter Date, Status, and Select Department -->
-    <div class="d-flex w-50 gap-3 justify-content-end">
-    <!-- Filter Date Select Dropdown -->
-    <select class="form-select w-25" aria-label="Filter Date Select" style="font-size: 14px!important;">
-        <option selected>Filter Date Select</option>
-        <option value="1">Weekly</option>
-        <option value="2">Monthly</option>
-        <option value="3">Yearly</option>
-    </select>
-
-    <!-- Status Select Dropdown -->
-    <select class="form-select w-25" id="statusSelect" aria-label="Status Select" style="font-size: 14px!important;" onchange=" filterTableSelect()">
-        <option selected>Status Select</option>
-        <option value="Active">Active</option>
-        <option value="On Leave">On Leave</option>
-        <option value="Pending">Pending</option>
-        <option value="Completed">Completed</option>
-    </select>
-
-    <!-- Select Department Dropdown -->
-    <select class="form-select w-25" id="departmentSelect" aria-label="Select Department" style="font-size: 14px!important;" onchange=" filterTableSelect()">
-        <option selected>Select Department</option>
-        <option value="Physics">Physics</option>
-        <option value="Computer Science">Computer Science</option>
-        <option value="Chemistry">Chemistry</option>
-        <option value="Biology">Biology</option>
-        <option value="History">History</option>
-        <option value="Mathematics">Mathematics</option>
-    </select>
-</div>
-</div>
-
-
-<!-- table data -->
-<table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
-    <thead>
-        <tr class="custom-header">
-            <!-- Checkbox for Select All -->
-            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll"onclick="toggleSelectAll()" /></th> 
-            <th class="ps-4 pe-4">Photo</th>
-            <th class="ps-4 pe-4" data-sortable="true">Teacher Name</th>
-            <th class="ps-4 pe-4" data-sortable="true">Subject</th>
-            <th class="ps-4 pe-4" data-sortable="true">Email</th>
-            <th class="ps-4 pe-4">Status</th>
-            <th class="ps-4 pe-4">Action</th>
-        </tr>
-    </thead>
-    <tbody id="tableBody">
-        <!-- Row 1 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">Mr. Zain</td>
-            <td class="ps-4 pe-4">Mathematics</td>
-            <td class="ps-4 pe-4">sarah.johnson@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 2 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">Mr. Ahmed</td>
-            <td class="ps-4 pe-4">History</td>
-            <td class="ps-4 pe-4">mark.lee@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 3 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">Ms. Sarah</td>
-            <td class="ps-4 pe-4">Physics</td>
-            <td class="ps-4 pe-4">emma.williams@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 4 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">Mr. Hassan</td>
-            <td class="ps-4 pe-4">Chemistry</td>
-            <td class="ps-4 pe-4">john.smith@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 5 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">	Ms.Fatima</td>
-            <td class="ps-4 pe-4">Biology</td>
-            <td class="ps-4 pe-4">lily.adams@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 6 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">Mr. Imran</td>
-            <td class="ps-4 pe-4">Computer Science</td>
-            <td class="ps-4 pe-4">james.brown@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
-
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <!-- Teachers Table -->
+    <table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
+        <thead>
+            <tr class="custom-header">
+                <!-- Checkbox for Select All -->
+                <th class="ps-3 pe-4"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"/></th>
+                <th class="ps-3 pe-4">Photo</th>
+                <th class="ps-3 pe-4" data-sortable="true">Teacher Name</th>
+                <th class="ps-3 pe-4" data-sortable="true">Subject</th>
+                <th class="ps-3 pe-4" data-sortable="true">Email</th>
+                <th class="ps-3 pe-4">Status</th>
+                <th class="ps-3 pe-4">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Row 1 -->
+            <tr>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()"/></td>
+                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4">Mr. Zain</td>
+                <td class="ps-4 pe-4">Mathematics</td>
+                <td class="ps-4 pe-4">sarah.johnson@example.com</td>
+                <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+                <td class="ps-4 pe-4">
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()"/></td>
+                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4">Mr. Ahmed</td>
+                <td class="ps-4 pe-4">History</td>
+                <td class="ps-4 pe-4">mark.lee@example.com</td>
+                <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
+                <td class="ps-4 pe-4">
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()"/></td>
+                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4">Ms. Sarah</td>
+                <td class="ps-4 pe-4">Physics</td>
+                <td class="ps-4 pe-4">emma.williams@example.com</td>
+                <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
+                <td class="ps-4 pe-4">
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <!-- Additional rows go here -->
+        </tbody>
+    </table>    
 
 
 
@@ -343,7 +244,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome JS (CDN) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="/includes/js/script.js"></script>
+    <script src="../includes/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.js"></script>

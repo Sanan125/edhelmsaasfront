@@ -125,14 +125,14 @@
         <tr class="custom-header">
             <!-- Checkbox for Select All -->
             <th class="ps-3 pe-4"><input type="checkbox" id="selectAll"onclick="toggleSelectAll()" /></th> 
-            <th class="ps-4 pe-4">Class </th>
-            <th class="ps-4 pe-4" data-sortable="true">Teacher Name</th>
-             <th class="ps-4 pe-4">	No. of Students</th>
-            <th class="ps-4 pe-4" data-sortable="true">Schedule</th>
-            <th class="ps-4 pe-4" data-sortable="true">	Subject</th>
-               <th class="ps-4 pe-4" data-sortable="true">Attendance</th>
-            <th class="ps-4 pe-4">Status</th>
-            <th class="ps-4 pe-4">Action</th>
+            <th class="ps-3 pe-4">Class </th>
+            <th class="ps-3 pe-4" data-sortable="true">Teacher Name</th>
+            <th class="ps-3 pe-4">	No. of Students</th>
+            <th class="ps-3 pe-4" data-sortable="true">Schedule</th>
+            <th class="ps-3 pe-4" data-sortable="true">	Subject</th>
+            <th class="ps-3 pe-4" data-sortable="true">Attendance</th>
+            <th class="ps-3 pe-4">Status</th>
+            <th class="ps-3 pe-4">Action</th>
            
 
         </tr>
@@ -359,7 +359,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome JS (CDN) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="/includes/js/script.js"></script>
+    <script src="../includes/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.js"></script>
