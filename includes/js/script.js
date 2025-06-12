@@ -239,3 +239,110 @@ function previewImage(event) {
             alert('No teachers selected for deletion!');
         }
     }
+    
+    //Theme Change  
+ document.addEventListener("DOMContentLoaded", function() {
+    const themes = {
+        default: {
+            '--sidebar-bg': '#343a40',
+            '--sidebar-color': '#fff',
+            '--primary-color': '#0977d6',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC'
+        },
+        whiteBlue: {
+            '--sidebar-bg': '#ffffff',
+            '--sidebar-color': '#333333',
+            '--primary-color': '#4f8bbf',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC'
+        },
+        black: {
+            '--sidebar-bg': '#000000',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#212121',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC'
+        },
+        purple: {
+            '--sidebar-bg': '#6f42c1',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#800080',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC'
+        },
+        green: {
+            '--sidebar-bg': '#28a745',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#1e7e34',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC'
+        },
+        red: {
+            '--sidebar-bg': '#dc3545',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#bd2130',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC'
+        }
+    };
+
+    // Function to change the theme by updating the :root CSS variables
+    function changeTheme(theme) {
+        const selectedTheme = themes[theme];
+        if (selectedTheme) {
+            for (let key in selectedTheme) {
+                document.documentElement.style.setProperty(key, selectedTheme[key]);
+            }
+        }
+    }
+
+    // Add event listeners to theme buttons
+    document.getElementById("theme-default").addEventListener("click", function() {
+        changeTheme('default');
+        localStorage.setItem('theme', 'default');
+    });
+
+    document.getElementById("theme-white-blue").addEventListener("click", function() {
+        changeTheme('whiteBlue');
+        localStorage.setItem('theme', 'whiteBlue');
+    });
+
+    document.getElementById("theme-black").addEventListener("click", function() {
+        changeTheme('black');
+        localStorage.setItem('theme', 'black');
+    });
+
+    document.getElementById("theme-purple").addEventListener("click", function() {
+        changeTheme('purple');
+        localStorage.setItem('theme', 'purple');
+    });
+
+    document.getElementById("theme-green").addEventListener("click", function() {
+        changeTheme('green');
+        localStorage.setItem('theme', 'green');
+    });
+
+    document.getElementById("theme-red").addEventListener("click", function() {
+        changeTheme('red');
+        localStorage.setItem('theme', 'red');
+    });
+
+    // Load and apply the saved theme from localStorage if available
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        changeTheme(savedTheme);
+    }
+});

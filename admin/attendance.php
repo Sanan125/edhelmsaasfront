@@ -49,7 +49,7 @@
             <div class="add-container">
                 <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addAttendanceModal">
                     <i class="fas fa-plus"></i>
-                    <span class="btn-text">Add New Attendance</span>
+                    <span class="btn-text">Add Attendance</span>
                 </button>
             </div>
 

@@ -9,6 +9,8 @@
     --info-color: #4DB6AC;
 }
 
+
+
 button.btn.btn-success.btn-sm {
     background-color: var(--sidebar-color);
     border: solid 1px var(--primary-color);
@@ -259,7 +261,7 @@ button.btn.btn-outline-primary:active {
 }
 
 .add-btn:hover {
-    width: 200px;
+    width: 215px;
     justify-content: flex-start;
     padding-left: 20px;
 }
@@ -837,3 +839,28 @@ button {
 .dropdown-menu .dropdown-item{
     font-size: 12px;
 }
+<<<<<<< Updated upstream
+=======
+
+
+   .theme-option {
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .theme-option:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .theme-option span {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+/* Registeration from */
+
+ /* Custom CSS */
+      
+>>>>>>> Stashed changes
