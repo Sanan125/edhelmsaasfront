@@ -1,3 +1,120 @@
+// Global Theme Change JS
+document.addEventListener("DOMContentLoaded", function () {
+    // Theme definitions with CSS variables
+    const themes = {
+        default: {
+            '--sidebar-bg': '#343a40',
+            '--sidebar-color': '#fff',
+            '--primary-color': '#0977d6',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC',
+            '--text-color': '#333'
+        },
+        whiteBlue: {
+            '--sidebar-bg': '#ffffff',
+            '--sidebar-color': '#333333',
+            '--primary-color': '#4f8bbf',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC',
+            '--text-color': '#333'
+        },
+        black: {
+            '--sidebar-bg': '#000000',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#212121',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC',
+            '--text-color': '#fff'
+        },
+        purple: {
+            '--sidebar-bg': '#6f42c1',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#800080',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC',
+            '--text-color': '#fff'
+        },
+        green: {
+            '--sidebar-bg': '#28a745',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#1e7e34',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC',
+            '--text-color': '#fff'
+        },
+        red: {
+            '--sidebar-bg': '#dc3545',
+            '--sidebar-color': '#ffffff',
+            '--primary-color': '#bd2130',
+            '--success-color': '#4CAF50',
+            '--danger-color': '#F1630F',
+            '--warning-color': '#ffc107',
+            '--info-color': '#4DB6AC',
+            '--text-color': '#fff'
+        }
+    };
+
+    // Function to apply the selected theme globally by updating the :root CSS variables
+    function changeTheme(theme) {
+        const selectedTheme = themes[theme];
+        if (selectedTheme) {
+            for (let key in selectedTheme) {
+                document.documentElement.style.setProperty(key, selectedTheme[key]);
+            }
+        }
+    }
+
+    // Apply the saved theme if it exists
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        changeTheme(savedTheme);  // Apply the saved theme across the whole site
+    }
+
+    // Event listeners for theme buttons
+    document.getElementById("theme-default").addEventListener("click", function () {
+        changeTheme('default');
+        localStorage.setItem('theme', 'default');
+    });
+
+    document.getElementById("theme-white-blue").addEventListener("click", function () {
+        changeTheme('whiteBlue');
+        localStorage.setItem('theme', 'whiteBlue');
+    });
+
+    document.getElementById("theme-black").addEventListener("click", function () {
+        changeTheme('black');
+        localStorage.setItem('theme', 'black');
+    });
+
+    document.getElementById("theme-purple").addEventListener("click", function () {
+        changeTheme('purple');
+        localStorage.setItem('theme', 'purple');
+    });
+
+    document.getElementById("theme-green").addEventListener("click", function () {
+        changeTheme('green');
+        localStorage.setItem('theme', 'green');
+    });
+
+    document.getElementById("theme-red").addEventListener("click", function () {
+        changeTheme('red');
+        localStorage.setItem('theme', 'red');
+    });
+});
+
+
+
+
 const ctx = document.getElementById('siteStatsChart').getContext('2d');
 new Chart(ctx, {
     type: 'line',
@@ -239,6 +356,5 @@ function previewImage(event) {
             alert('No teachers selected for deletion!');
         }
     }
-
-
     
+   

@@ -9,6 +9,10 @@
     --info-color: #4DB6AC;
 }
 
+.table>tbody{
+    vertical-align: unset !important;
+}
+
 button.btn.btn-success.btn-sm {
     background-color: var(--sidebar-color);
     border: solid 1px var(--primary-color);
@@ -259,7 +263,7 @@ button.btn.btn-outline-primary:active {
 }
 
 .add-btn:hover {
-    width: 200px;
+    width: 215px;
     justify-content: flex-start;
     padding-left: 20px;
 }

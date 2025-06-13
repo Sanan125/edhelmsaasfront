@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="siteTitle" class="form-label">Site Title</label>
-                        <input type="text" class="form-control" id="siteTitle" name="siteTitle" value="iNiLabs School" required>
+                        <input type="text" class="form-control" id="siteTitle" name="siteTitle" value="EDHELM" required>
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>
@@ -47,10 +47,6 @@
                     <div class="mb-3">
                         <label for="phoneNo" class="form-label">Phone No</label>
                         <input type="tel" class="form-control" id="phoneNo" name="phoneNo" value="+185283465385" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="footer" class="form-label">Footer</label>
-                        <input type="text" class="form-control" id="footer" name="footer" value="Copyright &copy; EduKing - School Management System" required>
                     </div>
                     <div class="mb-3">
                         <label for="currencySymbol" class="form-label">Currency Symbol</label>
@@ -119,9 +115,38 @@
                 </div>
             </form>
         </div>
+        
+
+<!-- Theme Change -->
+<div class="card my-4" style="margin-left: 62px; margin-right: 62px;">
+    <div class="card-header">
+        <h5 class="mb-0">Theme Settings</h5>
+    </div>
+    <div class="card-body">
+        <div class="d-flex flex-wrap justify-content-start">
+            <button id="theme-default" class="theme-option" style="background-color: #333333; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+                <span>Default</span>
+            </button>
+            <button id="theme-white-blue" class="theme-option" style="background-color: #4f8bbf; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+                <span>White Blue</span>
+            </button>
+            <button id="theme-black" class="theme-option" style="background-color: #000000; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+                <span>Black</span>
+            </button>
+            <button id="theme-purple" class="theme-option" style="background-color: #6f42c1; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+                <span>Purple</span>
+            </button>
+            <button id="theme-green" class="theme-option" style="background-color: #28a745; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+                <span>Green</span>
+            </button>
+            <button id="theme-red" class="theme-option" style="background-color: #dc3545; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+                <span>Red</span>
+            </button>
+        </div>
+    </div>
+</div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <?php include('../footer.php');?>
 </body>
 </html>
