@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Settings</title>
+
+    <!-- Include the Header -->
+    <?php include('../header.php');?>
+
+</head>
+<body>
+    
+    <!-- Include the Sidebar -->
+    <?php include('../sidebar.php');?>
+
+    <!-- Sidebar Toggle Button for mobile -->
+    <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="main-content px-5">
+        <!-- Top Navbar -->
+        <?php include('../topbar.php');?>
+
+        <!-- Site Configuration Section -->
+        <div class="card  pb-4" style="margin-left: 62px; margin-right: 62px;">
+            <div class="card-header bg-light d-flex justify-content-between align-items-center py-3">
+                <div>
+                    <h5 class="mb-0 fw-bold">General Settings</h5>
+                    <small class="fw-normal">Configure the general settings for the site.</small>
+                </div>
+            </div>
+
+            <form action="#" method="POST">
+                <!-- Site Configuration -->
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="siteTitle" class="form-label">Site Title</label>
+                        <input type="text" class="form-control" id="siteTitle" name="siteTitle" value="iNiLabs School" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" value="2400 Fresno St, Fresno, CA 93721, USA" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNo" class="form-label">Phone No</label>
+                        <input type="tel" class="form-control" id="phoneNo" name="phoneNo" value="+185283465385" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="footer" class="form-label">Footer</label>
+                        <input type="text" class="form-control" id="footer" name="footer" value="Copyright &copy; EduKing - School Management System" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="currencySymbol" class="form-label">Currency Symbol</label>
+                        <input type="text" class="form-control" id="currencySymbol" name="currencySymbol" value="$" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="systemEmail" class="form-label">System Email</label>
+                        <input type="email" class="form-control" id="systemEmail" name="systemEmail" value="info@inilabs.net" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="currencyCode" class="form-label">Currency Code</label>
+                        <input type="text" class="form-control" id="currencyCode" name="currencyCode" value="USD" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="timeZone" class="form-label">Time Zone</label>
+                        <select class="form-select" id="timeZone" name="timeZone" required>
+                            <option value="GMT+06:00 Dhaka" selected>(GMT+06:00) Dhaka</option>
+                            <option value="GMT+05:00">GMT+05:00</option>
+                            <option value="GMT+02:00">GMT+02:00</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="note" class="form-label">Note</label>
+                        <select class="form-select" id="note" name="note" required>
+                            <option value="Enable" selected>Enable</option>
+                            <option value="Disable">Disable</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="language" class="form-label">Default Language</label>
+                        <select class="form-select" id="language" name="language" required>
+                            <option value="English" selected>English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profileEdit" class="form-label">Profile Edit</label>
+                        <select class="form-select" id="profileEdit" name="profileEdit" required>
+                            <option value="Disable" selected>Disable</option>
+                            <option value="Enable">Enable</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="logo" class="form-label">Logo</label>
+                        <input type="file" class="form-control" id="logo" name="logo">
+                    </div>
+                </div>
+
+                <!-- License Code -->
+                <div class="card mb-4 mx-3">
+                    <div class="card-header">
+                        <h5 class="mb-0">License Code</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="licenseCode" class="form-label">License Code</label>
+                            <input type="text" class="form-control" id="licenseCode" name="licenseCode" value="p6u90xe7-h0j0-22v2-8467-k421p95209p11" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="d-flex justify-content-end mx-3">
+                    <button type="submit" class="btn btn-primary">Save Settings</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

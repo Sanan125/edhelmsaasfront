@@ -58,6 +58,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <i class="fas fa-bullhorn"></i> Announcements
             </a>
         </li>
+        <li class="nav-item <?php echo ($current_page == 'sign-in.php') ? 'active' : ''; ?>">
+    <a class="nav-link" href="../admin/sign-in.php">
+        <i class="fas fa-user-plus"></i> Sign-In
+    </a>
+</li>
+<li class="nav-item <?php echo ($current_page == 'sign-up.php') ? 'active' : ''; ?>">
+    <a class="nav-link" href="../admin/sign-up.php">
+        <i class="fas fa-user-plus"></i> Sign-Up
+    </a>
+</li>
+
         <li class="nav-item <?php echo ($current_page == 'settings.php') ? 'active' : ''; ?>">
             <a class="nav-link" href="../admin/settings.php">
                 <i class="fas fa-cog"></i> Settings

@@ -131,12 +131,7 @@
             <th class="ps-4 pe-4">Action</th>
            
 
-            <th class="ps-4 pe-4">Photo</th>
-            <th class="ps-4 pe-4" data-sortable="true">Teacher Name</th>
-            <th class="ps-4 pe-4" data-sortable="true">Subject</th>
-            <th class="ps-4 pe-4" data-sortable="true">Email</th>
-            <th class="ps-4 pe-4">Status</th>
-            <th class="ps-4 pe-4">Action</th>
+           
         </tr>
     </thead>
     <tbody id="tableBody">

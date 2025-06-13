@@ -837,11 +837,24 @@ button {
 .dropdown-menu .dropdown-item{
     font-size: 12px;
 }
+  .right-column {
+            background-image: url('../../assests/images/cover2.jpg'); /* Check the image path */
+            background-size: cover;
+            background-position: center;
+            /* height: 100vh;  */
+        }
 
+        .p-4{
+                    border-radius: 0px!important;
 
+        }
 
 
 /* Registeration from */
 
- /* Custom CSS */
-      
+
+        .no-gap {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+ 

@@ -239,3 +239,6 @@ function previewImage(event) {
             alert('No teachers selected for deletion!');
         }
     }
+
+
+    
