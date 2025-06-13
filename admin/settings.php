@@ -48,7 +48,6 @@
                         <label for="phoneNo" class="form-label">Phone No</label>
                         <input type="tel" class="form-control" id="phoneNo" name="phoneNo" value="+185283465385" required>
                     </div>
-
                     <div class="mb-3">
                         <label for="currencySymbol" class="form-label">Currency Symbol</label>
                         <input type="text" class="form-control" id="currencySymbol" name="currencySymbol" value="$" required>
