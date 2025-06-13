@@ -286,7 +286,6 @@ button.btn.btn-outline-primary:active {
 }
 
 
-
 tbody td tr thead tfoot{
     border-style: dashed !important;
     border-width: 0px 0px 1px 0px !important;
@@ -434,6 +433,24 @@ i.bi.bi-three-dots-vertical:hover{
     vertical-align: middle;
     font-family: 'Inter', sans-serif;  /* Inter font applied */
     font-size: 14px;
+}
+
+
+/* Styling for the bulk upload section */
+.bulk-upload-section {
+    font-size: 14px; /* Make the text smaller */
+}
+
+/* Smaller form control */
+.bulk-upload-section .form-control-sm {
+    font-size: 13px; /* Smaller input field */
+    padding: 8px; /* Adjust padding for smaller size */
+}
+
+/* Button styling */
+.bulk-upload-section .btn-sm {
+    font-size: 14px; /* Smaller button font size */
+    padding: 6px 12px; /* Adjust padding for the smaller button */
 }
 
 
@@ -820,3 +837,24 @@ button {
 .dropdown-menu .dropdown-item{
     font-size: 12px;
 }
+  .right-column {
+            background-image: url('../../assests/images/cover2.jpg'); /* Check the image path */
+            background-size: cover;
+            background-position: center;
+            /* height: 100vh;  */
+        }
+
+        .p-4{
+                    border-radius: 0px!important;
+
+        }
+
+
+/* Registeration from */
+
+
+        .no-gap {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+ 

@@ -5,108 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Student</title>
 
-   
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- CSS CDN -->
-    <link rel="stylesheet" href="../includes/css/style.css">
-    <!-- Chart JS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <!-- DataTables CSS / JS -->
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+              <!-- header call  php function -->
+
+          <?php include('../header.php');?>
+
 </head>
 <body>
     
 
+       <!-- side bar call  php function -->
 
-
-    <!-- Sidebar -->
-     <div class="sidebar">
-        <div class="sidebar-header">
-            <h3><b>EDHELM</b></h3>
-        </div>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link" href="../admin/dashboard.html">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="../admin/student.html">
-                    <i class="fas fa-users"></i> Students
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../admin/parent.html">
-                    <i class="fas fa-users"></i> Parents
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="../admin/teacher.html">
-                    <i class="fas fa-chalkboard-teacher"></i> Teachers
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../admin/class.html">
-                    <i class="fas fa-school"></i> Classes
-                </a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../admin/subject.html">
-                    <i class="fas fa-calendar-alt"></i> Subject
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../admin/attendance.html">
-                    <i class="fas fa-calendar-alt"></i> Attendance
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-money-bill-wave"></i> Fees
-                    <!-- <span class="badge bg-danger badge-notification">12</span> -->
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-book"></i> Exams
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-bullhorn"></i> Announcements
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-cog"></i> Settings
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">       
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-            </li>
-        </ul>
-    </div>
-
+    <?php include('../sidebar.php');?>
 
     
           <!-- Sidebar Toggle Button for mobile -->
@@ -122,106 +31,7 @@
         </div> -->
 
         
-    <!-- Top Navbar -->
-    <nav class="navbar navbar-light  py-2 ">
-      <div class="container-fluid d-flex justify-content-between align-items-center">
-        <!-- Left: Site Logo/Title -->
-        <span class="navbar-brand mb-0 h3 text-dark">Dashboard / Teacher</span>
-        <!-- Right: Icons -->
-        <div class="d-flex align-items-center gap-4">
-          <!-- Bell Icon with Badge -->
-          <div class="dropdown position-relative">
-     <!-- Bell Icon -->
-        <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-       <i class="fas fa-bell fs-5"></i> 
-       <!-- Badge for the number of notifications -->
-       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-         3
-        </span>
-        </a>
-          
-            <!-- Dropdown for notifications -->
-          <!-- Notification Dropdown -->
-  <ul class="dropdown-menu dropdown-menu-end custom-dropdown-width" aria-labelledby="notificationDropdown">
-    <!-- Notification Header -->
-    <li class="dropdown-item text-dark d-flex justify-content-between">
-      <span><b>Notification (4)</b></span>
-      <a href="#" class="text-primary">Mark All as Read</a>
-    </li>
-    <li><hr class="dropdown-divider"></li>
-
-    <!-- Notification Items -->
-<li><a class="dropdown-item " href=""><i class="bi bi-rocket-takeoff me-1" style="font-size: 18px;"></i> New message from Sarah<br><span class="text-muted ms-4"><small>10 min ago</small></span></a></li>
-<li><a class="dropdown-item" href="#"><i class="bi bi-rocket-takeoff me-1" style="font-size: 18px;"></i> John commented on your post<br><span class="text-muted ms-4"><small>15 min ago</small></span></a></li>
-<li><a class="dropdown-item" href="#"><i class="bi bi-rocket-takeoff me-1" style="font-size: 18px;"></i> 3 new assignments are due<br><span class="text-muted ms-4"><small>30 min ago</small></span></a></li>
-<li><a class="dropdown-item" href="#"><i class="bi bi-rocket-takeoff me-1" style="font-size: 18px;"></i> Your profile has been updated<br><span class="text-muted ms-4"><small>1 hour ago</small></span></a></li>
-
-    <li><hr class="dropdown-divider"></li>
-    
-    <li class="text-center w-100">
-      <a class="dropdown-item view" href="#"><b>View all notifications</b></a>
-    </li>
-</ul>
-         </div>
-
-          <!-- Profile Dropdown -->
-          <div class="dropdown">
-            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../assests/images/default.png" alt="Profile" class="rounded-circle me-2" width="30" height="30">
-              <span>Mr. Admin</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-              <li><a class="dropdown-item" href="../admin/teacher-profile.html">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-          </div>
-          
-        </div>
-      </div>
-    </nav>
-
-        
-        <!-- Row 1: Summary Cards -->
-    <div class="row mb-4 pt-4 mx-5">
-  <div class="col-md-3">
-    <div class="info-card student-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
-      <div>
-        <h2>44</h2>
-        <p>Student</p>
-      </div>
-      <i class="fas fa-user-graduate fa-2x"></i>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="info-card parent-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
-      <div>
-        <h2>10</h2>
-        <p>Parents</p>
-      </div>
-      <i class="fas fa-user fa-2x"></i>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="info-card teacher-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
-      <div>
-        <h2>12</h2>
-        <p>Teacher</p>
-      </div>
-      <i class="fas fa-chalkboard-teacher fa-2x"></i>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="info-card subject-card text-white d-flex justify-content-between align-items-center p-3 mb-3 mt-3">
-      <div>
-        <h2>35</h2>
-        <p>Subject</p>
-      </div>
-      <i class="fas fa-book fa-2x"></i>
-    </div>  
-  </div>
-</div>
+    <?php include('../topbar.php');?>
 
     
 <!-- Students Table -->
@@ -313,7 +123,7 @@
             <!-- Checkbox for Select All -->
             <th class="ps-3 pe-4"><input type="checkbox" id="selectAll"onclick="toggleSelectAll()" /></th> 
             <th class="ps-4 pe-4">Photo</th>
-            <th class="ps-4 pe-4" data-sortable="true">Name</th>
+            <th class="ps-4 pe-4" data-sortable="true">Student Name</th>
              <th class="ps-4 pe-4">Roll</th>
             <th class="ps-4 pe-4" data-sortable="true">Class</th>
             <th class="ps-4 pe-4" data-sortable="true">Email</th>
@@ -321,6 +131,7 @@
             <th class="ps-4 pe-4">Action</th>
            
 
+           
         </tr>
     </thead>
     <tbody id="tableBody">
@@ -548,7 +359,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome JS (CDN) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="/includes/js/script.js"></script>
+    <script src="../includes/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.4/bootstrap-table.min.js"></script>

@@ -200,3 +200,45 @@ function previewImage(event) {
   };
   reader.readAsDataURL(event.target.files[0]);
 }
+   // Toggle visibility of delete button based on checkbox selection
+    function toggleDeleteButton() {
+        var checkboxes = document.querySelectorAll('.selectRow');
+        var deleteBtn = document.getElementById('deleteBtn');
+        var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+        if (anyChecked) {
+            deleteBtn.style.display = 'block';  // Show the delete button
+        } else {
+            deleteBtn.style.display = 'none';   // Hide the delete button
+        }
+    }
+
+    // Toggle select all checkboxes
+    function toggleSelectAll() {
+        var selectAllCheckbox = document.getElementById('selectAll');
+        var checkboxes = document.querySelectorAll('.selectRow');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+        toggleDeleteButton();  // Update the delete button visibility
+    }
+
+    // Function to delete selected teachers
+    function deleteSelectedTeachers() {
+        var checkboxes = document.querySelectorAll('.selectRow:checked');
+        if (checkboxes.length > 0) {
+            if (confirm('Are you sure you want to delete the selected teachers?')) {
+                // Implement deletion logic here (e.g., send AJAX request or submit a form)
+                checkboxes.forEach(checkbox => {
+                    var row = checkbox.closest('tr');
+                    row.remove();  // Remove the row from the table (simulate deletion)
+                });
+                toggleDeleteButton();  // Hide delete button if no teachers are selected
+            }
+        } else {
+            alert('No teachers selected for deletion!');
+        }
+    }
+
+
+    
