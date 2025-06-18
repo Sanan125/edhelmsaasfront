@@ -64,6 +64,12 @@
                     <li><a class="dropdown-item" href="#">PDF</a></li>
                 </ul>
             </div>
+
+            <!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>
+
         </div>
     </div>
 
@@ -126,7 +132,7 @@
         <tbody id="tableBody">
             <!-- Row 1 -->
             <tr>
-                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()" /></td>
                 <td class="ps-4 pe-4">Sarah Johnson</td>
                 <td class="ps-4 pe-4">Class 5</td> <!-- Class added here -->
                 <td class="ps-4 pe-4">sarah.johnson@example.com</td>
@@ -152,7 +158,7 @@
             </tr>
             <!-- Row 2 -->
             <tr>
-                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()"  /></td>
                 <td class="ps-4 pe-4">Mark Lee</td>
                 <td class="ps-4 pe-4">Class 7</td> <!-- Class added here -->
                 <td class="ps-4 pe-4">mark.lee@example.com</td>
@@ -178,7 +184,7 @@
             </tr>
             <!-- Row 3 -->
             <tr>
-                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3"  onclick="toggleDeleteButton()" /></td>
                 <td class="ps-4 pe-4">Emma Williams</td>
                 <td class="ps-4 pe-4">Class 9</td> <!-- Class added here -->
                 <td class="ps-4 pe-4">emma.williams@example.com</td>

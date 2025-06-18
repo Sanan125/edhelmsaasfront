@@ -67,6 +67,11 @@
             </ul>
         </div>
 
+          <!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>
+           
     </div>
   </div>
 
@@ -134,7 +139,7 @@
     <tbody id="tableBody">
         <!-- Row 1 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">Sarah Johnson</td>
             <td class="ps-4 pe-4">01</td>
@@ -157,7 +162,7 @@
         </tr>
         <!-- Row 2 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">Mark Lee</td>
             <td class="ps-4 pe-4">02</td>
@@ -180,7 +185,7 @@
         </tr>
         <!-- Row 3 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()" /></td>
             <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">Emma Williams</td>
             <td class="ps-4 pe-4">03</td>
@@ -203,7 +208,7 @@
         </tr>
         <!-- Row 4 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4"  onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">John Smith</td>
             <td class="ps-4 pe-4">04</td>
@@ -226,7 +231,7 @@
         </tr>
         <!-- Row 5 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5"  onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">Lily Adams</td>
             <td class="ps-4 pe-4">05</td>
@@ -249,7 +254,7 @@
         </tr>
         <!-- Row 6 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6"  onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">James Brown</td>
             <td class="ps-4 pe-4">06</td>

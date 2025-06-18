@@ -122,30 +122,77 @@
     <div class="card-header">
         <h5 class="mb-0">Theme Settings</h5>
     </div>
-    <div class="card-body">
-        <div class="d-flex flex-wrap justify-content-start">
-            <button id="theme-default" class="theme-option" style="background-color: #333333; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-                <span>Default</span>
-            </button>
-            <button id="theme-white-blue" class="theme-option" style="background-color: #4f8bbf; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-                <span>White Blue</span>
-            </button>
-            <button id="theme-black" class="theme-option" style="background-color: #000000; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-                <span>Black</span>
-            </button>
-            <button id="theme-purple" class="theme-option" style="background-color: #6f42c1; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-                <span>Purple</span>
-            </button>
-            <button id="theme-green" class="theme-option" style="background-color: #28a745; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-                <span>Green</span>
-            </button>
-            <button id="theme-red" class="theme-option" style="background-color: #dc3545; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-                <span>Red</span>
-            </button>
-        </div>
-    </div>
+
+
+
+  <div class="card-body">
+  <div class="d-flex flex-wrap justify-content-start">
+    <button id="theme-default" class="theme-option" style="background-color: #333333; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+      <span>Default</span>
+    </button>
+    <button id="theme-white-blue" class="theme-option" style="background-color: #4f8bbf; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+      <span>White Blue</span>
+    </button>
+    <button id="theme-black" class="theme-option" style="background-color: #000000; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+      <span>Black</span>
+    </button>
+    <button id="theme-purple" class="theme-option" style="background-color: #6f42c1; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+      <span>Purple</span>
+    </button>
+    <button id="theme-green" class="theme-option" style="background-color: #28a745; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+      <span>Green</span>
+    </button>
+    <button id="theme-red" class="theme-option" style="background-color: #dc3545; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
+      <span>Red</span>
+    </button>
+
+    <!--  Custom Color Picker Button -->
+<div id="picker" class="theme-option d-flex align-items-center justify-content-center mt-3" 
+     style="background-color:#c5cfff; color:white; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; position: relative;">
+  Custom color <div class="check-icon"></div>
 </div>
-    </div>
+
+<!--  Color Input Fields -->
+<div id="colorInputwrapper" class="mt-3" style="display: none;">
+  <input type="color" id="colorinput" class="form-control form-control-color mb-2" value="#c5c8ff">
+  <input type="text" id="hexcode" class="form-control" placeholder="#c5c8ff">
+</div>
+
+   </div>
+
+  </div>
+ </div> 
+</div>
+
+</div>
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const pickerBtn = document.getElementById('picker');
+    const colorInputWrapper = document.getElementById('colorInputwrapper');
+    const colorInput = document.getElementById('colorinput');
+    const hexCode = document.getElementById('hexcode');
+
+    pickerBtn.addEventListener('click', () => {
+      colorInputWrapper.style.display = 'block';
+    });
+
+    colorInput.addEventListener('input', () => {
+      hexCode.value = colorInput.value;
+      pickerBtn.style.backgroundColor = colorInput.value;
+    });
+
+    hexCode.addEventListener('input', () => {
+      const color = hexCode.value;
+      if (/^#([0-9A-F]{3}){1,2}$/i.test(color)) {
+        colorInput.value = color;
+        pickerBtn.style.backgroundColor = color;
+      }
+    });
+  });
+
+
+
+</script>
 
       <?php include('../footer.php');?>
 </body>

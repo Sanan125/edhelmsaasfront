@@ -82,6 +82,12 @@
                             <li><a class="dropdown-item" href="#">PDF</a></li>
                         </ul>
                     </div>
+
+          <!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>
+
                 </div>
             </div>
 
@@ -111,41 +117,88 @@
 
             <!-- Exam Table -->
             <table class="table ps-3 pe-3" id="examTable" data-toggle="table" data-sortable="true" data-classes="table">
-                <thead>
-                    <tr class="custom-header">
-                        <th class="ps-4 pe-4">Exam Name</th>
-                        <th class="ps-4 pe-4">Class</th>
-                        <th class="ps-4 pe-4">Date</th>
-                        <th class="ps-4 pe-4">Duration</th>
-                        <th class="ps-4 pe-4">Status</th>
-                        <th class="ps-4 pe-4">Participation</th>
-                        <th class="ps-4 pe-4">Action</th>
-                    </tr>
-                </thead>
-                <tbody id="examTableBody">
-                    <!-- Exam Row Example -->
-                    <tr>
-                        <td class="ps-4 pe-4">Mid-Term Exam</td>
-                        <td class="ps-4 pe-4">Class One</td>
-                        <td class="ps-4 pe-4">2025-06-15</td>
-                        <td class="ps-4 pe-4">1 hour</td>
-                        <td class="ps-4 pe-4"><span class="badge bg-success">Scheduled</span></td>
-                        <td class="ps-4 pe-4"><span class="badge bg-warning">Not Attempted</span></td>
-                        <td class="ps-4 pe-4">
-                            <div class="dropdown">
-                                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-three-dots-vertical"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">View Results</a></li>
-                                    <li><a class="dropdown-item" href="#">Edit Exam</a></li>
-                                    <li><a class="dropdown-item text-danger" href="#">Delete Exam</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <thead>
+        <tr class="custom-header">
+            <!-- Checkbox for Select All -->
+            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll"onclick="toggleSelectAll()" /></th>
+            <th class="ps-4 pe-4">Exam Name</th>
+            <th class="ps-4 pe-4">Class</th>
+            <th class="ps-4 pe-4">Date</th>
+            <th class="ps-4 pe-4">Duration</th>
+            <th class="ps-4 pe-4">Status</th>
+            <th class="ps-4 pe-4">Participation</th>
+            <th class="ps-4 pe-4">Action</th>
+        </tr>
+    </thead>
+    <tbody id="examTableBody">
+        <!-- Row 1 -->
+        <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Mid-Term Exam</td>
+            <td class="ps-4 pe-4">Class One</td>
+            <td class="ps-4 pe-4">2025-06-15</td>
+            <td class="ps-4 pe-4">1 hour</td>
+            <td class="ps-4 pe-4"><span class="badge bg-success">Scheduled</span></td>
+            <td class="ps-4 pe-4"><span class="badge bg-warning">Not Attempted</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">View Results</a></li>
+                        <li><a class="dropdown-item" href="#">Edit Exam</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete Exam</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Final Exam</td>
+            <td class="ps-4 pe-4">Class Two</td>
+            <td class="ps-4 pe-4">2025-06-20</td>
+            <td class="ps-4 pe-4">2 hours</td>
+            <td class="ps-4 pe-4"><span class="badge bg-warning">Scheduled</span></td>
+            <td class="ps-4 pe-4"><span class="badge bg-success">Attempted</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item" href="#">View Results</a></li>
+                        <li><a class="dropdown-item" href="#">Edit Exam</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete Exam</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Quiz 1</td>
+            <td class="ps-4 pe-4">Class One</td>
+            <td class="ps-4 pe-4">2025-06-18</td>
+            <td class="ps-4 pe-4">30 minutes</td>
+            <td class="ps-4 pe-4"><span class="badge bg-danger">Completed</span></td>
+            <td class="ps-4 pe-4"><span class="badge bg-success">Attempted</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                        <li><a class="dropdown-item" href="#">View Results</a></li>
+                        <li><a class="dropdown-item" href="#">Edit Exam</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete Exam</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
             <!-- Pagination Controls -->
             <div class="d-flex justify-content-between pt-4 pe-4 ps-4">

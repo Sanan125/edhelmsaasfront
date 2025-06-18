@@ -114,6 +114,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+    // Custom color picker 
+    document.addEventListener('DOMContentLoaded', function () {
+        const pickerBtn = document.getElementById('picker');
+        const colorInputWrapper = document.getElementById('colorInputwrapper');
+        const colorInput = document.getElementById('colorinput');
+        const hexCode = document.getElementById('hexcode');
+
+        pickerBtn.addEventListener('click', () => {
+        colorInputWrapper.style.display = 'block';
+        });
+
+        colorInput.addEventListener('input', () => {
+        hexCode.value = colorInput.value;
+        pickerBtn.style.backgroundColor = colorInput.value;
+        });
+
+        hexCode.addEventListener('input', () => {
+        const color = hexCode.value;
+        if (/^#([0-9A-F]{3}){1,2}$/i.test(color)) {
+            colorInput.value = color;
+            pickerBtn.style.backgroundColor = color;
+        }
+        });
+    });
+
+
+
+
+    
+
 
 const ctx = document.getElementById('siteStatsChart').getContext('2d');
 new Chart(ctx, {
@@ -358,3 +388,5 @@ function previewImage(event) {
     }
     
    
+
+

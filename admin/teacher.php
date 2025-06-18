@@ -67,11 +67,13 @@
                 </ul>
             </div>
             
+            
             <!-- Delete Button with Trash Icon (Initially Hidden) -->
             <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
                 <i class="fas fa-trash-alt"></i> 
             </button>
            
+
         </div>
     </div>
 
@@ -81,10 +83,35 @@
         <div class="d-flex w-25">
             <input type="text" id="search" class="form-control w-100" placeholder="Search" onkeyup="filterTable()"/>
         </div>
-        <div class="d-flex w-50 gap-3 justify-content-end">
-            <!-- Filters (Date, Status, Department) -->
-        </div>
-    </div>
+        <!-- Right: Filter Date, Status, and Select Department -->
+    <div class="d-flex w-50 gap-3 justify-content-end">
+    <!-- Filter Date Select Dropdown -->
+    <select class="form-select w-25" aria-label="Filter Date Select" style="font-size: 14px!important;">
+        <option selected>Filter Date Select</option>
+        <option value="1">Weekly</option>
+        <option value="2">Monthly</option>
+        <option value="3">Yearly</option>
+    </select>
+
+    <!-- Status Select Dropdown -->
+    <select class="form-select w-25" id="statusSelect" aria-label="Status Select" style="font-size: 14px!important;" onchange=" filterTableSelect()">
+        <option selected>Status Select</option>
+        <option value="Active">Active</option>
+        <option value="On Leave">On Leave</option>
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+    </select>
+
+    <!-- Select Department Dropdown -->
+    <select class="form-select w-25" id="departmentSelect" aria-label="Select Department" style="font-size: 14px!important;" onchange=" filterTableSelect()">
+        <option selected>Select Subject</option>
+        <option value="One">Physics</option>
+        <option value="Five">History</option>
+        <option value="Six">Mathematics</option>
+    </select>
+</div>
+</div>
+
 
     <!-- Teachers Table -->
     <table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
