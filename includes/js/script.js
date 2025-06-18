@@ -1,3 +1,18 @@
+//Bulk Added student
+document.addEventListener('DOMContentLoaded', function () {
+    const checkbox = document.getElementById('bulkUploadCheckbox');
+    const bulkDiv = document.getElementById('bulkUploadDiv');
+
+    if (checkbox && bulkDiv) {
+        checkbox.addEventListener('change', function () {
+            bulkDiv.style.display = this.checked ? 'block' : 'none';
+        });
+    } else {
+        console.error("Checkbox or bulk upload div not found in the DOM.");
+    }
+});
+
+
 // Global Theme Change JS
 document.addEventListener("DOMContentLoaded", function () {
     // Theme definitions with CSS variables
@@ -111,9 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('theme', 'red');
     });
 });
-
-
-
 
 const ctx = document.getElementById('siteStatsChart').getContext('2d');
 new Chart(ctx, {

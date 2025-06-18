@@ -6,7 +6,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- CSS CDN -->
     <link rel="stylesheet" href="../includes/css/style.css">
-    <link rel="stylesheet" href="/includes/css/style.css">
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Bootstrap CSS -->
