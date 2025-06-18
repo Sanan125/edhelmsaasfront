@@ -70,6 +70,11 @@
             </ul>
         </div>
 
+<!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>
+
     </div>
   </div>
 
@@ -140,7 +145,7 @@
     <tbody id="tableBody">
         <!-- Row 1 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4">One</td>
             <td class="ps-4 pe-4">Mr. Ahmed</td>
             <td class="ps-4 pe-4">65</td>
@@ -164,7 +169,7 @@
         </tr>
         <!-- Row 2 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2"onclick="toggleDeleteButton()" /></td>
             <td class="ps-4 pe-4">Two</td>
             <td class="ps-4 pe-4">Ms. Fatima</td>
             <td class="ps-4 pe-4">40</td>
@@ -188,7 +193,7 @@
         </tr>
         <!-- Row 3 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4">Three</td>
             <td class="ps-4 pe-4">Mr. Hassan</td>
             <td class="ps-4 pe-4">60</td>
@@ -212,7 +217,7 @@
         </tr>
         <!-- Row 4 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4">Four</td>
             <td class="ps-4 pe-4">Ms. Sarah</td>
             <td class="ps-4 pe-4">50</td>
@@ -236,7 +241,7 @@
         </tr>
         <!-- Row 5 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5"onclick="toggleDeleteButton()" /></td>
             <td class="ps-4 pe-4">Five</td>
             <td class="ps-4 pe-4">Mr. Imran</td>
             <td class="ps-4 pe-4">40</td>
@@ -260,7 +265,7 @@
         </tr>
         <!-- Row 6 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" /></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4">Six</td>
             <td class="ps-4 pe-4">Mr. Zain</td>
             <td class="ps-4 pe-4">30</td>

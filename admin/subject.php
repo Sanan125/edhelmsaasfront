@@ -62,6 +62,12 @@
                     <li><a class="dropdown-item" href="#">PDF</a></li>
                 </ul>
             </div>
+
+            <!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>
+            
         </div>
     </div>
 
@@ -99,7 +105,7 @@
         <tbody id="subjectTableBody">
             <!-- Row 1 -->
             <tr>
-                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" /></td>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()" /></td>
                 <td class="ps-4 pe-4">Mathematics</td>
                 <td class="ps-4 pe-4">MATH101</td>
                 <td class="ps-4 pe-4">Science</td>
@@ -120,7 +126,7 @@
             </tr>
             <!-- Row 2 -->
             <tr>
-                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" /></td>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()" /></td>
                 <td class="ps-4 pe-4">Physics</td>
                 <td class="ps-4 pe-4">PHYS101</td>
                 <td class="ps-4 pe-4">Science</td>
@@ -141,7 +147,7 @@
             </tr>
             <!-- Row 3 -->
             <tr>
-                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" /></td>
+                <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()" /></td>
                 <td class="ps-4 pe-4">Chemistry</td>
                 <td class="ps-4 pe-4">CHEM101</td>
                 <td class="ps-4 pe-4">Science</td>
@@ -162,7 +168,7 @@
             </tr>
             <!-- Additional Rows for Subject Table -->
 <tr>
-    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4" /></td>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4"onclick="toggleDeleteButton()" /></td>
     <td class="ps-4 pe-4">Biology</td>
     <td class="ps-4 pe-4">BIO101</td>
     <td class="ps-4 pe-4">Science</td>
@@ -183,7 +189,7 @@
 </tr>
 
 <tr>
-    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5" /></td>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5"  onclick="toggleDeleteButton()"/></td>
     <td class="ps-4 pe-4">English</td>
     <td class="ps-4 pe-4">ENG101</td>
     <td class="ps-4 pe-4">Arts</td>
@@ -204,7 +210,7 @@
 </tr>
 
 <tr>
-    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" /></td>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6"onclick="toggleDeleteButton()" /></td>
     <td class="ps-4 pe-4">Computer Science</td>
     <td class="ps-4 pe-4">CS101</td>
     <td class="ps-4 pe-4">Engineering</td>
@@ -225,7 +231,7 @@
 </tr>
 
 <tr>
-    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox7" /></td>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox7" onclick="toggleDeleteButton()"/></td>
     <td class="ps-4 pe-4">History</td>
     <td class="ps-4 pe-4">HIST101</td>
     <td class="ps-4 pe-4">Arts</td>
@@ -246,7 +252,7 @@
 </tr>
 
 <tr>
-    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox8" /></td>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox8" onclick="toggleDeleteButton()"/></td>
     <td class="ps-4 pe-4">Economics</td>
     <td class="ps-4 pe-4">ECO101</td>
     <td class="ps-4 pe-4">Commerce</td>
@@ -267,7 +273,7 @@
 </tr>
 
 <tr>
-    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox9" /></td>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox9" onclick="toggleDeleteButton()" /></td>
     <td class="ps-4 pe-4">Physical Education</td>
     <td class="ps-4 pe-4">PE101</td>
     <td class="ps-4 pe-4">Arts</td>
