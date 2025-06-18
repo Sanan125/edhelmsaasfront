@@ -1,6 +1,4 @@
-// Global Theme Change JS
 document.addEventListener("DOMContentLoaded", function () {
-    // Theme definitions with CSS variables
     const themes = {
         default: {
             '--sidebar-bg': '#343a40',
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Function to apply the selected theme globally by updating the :root CSS variables
     function changeTheme(theme) {
         const selectedTheme = themes[theme];
         if (selectedTheme) {
@@ -74,70 +71,64 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Apply the saved theme if it exists
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        changeTheme(savedTheme);  // Apply the saved theme across the whole site
+    function applyCustomTheme(hexColor) {
+        document.documentElement.style.setProperty('--sidebar-bg', hexColor);
+        document.documentElement.style.setProperty('--sidebar-color', '#fff');
+        document.documentElement.style.setProperty('--primary-color', hexColor);
+        document.documentElement.style.setProperty('--text-color', '#fff');
     }
 
-    // Event listeners for theme buttons
-    document.getElementById("theme-default").addEventListener("click", function () {
-        changeTheme('default');
-        localStorage.setItem('theme', 'default');
+    const savedTheme = localStorage.getItem('theme');
+    const savedCustomColor = localStorage.getItem('customColor');
+
+    if (savedTheme && themes[savedTheme]) {
+        changeTheme(savedTheme);
+    } else if (savedTheme === 'custom' && savedCustomColor) {
+        applyCustomTheme(savedCustomColor);
+    }
+
+    // Standard theme buttons
+    Object.keys(themes).forEach(themeName => {
+        const btn = document.getElementById(`theme-${themeName}`);
+        if (btn) {
+            btn.addEventListener("click", () => {
+                changeTheme(themeName);
+                localStorage.setItem('theme', themeName);
+            });
+        }
     });
 
-    document.getElementById("theme-white-blue").addEventListener("click", function () {
-        changeTheme('whiteBlue');
-        localStorage.setItem('theme', 'whiteBlue');
+    // Custom Picker Toggle
+    document.getElementById('picker').addEventListener('click', () => {
+        const wrapper = document.getElementById('colorInputwrapper');
+        wrapper.style.display = wrapper.style.display === 'none' ? 'block' : 'none';
     });
 
-    document.getElementById("theme-black").addEventListener("click", function () {
-        changeTheme('black');
-        localStorage.setItem('theme', 'black');
+    // When user picks color
+    const colorInput = document.getElementById('colorinput');
+    const hexInput = document.getElementById('hexcode');
+
+    function updateCustomColor(hex) {
+        if (!/^#([0-9A-F]{3}){1,2}$/i.test(hex)) return; // basic hex validation
+        applyCustomTheme(hex);
+        localStorage.setItem('theme', 'custom');
+        localStorage.setItem('customColor', hex);
+        colorInput.value = hex;
+        hexInput.value = hex;
+    }
+
+    colorInput.addEventListener('input', (e) => {
+        updateCustomColor(e.target.value);
     });
 
-    document.getElementById("theme-purple").addEventListener("click", function () {
-        changeTheme('purple');
-        localStorage.setItem('theme', 'purple');
-    });
-
-    document.getElementById("theme-green").addEventListener("click", function () {
-        changeTheme('green');
-        localStorage.setItem('theme', 'green');
-    });
-
-    document.getElementById("theme-red").addEventListener("click", function () {
-        changeTheme('red');
-        localStorage.setItem('theme', 'red');
+    hexInput.addEventListener('input', (e) => {
+        updateCustomColor(e.target.value);
     });
 });
 
 
 
-    // Custom color picker 
-    document.addEventListener('DOMContentLoaded', function () {
-        const pickerBtn = document.getElementById('picker');
-        const colorInputWrapper = document.getElementById('colorInputwrapper');
-        const colorInput = document.getElementById('colorinput');
-        const hexCode = document.getElementById('hexcode');
-
-        pickerBtn.addEventListener('click', () => {
-        colorInputWrapper.style.display = 'block';
-        });
-
-        colorInput.addEventListener('input', () => {
-        hexCode.value = colorInput.value;
-        pickerBtn.style.backgroundColor = colorInput.value;
-        });
-
-        hexCode.addEventListener('input', () => {
-        const color = hexCode.value;
-        if (/^#([0-9A-F]{3}){1,2}$/i.test(color)) {
-            colorInput.value = color;
-            pickerBtn.style.backgroundColor = color;
-        }
-        });
-    });
+   
 
 
 
