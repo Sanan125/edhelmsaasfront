@@ -11,8 +11,6 @@
 
 </head>
 <body>
-    
-
        <!-- side bar call  php function -->
 
     <?php include('../sidebar.php');?>
