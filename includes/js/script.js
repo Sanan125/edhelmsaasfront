@@ -1,3 +1,4 @@
+// Global Theme Change JS
 document.addEventListener("DOMContentLoaded", function () {
     const themes = {
         default: {
@@ -125,15 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCustomColor(e.target.value);
     });
 });
-
-
-
-   
-
-
-
-
-    
 
 
 const ctx = document.getElementById('siteStatsChart').getContext('2d');

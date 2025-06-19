@@ -7,7 +7,10 @@
 
            <!-- header call  php function -->
 
-         <?php include('../header.php');?>
+         <?php 
+  $basePath = '../'; // because this page is inside a subfolder
+  include('../includes/inc/header.php'); 
+?>
 
 </head>
 <body>
@@ -16,7 +19,7 @@
        <!-- side bar call  php function -->
 
 
-      <?php include('../sidebar.php');?>
+      <?php include('../includes/inc/sidebar.php');?>
 
     
           <!-- Sidebar Toggle Button for mobile -->
@@ -34,7 +37,7 @@
         
     <!-- Top Navbar -->
    
-    <?php include('../topbar.php');?>
+    <?php include('../includes/inc/topbar.php');?>
     
 <!-- Parent Table -->
 <div class="card pt-4 pb-4" style="margin-left: 62px; margin-right: 62px;">
@@ -341,6 +344,6 @@
   </div>
 </div>
 
- <?php include('../footer.php');?>
+ <?php include('../includes/inc/footer.php');?>
 </body>
 </html>

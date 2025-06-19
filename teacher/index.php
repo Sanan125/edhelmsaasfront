@@ -6,16 +6,17 @@
     <title>Admin Dashboard</title>
 
            <!--  call  php function -->
-
-
-      <?php include('../header.php');?>
+      <?php 
+    $basePath = '../'; // Go up one level
+    include('../includes/inc/header.php'); 
+    ?>
 
    
 </head>
 <body>
     
     <!-- side bar call  php function -->
-   <?php include('../sidebar.php');?>
+   <?php include('../includes/inc/sidebar.php');?>
     
           <!-- Sidebar Toggle Button for mobile -->
             <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
@@ -32,7 +33,7 @@
         
     <!-- Top Navbar -->
 
-         <?php include('../topbar.php');?>
+         <?php include('../includes/inc/topbar.php');?>
 
     
 <!-- Teachers Table -->
@@ -131,7 +132,7 @@
             <!-- Row 1 -->
             <tr>
                 <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()"/></td>
-                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4"><img src="../includes/inc/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
                 <td class="ps-4 pe-4">Mr. Zain</td>
                 <td class="ps-4 pe-4">Mathematics</td>
                 <td class="ps-4 pe-4">sarah.johnson@example.com</td>
@@ -152,7 +153,7 @@
             <!-- Row 2 -->
             <tr>
                 <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()"/></td>
-                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4"><img src="../includes/inc/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
                 <td class="ps-4 pe-4">Mr. Ahmed</td>
                 <td class="ps-4 pe-4">History</td>
                 <td class="ps-4 pe-4">mark.lee@example.com</td>
@@ -173,7 +174,7 @@
             <!-- Row 3 -->
             <tr>
                 <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()"/></td>
-                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4"><img src="../includes/inc/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
                 <td class="ps-4 pe-4">Ms. Sarah</td>
                 <td class="ps-4 pe-4">Physics</td>
                 <td class="ps-4 pe-4">emma.williams@example.com</td>
@@ -267,6 +268,6 @@
     </div>
   </div>     
 
-    <?php include('../footer.php');?>
+    <?php include('../includes/inc/footer.php');?>
 </body>
 </html>

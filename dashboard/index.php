@@ -6,8 +6,11 @@
     <title>Admin Dashboard</title>
 
               <!-- header call  php function -->
-
-          <?php include('../header.php');?>
+            
+              <?php 
+  $basePath = '../'; // because this page is inside a subfolder
+  include('../includes/inc/header.php'); 
+?>
 
 </head>
 <body>
@@ -15,8 +18,7 @@
 
        <!-- side bar call  php function -->
 
-
-   <?php include('../sidebar.php');?>
+    <?php include('../includes/inc/sidebar.php');?>
 
 
     
@@ -32,8 +34,8 @@
             <h2>School Management Dashboard</h2>
         </div> -->
 
-        
-    <?php include('../topbar.php');?>
+          <?php include('../includes/inc/topbar.php');?>
+
 
         
         <!-- Row 2: New Sections -->
@@ -262,12 +264,8 @@
     </div>
 </div>
 
-
-
-       
-          
-     
-
-    <?php include('../footer.php');?>
+<?php 
+  include('../includes/inc/footer.php'); 
+?>
 </body>
 </html>

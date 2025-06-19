@@ -7,10 +7,12 @@
 
               <!-- header call  php function -->
 
-          <?php include('../header.php');?>
+          <?php include('../include/inc/header.php');?>
 
 </head>
 <body>
+    
+
        <!-- side bar call  php function -->
 
     <?php include('../sidebar.php');?>

@@ -6,13 +6,16 @@
     <title>General Settings</title>
 
     <!-- Include the Header -->
-    <?php include('../header.php');?>
+    <?php 
+  $basePath = '../'; // because this page is inside a subfolder
+  include('../includes/inc/header.php'); 
+?>
 
 </head>
 <body>
     
     <!-- Include the Sidebar -->
-    <?php include('../sidebar.php');?>
+    <?php include('../includes/inc/sidebar.php');?>
 
     <!-- Sidebar Toggle Button for mobile -->
     <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
@@ -22,7 +25,7 @@
     <!-- Main Content -->
     <div class="main-content px-5">
         <!-- Top Navbar -->
-        <?php include('../topbar.php');?>
+        <?php include('../includes/inc/topbar.php');?>
 
         <!-- Site Configuration Section -->
         <div class="card  pb-4" style="margin-left: 62px; margin-right: 62px;">
@@ -166,7 +169,8 @@
 
 </div>
 
+  
 
-      <?php include('../footer.php');?>
+    <?php include('../includes/inc/footer.php');?>
 </body>
 </html>

@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Student</title>
+    <title>Admin Fees</title>
 
               <!-- header call  php function -->
 
-          <?php include('../header.php');?>
+          <?php 
+  $basePath = '../'; // because this page is inside a subfolder
+  include('../includes/inc/header.php'); 
+?>
 
 </head>
 <body>
@@ -15,7 +18,7 @@
 
        <!-- side bar call  php function -->
 
-    <?php include('../sidebar.php');?>
+    <?php include('../includes/inc/sidebar.php');?>
 
     
           <!-- Sidebar Toggle Button for mobile -->
@@ -31,7 +34,7 @@
         </div> -->
 
         
-    <?php include('../topbar.php');?>
+    <?php include('../includes/inc/topbar.php');?>
 
     
 <!-- Students Table -->
@@ -39,8 +42,8 @@
 <div class="card-header d-flex justify-content-between align-items-center bg-white">
     <!-- Left Side: Section Title and Suboptions -->
     <div>
-        <h5 class="mb-0 fw-bold">All Students</h5>
-        <small class="fw-normal">Manage your Students from start to finish with complete control.</small>
+        <h5 class="mb-0 fw-bold">All Fees</h5>
+        <small class="fw-normal">Manage your Fees from start to finish with complete control.</small>
         <ul class="list-unstyled mt-2">
         
         </ul>
@@ -67,11 +70,11 @@
             </ul>
         </div>
 
-          <!-- Delete Button with Trash Icon (Initially Hidden) -->
+    <!-- Delete Button with Trash Icon (Initially Hidden) -->
             <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
                 <i class="fas fa-trash-alt"></i> 
             </button>
-           
+
     </div>
   </div>
 
@@ -126,12 +129,12 @@
     <thead>
         <tr class="custom-header">
             <!-- Checkbox for Select All -->
-            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll"onclick="toggleSelectAll()" /></th> 
-            <th class="ps-4 pe-4">Photo</th>
+            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()" /></th> 
             <th class="ps-4 pe-4" data-sortable="true">Student Name</th>
-             <th class="ps-4 pe-4">Roll</th>
+            <th class="ps-4 pe-4">Roll</th>
             <th class="ps-4 pe-4" data-sortable="true">Class</th>
             <th class="ps-4 pe-4" data-sortable="true">Email</th>
+            <th class="ps-4 pe-4">Fees/Challan</th>
             <th class="ps-4 pe-4">Status</th>
             <th class="ps-4 pe-4">Action</th>
         </tr>
@@ -139,15 +142,18 @@
     <tbody id="tableBody">
         <!-- Row 1 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()"/></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1"  onclick="toggleDeleteButton()"/></td>
             <td class="ps-4 pe-4">Sarah Johnson</td>
             <td class="ps-4 pe-4">01</td>
             <td class="ps-4 pe-4">One</td>
             <td class="ps-4 pe-4">sarah.johnson@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
             <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
+                <a href="#" data-bs-toggle="modal" data-bs-target="#challanModal1">
+                    <img src="../assests/images/challan.jpg" alt="Challan Image" class="img-thumbnail" style="width: 50px; height: auto;" />
+                </a>
+            </td>
+            <td class="ps-4 pe-4"><span class="badge bg-success">Paid</span></td>
+            <td class="ps-4 pe-4">
                 <div class="dropdown">
                     <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -160,17 +166,21 @@
                 </div>
             </td>
         </tr>
+
         <!-- Row 2 -->
         <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()"/></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2"  onclick="toggleDeleteButton()" /></td>
             <td class="ps-4 pe-4">Mark Lee</td>
             <td class="ps-4 pe-4">02</td>
-            <td class="ps-4 pe-4">two</td>
+            <td class="ps-4 pe-4">Two</td>
             <td class="ps-4 pe-4">mark.lee@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
             <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
+                <a href="#" data-bs-toggle="modal" data-bs-target="#challanModal2">
+                    <img src="../assests/images/challan.jpg" alt="Challan Image" class="img-thumbnail" style="width: 50px; height: auto;" />
+                </a>
+            </td>
+            <td class="ps-4 pe-4"><span class="badge bg-warning">Pending</span></td>
+            <td class="ps-4 pe-4">
                 <div class="dropdown">
                     <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -183,17 +193,21 @@
                 </div>
             </td>
         </tr>
+
         <!-- Row 3 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()" /></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
             <td class="ps-4 pe-4">Emma Williams</td>
             <td class="ps-4 pe-4">03</td>
             <td class="ps-4 pe-4">Three</td>
             <td class="ps-4 pe-4">emma.williams@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
             <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
+                <a href="#" data-bs-toggle="modal" data-bs-target="#challanModal3">
+                    <img src="../assests/images/challan.jpg" alt="Challan Image" class="img-thumbnail" style="width: 50px; height: auto;" />
+                </a>
+            </td>
+            <td class="ps-4 pe-4"><span class="badge bg-success">Paid</span></td>
+            <td class="ps-4 pe-4">
                 <div class="dropdown">
                     <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -206,78 +220,145 @@
                 </div>
             </td>
         </tr>
-        <!-- Row 4 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4"  onclick="toggleDeleteButton()"/></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">John Smith</td>
-            <td class="ps-4 pe-4">04</td>
-            <td class="ps-4 pe-4">Four</td>
-            <td class="ps-4 pe-4">john.smith@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 5 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5"  onclick="toggleDeleteButton()"/></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">Lily Adams</td>
-            <td class="ps-4 pe-4">05</td>
-            <td class="ps-4 pe-4">Five</td>
-            <td class="ps-4 pe-4">lily.adams@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">On Leave</span></td>
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 6 -->
-        <tr>
-            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6"  onclick="toggleDeleteButton()"/></td>
-            <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
-            <td class="ps-4 pe-4">James Brown</td>
-            <td class="ps-4 pe-4">06</td>
-            <td class="ps-4 pe-4">Six</td>
-            <td class="ps-4 pe-4">james.brown@example.com</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">Active</span></td>
 
-            <td class="ps-4 pe-4">
-                <!-- Dropdown with 3 dots -->
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
+        <!-- Row 4 -->
+<tr>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox4"  onclick="toggleDeleteButton()"/></td>
+    <td class="ps-4 pe-4">John Smith</td>
+    <td class="ps-4 pe-4">04</td>
+    <td class="ps-4 pe-4">Four</td>
+    <td class="ps-4 pe-4">john.smith@example.com</td>
+    <td class="ps-4 pe-4">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#challanModal4">
+            <img src="../assests/images/challan.jpg" alt="Challan Image" class="img-thumbnail" style="width: 50px; height: auto;" />
+        </a>
+    </td>
+    <td class="ps-4 pe-4"><span class="badge bg-success">Paid</span></td>
+    <td class="ps-4 pe-4">
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 5 -->
+<tr>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox5"  onclick="toggleDeleteButton()"/></td>
+    <td class="ps-4 pe-4">Lily Adams</td>
+    <td class="ps-4 pe-4">05</td>
+    <td class="ps-4 pe-4">Five</td>
+    <td class="ps-4 pe-4">lily.adams@example.com</td>
+    <td class="ps-4 pe-4">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#challanModal5">
+            <img src="../assests/images/challan.jpg" alt="Challan Image" class="img-thumbnail" style="width: 50px; height: auto;" />
+        </a>
+    </td>
+    <td class="ps-4 pe-4"><span class="badge bg-warning">Pending</span></td>
+    <td class="ps-4 pe-4">
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 6 -->
+<tr>
+    <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox6" onclick="toggleDeleteButton()" /></td>
+    <td class="ps-4 pe-4">James Brown</td>
+    <td class="ps-4 pe-4">06</td>
+    <td class="ps-4 pe-4">Six</td>
+    <td class="ps-4 pe-4">james.brown@example.com</td>
+    <td class="ps-4 pe-4">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#challanModal6">
+            <img src="../assests/images/challan.jpg" alt="Challan Image" class="img-thumbnail" style="width: 50px; height: auto;" />
+        </a>
+    </td>
+    <td class="ps-4 pe-4"><span class="badge bg-success">Paid</span></td>
+    <td class="ps-4 pe-4">
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
+
+
+
     </tbody>
 </table>
+
+<!-- Challan Modals (for each row) -->
+<div class="modal fade" id="challanModal1" tabindex="-1" aria-labelledby="challanModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="challanModalLabel1">Challan Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="../assests/images/challan-main.jpg" alt="Challan" class="img-fluid w-100" />
+            </div>
+            <div class="modal-footer">
+                <a href="../assests/images/challan-main.jpg" class="btn btn-primary" download>Download Challan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="challanModal2" tabindex="-1" aria-labelledby="challanModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="challanModalLabel2">Challan Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="../assests/images/challan-main.jpg" alt="Challan" class="img-fluid" />
+            </div>
+            <div class="modal-footer">
+                <a href="../assests/images/challan-main.jpg" class="btn btn-primary" download>Download Challan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="challanModal3" tabindex="-1" aria-labelledby="challanModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="challanModalLabel3">Challan Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="../assests/images/challan-main.jpg" alt="Challan" class="img-fluid" />
+            </div>
+            <div class="modal-footer">
+                <a href="../assests/images/challan-main.jpg" class="btn btn-primary" download>Download Challan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -307,10 +388,6 @@
         </button>
     </div>
   </div>
-
-
-
-
 
 </div>
 
@@ -357,6 +434,6 @@
     </div>
   </div>     
 
-    <?php include('../footer.php');?>
+    <?php include('../includes/inc/footer.php');?>
 </body>
 </html>

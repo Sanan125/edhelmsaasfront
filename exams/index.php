@@ -6,11 +6,14 @@
     <title>Exam Management</title>
 
     <!-- header call php function -->
-    <?php include('../header.php');?>
+    <?php 
+  $basePath = '../'; // because this page is inside a subfolder
+  include('../includes/inc/header.php'); 
+?>
 </head>
 <body>
     <!-- sidebar call php function -->
-    <?php include('../sidebar.php');?>
+    <?php include('../includes/inc/sidebar.php');?>
 
     <!-- Sidebar Toggle Button for mobile -->
     <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
@@ -19,7 +22,7 @@
 
     <!-- Main Content -->
     <div class="main-content px-5">
-        <?php include('../topbar.php');?>
+        <?php include('../includes/inc/topbar.php');?>
 
  <!-- Announcement and Upcoming Exams Sections -->
 <div class="row mt-4 mx-5 ">
@@ -283,6 +286,6 @@
         </div>
     </div>
     
- <?php include('../footer.php');?>
+ <?php include('../includes/inc/footer.php');?>
 </body>
 </html>
