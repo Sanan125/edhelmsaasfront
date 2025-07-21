@@ -57,13 +57,13 @@ body {
     position: fixed;
     transition: all 0.3s ease;
     z-index: 1000;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); */
     font-family: 'Inter', sans-serif;  /* Inter font applied */
     font-size: 14px;
 }
 
 .sidebar-header {
-    padding: 20px;
+    padding: 8px 22px;
     background: rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-family: 'Inter', sans-serif;  /* Inter font applied */
@@ -100,10 +100,17 @@ body {
 .sidebar ul li.active > a {
     background: var(--primary-color);
 }
+.navbar.py-3{
+    background-color:rgba(0, 0, 0, 0.2);
+}
+.top-bar{
+    background-color: var(--sidebar-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); position:sticky; top:0; z-index:10;
+}
 
 .main-content {
     margin-left: var(--sidebar-width);
-    padding: 20px;
+    /* padding: 20px; */
     width: calc(100% - var(--sidebar-width));
     min-height: 100vh;
     transition: all 0.3s;
@@ -457,33 +464,6 @@ i.bi.bi-three-dots-vertical:hover{
     padding: 6px 12px; /* Adjust padding for the smaller button */
 }
 
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .main-content {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .site-stats {
-        width: 100%;
-        margin-top: -11px;
-    }
-
-    .events {
-        width: 100%;
-    }
-}
-
-
 /* Hover Effects */
 .info-card:hover {
     transform: translateY(-10px);
@@ -694,7 +674,7 @@ input[type="search"] {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
     height: 250px;
-    background-image: url('/assests/images/cover.jpg'); /* background cover image*/
+    background-image: url('../../assests/images/555.jpg'); /* background cover image*/
     background-size: cover;
     background-position: center;
     position: relative;
@@ -862,5 +842,85 @@ button {
             margin: 0 !important;
         }
  
+        /* Table */
+    .card.pt-4.pb-4,.announcement.card.pb-4, .setting.card.pb-4, .card.my-4, .teacher-profile.mt-3 {
+        margin-left: 44px;
+        margin-right: 44px;
+        margin-bottom: 44px;
+        }
 
-        /* color picker css */
+        
+        /* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+          /* padding-left: 10px !important;
+    padding-right: 10px !important; */
+    }
+
+    .site-stats {
+        width: 100%;
+        margin-top: -11px;
+    }
+
+    .events {
+        width: 100%;
+    }
+    .summarycard {
+        display: none;
+    }
+    .dropdown-menu-end[data-bs-popper] {
+    right: 0;
+    left: 0;
+    }
+    .card.pt-4.pb-4,.announcement.card.pb-4, .setting.card.pb-4, .card.my-4 {
+    margin: 20px 11px ;
+    }
+    .exams.row.mt-4.mx-5{
+        padding-top: 40px;
+        margin: 0px !important;
+    }
+   .exams-overview.d-flex.flex-row.gap-4{
+        display: flex !important;
+        flex-direction: column !important;
+    }    
+      #mobileSidebar .nav-link {
+    padding: 10px 15px;
+    color: var(--sidebar-color);
+  }
+  #mobileSidebar .nav-link:hover {
+    background: var(--primary-color);
+  }
+
+  .sidebar-header{
+    color: var(--sidebar-color);
+  }
+  .card-header.d-flex.justify-content-between.align-items-center.bg-white {
+    gap: 8px;
+    }
+    .calendar.row.mx-5 {
+    margin: 30px 0px !important;
+    display: flex;
+    flex-direction: column;
+}
+.col-md-4.mb-4.w-50 {
+    width: 100% !important;
+}
+    .final-exam.container.mt-5 {
+        margin: 0px !important;
+    }
+}
+   @media (min-width: 768px) {
+    #mobileSidebar, #sidebarOverlay {
+      display: none !important;
+    }
+}

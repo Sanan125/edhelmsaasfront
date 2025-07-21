@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Announcement Page</title>
 
-    <!-- Include the Header -->
-  <?php 
+
+              <!-- header call  php function -->
+
+          <?php 
   $basePath = '../'; // because this page is inside a subfolder
   include('../includes/inc/header.php'); 
 ?>
 </head>
 <body>
-    
-    <!-- Include the Sidebar -->
+<?php include('../includes/inc/topbar.php');?>
+
+       <!-- side bar call  php function -->
+
     <?php include('../includes/inc/sidebar.php');?>
 
-    <!-- Sidebar Toggle Button for mobile -->
-    <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-        <i class="fas fa-bars"></i>
-    </button>
 
-    <!-- Main Content -->
-    <div class="main-content px-5">
-        <!-- Top Navbar -->
-        <?php include('../includes/inc/topbar.php');?>
+    
+    <!-- Row1 Main Content -->
+    <div class="main-content  ">
+     
+
+
+     <?php include('../includes/inc/breadcrumb.php');?>
 
         <!-- Announcement Section -->
-        <div class="card pb-4" style="margin-left: 62px; margin-right: 62px;">
+        <div class="announcement card pb-4">
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <div>
                     <h5 class="mb-0 fw-bold">Manage Announcements</h5>
@@ -35,8 +38,9 @@
                 </div>
 
                 <div>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAnnouncementModal">
-                        <i class="bi bi-plus-circle"></i> Add New Announcement
+                    <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addAnnouncementModal">
+                        <i class="fas fa-plus"></i>
+                        <span class="btn-text">Add Announcement</span>
                     </button>
                 </div>
             </div>
@@ -105,10 +109,8 @@
     </div>
 
 
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Font Awesome JS (CDN) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<?php 
+  include('../includes/inc/footer.php'); 
+?>
 </body>
 </html>

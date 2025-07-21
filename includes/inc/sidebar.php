@@ -6,9 +6,12 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
 ?>
 
 <div class="sidebar">
-    <div class="sidebar-header">
-        <h3><b>EDHELM</b></h3>
-    </div>
+    <!-- <div class="sidebar-header">
+        <a href="../dashboard">
+       <img src="../assests/images/edhelm-logo-1024x465.png" alt="Logo" class="img-fluid mb-2" style="max-height: 38px;">
+ 
+        </a>
+    </div> -->
     <ul class="nav flex-column">
 
         
@@ -71,7 +74,7 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
                 <i class="fas fa-bullhorn"></i> Announcements
             </a>
         </li>
-
+<!-- 
         <li class="nav-item <?php echo ($current_folder == 'sign-in') ? 'active' : ''; ?>">
             <a class="nav-link" href="../sign-in">
                 <i class="fas fa-user-plus"></i> Sign-In
@@ -82,7 +85,7 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
             <a class="nav-link" href="../sign-up">
                 <i class="fas fa-user-plus"></i> Sign-Up
             </a>
-        </li>
+        </li> -->
 
         <li class="nav-item <?php echo ($current_folder == 'settings') ? 'active' : ''; ?>">
             <a class="nav-link" href="../settings">

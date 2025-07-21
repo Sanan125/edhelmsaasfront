@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    
+     <?php include('../includes/inc/topbar.php');?>
 
        <!-- side bar call  php function -->
 
@@ -22,24 +22,18 @@
 
 
     
-          <!-- Sidebar Toggle Button for mobile -->
-            <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-                <i class="fas fa-bars"></i>
-            </button>
-
-
     <!-- Row1 Main Content -->
-    <div class="main-content px-5 ">
-        <!-- <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>School Management Dashboard</h2>
-        </div> -->
+    <div class="main-content  ">
+     
 
-          <?php include('../includes/inc/topbar.php');?>
+
+     <?php include('../includes/inc/breadcrumb.php');?>
+         
 
 
         
         <!-- Row 2: New Sections -->
-     <div class="row mx-5">
+     <div class="calendar row mx-5 mb-5">
     <!-- Calendar Section -->
     <div class="col-md-4 mb-4 w-50">
         <div class="card dashboard-card shadow-sm">
@@ -128,7 +122,7 @@
     </div>
     
     <!-- Student Time Table -->
-    <div class="col-md-4 mb-4 w-50">
+    <div class="calendar-table col-md-4 mb-4 w-50">
     <div class="card dashboard-card shadow-sm">
         <div class="card-header bg-secondary text-white">
             <h5><i class="fas fa-calendar me-2"></i>Student Time Table</h5>
@@ -189,13 +183,13 @@
 </div>
 
     
-
-  <div class="container mt-5">
+  <div class="final-exam container">
     <div class="card shadow-sm">
         <div class="card-header bg-primary text-white">
             <h5 class=" text-center mb-0"style="font-size:16px;">School Final Exam Date Sheet - 2025</h5>
         </div>
         <div class="card-body">
+            <div class="table-responsive">
             <table class="table table-bordered  table-hover">
                 <thead class="table-light">
                     <tr>
@@ -259,6 +253,7 @@
                     <li> Mobile phones, calculators, and other electronic devices are strictly prohibited inside the exam hall.</li>
                     <li> Ensure you have all necessary stationery (pens, pencils, etc.) before entering the exam room.</li>
                 </ul>
+                </div>
             </div>
         </div>
     </div>

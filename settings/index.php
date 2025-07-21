@@ -1,176 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Settings</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
 
-    <!-- Include the Header -->
-    <?php 
-  $basePath = '../'; // because this page is inside a subfolder
-  include('../includes/inc/header.php'); 
-?>
-
+  <!-- Header include (links Bootstrap CSS + icons, etc.) -->
+  <?php 
+    $basePath = '../';           // because this file lives in a sub-folder
+    include('../includes/inc/header.php');
+  ?>
 </head>
+
 <body>
-    
-    <!-- Include the Sidebar -->
-    <?php include('../includes/inc/sidebar.php');?>
+  <!-- Top-bar -->
+  <?php include('../includes/inc/topbar.php'); ?>
 
-    <!-- Sidebar Toggle Button for mobile -->
-    <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-        <i class="fas fa-bars"></i>
-    </button>
+  <!-- Sidebar -->
+  <?php include('../includes/inc/sidebar.php'); ?>
 
-    <!-- Main Content -->
-    <div class="main-content px-5">
-        <!-- Top Navbar -->
-        <?php include('../includes/inc/topbar.php');?>
+  <!-- —— Main content —— -->
+  <div class="main-content">
 
-        <!-- Site Configuration Section -->
-        <div class="card  pb-4" style="margin-left: 62px; margin-right: 62px;">
-            <div class="card-header bg-light d-flex justify-content-between align-items-center py-3">
-                <div>
-                    <h5 class="mb-0 fw-bold">General Settings</h5>
-                    <small class="fw-normal">Configure the general settings for the site.</small>
-                </div>
+    <!-- Breadcrumb -->
+    <?php include('../includes/inc/breadcrumb.php'); ?>
+
+
+    <!-- ───── Tabs navigation ───── -->
+    <ul class="nav nav-pills mb-3 mt-5 ms-5" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="general-settings-tab"
+           data-bs-toggle="pill" href="#general-settings"
+           role="tab" aria-controls="general-settings" aria-selected="true">
+          <i class="bi bi-person"></i> General Settings
+        </a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="theme-settings-tab"
+           data-bs-toggle="pill" href="#theme-settings"
+           role="tab" aria-controls="theme-settings" aria-selected="false">
+          <i class="bi bi-shield-lock"></i> Theme Settings
+        </a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="activity-tab"
+           data-bs-toggle="pill" href="#activity"
+           role="tab" aria-controls="activity" aria-selected="false">
+          <i class="bi bi-credit-card"></i> Activity
+        </a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+  <a class="nav-link" id="role-permissions-tab"
+     data-bs-toggle="pill"
+     href="#role-permissions"
+     role="tab" aria-controls="role-permissions" aria-selected="false">
+    <i class="bi bi-people"></i> User Roles & Permissions
+  </a>
+   </li>
+
+
+
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="logs-tab"
+           data-bs-toggle="pill" href="#logs"
+           role="tab" aria-controls="logs" aria-selected="false">
+          <i class="bi bi-box-arrow-right"></i> Logs
+        </a>
+      </li>
+    </ul>
+
+    <!-- ───── Tabs content ───── -->
+    <div class="tab-content" id="pills-tabContent">
+
+      <!-- ▸ General Settings (default open) -->
+      <div class="tab-pane fade show active" id="general-settings" role="tabpanel"
+           aria-labelledby="general-settings-tab">
+        <div class="setting card pb-4 mt-3">
+
+          <div class="card-header bg-light d-flex justify-content-between align-items-center py-3">
+            <div>
+              <h5 class="mb-0 fw-bold">General Settings</h5>
+              <small class="fw-normal">Configure the general settings for the site.</small>
+            </div>
+          </div>
+
+          <form action="#" method="POST">
+            <div class="card-body">
+
+              <div class="mb-3">
+                <label for="siteTitle" class="form-label">Site Title</label>
+                <input type="text" class="form-control" id="siteTitle" name="siteTitle"
+                       value="EDHELM" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address"
+                       value="2400 Fresno St, Fresno, CA 93721, USA" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="phoneNo" class="form-label">Phone No</label>
+                <input type="tel" class="form-control" id="phoneNo" name="phoneNo"
+                       value="+185283465385" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="currencySymbol" class="form-label">Currency Symbol</label>
+                <input type="text" class="form-control" id="currencySymbol" name="currencySymbol"
+                       value="$" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="systemEmail" class="form-label">System Email</label>
+                <input type="email" class="form-control" id="systemEmail" name="systemEmail"
+                       value="info@inilabs.net" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="currencyCode" class="form-label">Currency Code</label>
+                <input type="text" class="form-control" id="currencyCode" name="currencyCode"
+                       value="USD" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="timeZone" class="form-label">Time Zone</label>
+                <select class="form-select" id="timeZone" name="timeZone" required>
+                  <option value="GMT+06:00 Dhaka" selected>(GMT+06:00) Dhaka</option>
+                  <option value="GMT+05:00">(GMT+05:00)</option>
+                  <option value="GMT+02:00">(GMT+02:00)</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="note" class="form-label">Note</label>
+                <select class="form-select" id="note" name="note" required>
+                  <option value="Enable" selected>Enable</option>
+                  <option value="Disable">Disable</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="language" class="form-label">Default Language</label>
+                <select class="form-select" id="language" name="language" required>
+                  <option value="English" selected>English</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="French">French</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="profileEdit" class="form-label">Profile Edit</label>
+                <select class="form-select" id="profileEdit" name="profileEdit" required>
+                  <option value="Disable" selected>Disable</option>
+                  <option value="Enable">Enable</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="logo" class="form-label">Logo</label>
+                <input type="file" class="form-control" id="logo" name="logo">
+              </div>
             </div>
 
-            <form action="#" method="POST">
-                <!-- Site Configuration -->
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label for="siteTitle" class="form-label">Site Title</label>
-                        <input type="text" class="form-control" id="siteTitle" name="siteTitle" value="EDHELM" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" value="2400 Fresno St, Fresno, CA 93721, USA" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phoneNo" class="form-label">Phone No</label>
-                        <input type="tel" class="form-control" id="phoneNo" name="phoneNo" value="+185283465385" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="currencySymbol" class="form-label">Currency Symbol</label>
-                        <input type="text" class="form-control" id="currencySymbol" name="currencySymbol" value="$" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="systemEmail" class="form-label">System Email</label>
-                        <input type="email" class="form-control" id="systemEmail" name="systemEmail" value="info@inilabs.net" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="currencyCode" class="form-label">Currency Code</label>
-                        <input type="text" class="form-control" id="currencyCode" name="currencyCode" value="USD" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="timeZone" class="form-label">Time Zone</label>
-                        <select class="form-select" id="timeZone" name="timeZone" required>
-                            <option value="GMT+06:00 Dhaka" selected>(GMT+06:00) Dhaka</option>
-                            <option value="GMT+05:00">GMT+05:00</option>
-                            <option value="GMT+02:00">GMT+02:00</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="note" class="form-label">Note</label>
-                        <select class="form-select" id="note" name="note" required>
-                            <option value="Enable" selected>Enable</option>
-                            <option value="Disable">Disable</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="language" class="form-label">Default Language</label>
-                        <select class="form-select" id="language" name="language" required>
-                            <option value="English" selected>English</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="French">French</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="profileEdit" class="form-label">Profile Edit</label>
-                        <select class="form-select" id="profileEdit" name="profileEdit" required>
-                            <option value="Disable" selected>Disable</option>
-                            <option value="Enable">Enable</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="logo" class="form-label">Logo</label>
-                        <input type="file" class="form-control" id="logo" name="logo">
-                    </div>
+            <!-- License -->
+            <div class="card mb-4 mx-3">
+              <div class="card-header"><h5 class="mb-0">License Code</h5></div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="licenseCode" class="form-label">License Code</label>
+                  <input type="text" class="form-control" id="licenseCode" name="licenseCode"
+                         value="p6u90xe7-h0j0-22v2-8467-k421p95209p11" required>
                 </div>
+              </div>
+            </div>
 
-                <!-- License Code -->
-                <div class="card mb-4 mx-3">
-                    <div class="card-header">
-                        <h5 class="mb-0">License Code</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="licenseCode" class="form-label">License Code</label>
-                            <input type="text" class="form-control" id="licenseCode" name="licenseCode" value="p6u90xe7-h0j0-22v2-8467-k421p95209p11" required>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Save Button -->
-                <div class="d-flex justify-content-end mx-3">
-                    <button type="submit" class="btn btn-primary">Save Settings</button>
-                </div>
-            </form>
+            <div class="d-flex justify-content-end mx-3 pb-3">
+              <button type="submit" class="btn btn-primary">Save Settings</button>
+            </div>
+          </form>
         </div>
-        
+      </div>
 
-<!-- Theme Change -->
-<div class="card my-4" style="margin-left: 62px; margin-right: 62px;">
-    <div class="card-header">
-        <h5 class="mb-0">Theme Settings</h5>
+      <!-- ▸ Theme Settings (default hidden) -->
+      <div class="tab-pane fade" id="theme-settings" role="tabpanel"
+           aria-labelledby="theme-settings-tab">
+        <div class="card my-4">
+          <div class="card-header"><h5 class="mb-0">Theme Settings</h5></div>
+
+          <div class="card-body">
+            <!-- colour swatches -->
+            <div class="d-flex flex-wrap mb-3">
+              <button id="theme-default"      class="theme-option" style="background:#333;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;">Default</button>
+              <button id="theme-white-blue"   class="theme-option" style="background:#4f8bbf;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;">White Blue</button>
+              <button id="theme-black"        class="theme-option" style="background:#000;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;">Black</button>
+              <button id="theme-purple"       class="theme-option" style="background:#6f42c1;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;">Purple</button>
+              <button id="theme-green"        class="theme-option" style="background:#28a745;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;">Green</button>
+              <button id="theme-red"          class="theme-option" style="background:#dc3545;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;">Red</button>
+
+              <!-- custom picker -->
+              <div id="picker" class="theme-option d-flex align-items-center justify-content-center"
+                   style="background:#c5cfff;width:100px;height:50px;margin:0 10px 10px 0;color:#fff;cursor:pointer;">
+                Custom
+              </div>
+            </div>
+
+            <!-- input fields for custom colour -->
+            <div id="colorInputwrapper" class="mt-3" style="display:none;">
+              <input type="color" id="colorinput" class="form-control form-control-color mb-2" value="#c5c8ff">
+              <input type="text"  id="hexcode"   class="form-control" placeholder="#c5c8ff">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ▸ Activity -->
+      <div class="tab-pane fade" id="activity" role="tabpanel"
+           aria-labelledby="activity-tab">
+        <div class="card my-4">
+          <div class="card-header"><h5 class="mb-0">Activity</h5></div>
+          <div class="card-body">
+            <!-- placeholder table -->
+            <table class="table">
+              <thead><tr><th>Date</th><th>Action</th><th>User</th></tr></thead>
+              <tbody>
+                <tr><td>2025-06-27</td><td>Login</td><td>Admin</td></tr>
+                <tr><td>2025-06-26</td><td>Updated theme</td><td>Admin</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+<!-- User Roles &amp; Permissions -->
+
+   <div class="tab-pane fade" id="role-permissions" role="tabpanel" aria-labelledby="role-permissions-tab">
+  <div class="card my-4 shadow-sm ">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">User Roles &amp; Permissions</h5>
+
+
+
+        <!-- Right Side: Download, Add, and Delete Buttons -->
+        <div class="d-flex gap-2">
+            <div class="add-container">
+                <button class="add-btn" data-bs-toggle="modal" data-bs-target="#roleModal">
+                    <i class="fas fa-plus"></i>
+                    <span class="btn-text">Add New Role</span>
+                </button>
+            </div>
+
+    <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle download-btn" type="button" id="fileOptionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi-download"></i>
+                    <span class="btn-text">Download</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="fileOptionsDropdown">
+                    <li><a class="dropdown-item" href="#">Excel</a></li>
+                    <li><a class="dropdown-item" href="#">CSV</a></li>
+                    <li><a class="dropdown-item" href="#">PDF</a></li>
+                </ul>
+            </div>
+
+             
+            <!-- Delete Button with Trash Icon (Initially Hidden) -->
+            <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
+                <i class="fas fa-trash-alt"></i> 
+            </button>   
+
+    </div>
+    
     </div>
 
+    <!-- role table -->
+     <table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
+    <thead>
+        <tr class="custom-header">
+            <!-- Checkbox for Select All -->
+            <th class="ps-3 pe-4"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()" /></th>
+            <th class="ps-3 pe-4">Role</th>
+            <th class="ps-3 pe-4" data-sortable="true">Description</th>
+            <th class="ps-3 pe-4" data-sortable="true">Assigned Users</th>
+            <th class="ps-3 pe-4">Permissions</th>
+            <th class="ps-3 pe-4">Action</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Row 1 -->
+        <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Administrator</td>
+            <td class="ps-4 pe-4">Full access to all features</td>
+            <td class="ps-4 pe-4">5</td>
+            <td class="ps-4 pe-4"><span class="badge bg-success">All Access</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Overview</a></li>
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Editor</td>
+            <td class="ps-4 pe-4">Can modify content but limited settings access</td>
+            <td class="ps-4 pe-4">8</td>
+            <td class="ps-4 pe-4"><span class="badge bg-warning">Limited Access</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Overview</a></li>
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Viewer</td>
+            <td class="ps-4 pe-4">Read-only access</td>
+            <td class="ps-4 pe-4">15</td>
+            <td class="ps-4 pe-4"><span class="badge bg-secondary">View Only</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Overview</a></li>
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 
-  <div class="card-body">
-  <div class="d-flex flex-wrap justify-content-start">
-    <button id="theme-default" class="theme-option" style="background-color: #333333; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-      <span>Default</span>
-    </button>
-    <button id="theme-white-blue" class="theme-option" style="background-color: #4f8bbf; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-      <span>White Blue</span>
-    </button>
-    <button id="theme-black" class="theme-option" style="background-color: #000000; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-      <span>Black</span>
-    </button>
-    <button id="theme-purple" class="theme-option" style="background-color: #6f42c1; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-      <span>Purple</span>
-    </button>
-    <button id="theme-green" class="theme-option" style="background-color: #28a745; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-      <span>Green</span>
-    </button>
-    <button id="theme-red" class="theme-option" style="background-color: #dc3545; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; text-align: center; color: white;">
-      <span>Red</span>
-    </button>
 
-    <!--  Custom Color Picker Button -->
-<div id="picker" class="theme-option d-flex align-items-center justify-content-center mt-3" 
-     style="background-color:#c5cfff; color:white; width: 100px; height: 50px; margin-right: 10px; margin-bottom: 10px; cursor: pointer; position: relative;">
-  Custom color <div class="check-icon"></div>
-</div>
-
-<!--  Color Input Fields -->
-<div id="colorInputwrapper" class="mt-3" style="display: none;">
-  <input type="color" id="colorinput" class="form-control form-control-color mb-2" value="#c5c8ff">
-  <input type="text" id="hexcode" class="form-control" placeholder="#c5c8ff">
-</div>
-
-   </div>
-
-  </div>
- </div> 
-</div>
-
-</div>
-
+<!-- Pagination Controls -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 pt-4 px-4 ">
   
+  <!-- Showing results text -->
+  <div>
+    Showing 1 to 3 of 3 entries
+  </div>
 
-    <?php include('../includes/inc/footer.php');?>
+  <!-- Pagination buttons -->
+  <div class="d-flex flex-wrap gap-2 pb-5">
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <i class="bi bi-chevron-left"></i> Previous
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>1</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>2</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      Next <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+
+<!-- ▸ ADD/EDIT ROLE MODAL -->
+<div class="modal fade" id="roleModal" tabindex="-1" aria-labelledby="roleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- 💡 Added modal-dialog-centered -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="roleModalLabel">Create / Edit Role</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+ <form action="#" method="post" class="px-4 py-3"> 
+        <div class="mb-3">
+          <label for="roleName" class="form-label">Role Name</label>
+          <input type="text" class="form-control" id="roleName" name="roleName" required>
+        </div>
+
+        <label class="form-label mb-2">Permissions</label>
+        <div class="row g-2">
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="students" id="permStudents">
+              <label class="form-check-label" for="permStudents">Manage Students</label>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="attendance" id="permAttendance">
+              <label class="form-check-label" for="permAttendance">Attendance</label>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="fees" id="permFees">
+              <label class="form-check-label" for="permFees">Fees & Billing</label>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="exams" id="permExams">
+              <label class="form-check-label" for="permExams">Exams</label>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="library" id="permLibrary">
+              <label class="form-check-label" for="permLibrary">Library</label>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="transport" id="permTransport">
+              <label class="form-check-label" for="permTransport">Transport</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 text-end">
+          <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Role</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+
+  </div><!-- /.main-content -->
+
+  <!-- Footer -->
+  <?php include('../includes/inc/footer.php'); ?>
+
+  <!-- Make sure Bootstrap JS is included (usually in footer.php) -->
 </body>
 </html>

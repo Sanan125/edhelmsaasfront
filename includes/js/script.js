@@ -370,6 +370,3 @@ function previewImage(event) {
         }
     }
     
-   
-
-

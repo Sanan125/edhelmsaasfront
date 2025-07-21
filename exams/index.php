@@ -12,21 +12,20 @@
 ?>
 </head>
 <body>
+
+ <?php include('../includes/inc/topbar.php');?>
     <!-- sidebar call php function -->
     <?php include('../includes/inc/sidebar.php');?>
 
-    <!-- Sidebar Toggle Button for mobile -->
-    <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-        <i class="fas fa-bars"></i>
-    </button>
+
 
     <!-- Main Content -->
-    <div class="main-content px-5">
-        <?php include('../includes/inc/topbar.php');?>
-
+    <div class="main-content">
+       
+ <?php include('../includes/inc/breadcrumb.php');?>
  <!-- Announcement and Upcoming Exams Sections -->
-<div class="row mt-4 mx-5 ">
-    <div class="d-flex flex-row gap-4">
+<div class="exams row mt-4 mx-5 ">
+    <div class="exams-overview d-flex flex-row gap-4">
         <!-- Announcement Section -->
         <div class="card shadow-md rounded border-light" style="flex: 1;">
             <div class="card-header bg-primary text-white">
@@ -64,7 +63,7 @@
 
 
         <!-- Exam Table -->
-        <div class="card pt-4 pb-4 mt-5" style="margin-left: 62px; margin-right: 62px;">
+        <div class="card pt-4 pb-4 mt-5">
             <div class="card-header d-flex justify-content-between align-items-center bg-white">
                 <div>
                     <h5 class="mb-0 fw-bold">All Exams</h5>
@@ -97,7 +96,7 @@
             <!-- Filter Section -->
             <div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-4 pe-4">
                 <div class="d-flex w-25">
-                    <input type="text" id="searchExam" class="form-control w-100" placeholder="Search Exams" onkeyup="filterTable()" />
+                    <input type="text" id="search" class="form-control w-100" placeholder="Search" onkeyup="filterTable()" />
                 </div>
                 <div class="d-flex w-50 gap-3 justify-content-end">
                     <!-- Filter by Class -->
@@ -133,7 +132,7 @@
             <th class="ps-4 pe-4">Action</th>
         </tr>
     </thead>
-    <tbody id="examTableBody">
+    <tbody id="tableBody">
         <!-- Row 1 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()" /></td>
@@ -203,21 +202,33 @@
     </tbody>
 </table>
 
-            <!-- Pagination Controls -->
-            <div class="d-flex justify-content-between pt-4 pe-4 ps-4">
-                <div>Showing 1 to 2 of 2 entries</div>
-                <div>
-                    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-                        <i class="bi bi-chevron-left"></i>Previous
-                    </button>
-                    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-                        <span>1</span>
-                    </button>
-                    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-                        Next<i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
+          <!-- Pagination Controls -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 pt-4 px-4">
+  
+  <!-- Showing results text -->
+  <div>
+    Showing 1 to 3 of 3 entries
+  </div>
+
+  <!-- Pagination buttons -->
+  <div class="d-flex flex-wrap gap-2">
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <i class="bi bi-chevron-left"></i> Previous
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>1</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>2</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      Next <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>
         </div>
     </div>
 

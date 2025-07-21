@@ -15,29 +15,23 @@
 </head>
 <body>
     
-    <!-- side bar call  php function -->
-   <?php include('../includes/inc/sidebar.php');?>
+   <?php include('../includes/inc/topbar.php');?>
+
+       <!-- side bar call  php function -->
+
+    <?php include('../includes/inc/sidebar.php');?>
+
+
     
-          <!-- Sidebar Toggle Button for mobile -->
-            <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-                <i class="fas fa-bars"></i>
-            </button>
-
-
     <!-- Row1 Main Content -->
-    <div class="main-content px-5 ">
-        <!-- <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>School Management Dashboard</h2>
-        </div> -->
+    <div class="main-content  ">
+     
 
-        
-    <!-- Top Navbar -->
 
-         <?php include('../includes/inc/topbar.php');?>
-
+     <?php include('../includes/inc/breadcrumb.php');?>
     
 <!-- Teachers Table -->
-<div class="card pt-4 pb-4" style="margin-left: 62px; margin-right: 62px;">
+<div class="card pt-4 pb-4">
  <div class="card-header d-flex justify-content-between align-items-center bg-white">
         <!-- Left Side: Section Title and Suboptions -->
         <div>
@@ -72,9 +66,7 @@
             <!-- Delete Button with Trash Icon (Initially Hidden) -->
             <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
                 <i class="fas fa-trash-alt"></i> 
-            </button>
-           
-
+            </button>   
         </div>
     </div>
 
@@ -99,6 +91,9 @@
         <option selected>Status Select</option>
         <option value="Active">Active</option>
         <option value="On Leave">On Leave</option>
+
+
+        
         <option value="Pending">Pending</option>
         <option value="Completed">Completed</option>
     </select>
@@ -132,7 +127,7 @@
             <!-- Row 1 -->
             <tr>
                 <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox1" onclick="toggleDeleteButton()"/></td>
-                <td class="ps-4 pe-4"><img src="../includes/inc/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
                 <td class="ps-4 pe-4">Mr. Zain</td>
                 <td class="ps-4 pe-4">Mathematics</td>
                 <td class="ps-4 pe-4">sarah.johnson@example.com</td>
@@ -153,7 +148,7 @@
             <!-- Row 2 -->
             <tr>
                 <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox2" onclick="toggleDeleteButton()"/></td>
-                <td class="ps-4 pe-4"><img src="../includes/inc/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
                 <td class="ps-4 pe-4">Mr. Ahmed</td>
                 <td class="ps-4 pe-4">History</td>
                 <td class="ps-4 pe-4">mark.lee@example.com</td>
@@ -174,7 +169,7 @@
             <!-- Row 3 -->
             <tr>
                 <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" id="checkbox3" onclick="toggleDeleteButton()"/></td>
-                <td class="ps-4 pe-4"><img src="../includes/inc/assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
+                <td class="ps-4 pe-4"><img src="../assests/images/default.png" alt="Teacher" class="img-fluid rounded-circle small-image"></td>
                 <td class="ps-4 pe-4">Ms. Sarah</td>
                 <td class="ps-4 pe-4">Physics</td>
                 <td class="ps-4 pe-4">emma.williams@example.com</td>
@@ -201,28 +196,31 @@
 
 
 <!-- Pagination Controls -->
-   <div class="d-flex justify-content-between pt-4 pe-4 ps-4">
-    <!-- Showing results text -->
-    <div>Showing 1 to 3 of 3 entries</div>
-    
-    <!-- Pagination with Previous, Next, and page numbers -->
-    <div>
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <i class="bi bi-chevron-left"></i>Previous
-        </button>
-        
-        <!-- Pagination Page Numbers -->
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <span>1</span>
-        </button>
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <span >2</span>
-        </button>
-        
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;" >Next
-            <i class="bi bi-chevron-right"></i>
-        </button>
-    </div>
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 pt-4 px-4">
+  
+  <!-- Showing results text -->
+  <div>
+    Showing 1 to 3 of 3 entries
+  </div>
+
+  <!-- Pagination buttons -->
+  <div class="d-flex flex-wrap gap-2">
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <i class="bi bi-chevron-left"></i> Previous
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>1</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>2</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      Next <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
 </div>
 
   </div>
