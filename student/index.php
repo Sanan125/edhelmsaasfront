@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Student</title>
+    <title>Student</title>
 
               <!-- header call  php function -->
 
@@ -14,31 +14,25 @@
 
 </head>
 <body>
-    
+ <?php include('../includes/inc/topbar.php');?>
 
        <!-- side bar call  php function -->
 
     <?php include('../includes/inc/sidebar.php');?>
 
+
     
-          <!-- Sidebar Toggle Button for mobile -->
-            <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-                <i class="fas fa-bars"></i>
-            </button>
-
-
     <!-- Row1 Main Content -->
-    <div class="main-content px-5 ">
-        <!-- <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>School Management Dashboard</h2>
-        </div> -->
+    <div class="main-content  ">
+     
 
-        
-    <?php include('../includes/inc/topbar.php');?>
+
+     <?php include('../includes/inc/breadcrumb.php');?>
+
 
     
 <!-- Students Table -->
-<div class="card pt-4 pb-4" style="margin-left: 62px; margin-right: 62px;">
+<div class="card pt-4 pb-4">
 <div class="card-header d-flex justify-content-between align-items-center bg-white">
     <!-- Left Side: Section Title and Suboptions -->
     <div>
@@ -73,14 +67,11 @@
           <!-- Delete Button with Trash Icon (Initially Hidden) -->
             <button id="deleteBtn" class="btn btn-danger" style="display:none;" onclick="deleteSelectedTeachers()">
                 <i class="fas fa-trash-alt"></i> 
-            </button>
-           
+            </button>   
     </div>
   </div>
 
 
-
-  
 <!-- Filter Section with two sections: Left for Search and Right for Filters -->
 <div class="d-flex justify-content-between mt-3 mb-3 w-100 gap-4 ps-4 pe-4">
     <!-- Left: Search Bar -->
@@ -282,29 +273,32 @@
 
 
 <!-- Pagination Controls -->
-   <div class="d-flex justify-content-between pt-4 pe-4 ps-4">
-    <!-- Showing results text -->
-    <div>Showing 1 to 3 of 3 entries</div>
-    
-    <!-- Pagination with Previous, Next, and page numbers -->
-    <div>
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <i class="bi bi-chevron-left"></i>Previous
-        </button>
-        
-        <!-- Pagination Page Numbers -->
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <span>1</span>
-        </button>
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
-            <span >2</span>
-        </button>
-        
-        <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;" >Next
-            <i class="bi bi-chevron-right"></i>
-        </button>
-    </div>
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 pt-4 px-4">
+  
+  <!-- Showing results text -->
+  <div>
+    Showing 1 to 3 of 3 entries
   </div>
+
+  <!-- Pagination buttons -->
+  <div class="d-flex flex-wrap gap-2">
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <i class="bi bi-chevron-left"></i> Previous
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>1</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      <span>2</span>
+    </button>
+
+    <button class="btn btn-outline-primary" style="color:#727171; font-size: 12px; border: 1px solid #d3d1d1;">
+      Next <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>
 
 
 </div>

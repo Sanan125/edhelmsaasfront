@@ -14,21 +14,31 @@
 </head>
 <body>
     
-    <!-- Include the Sidebar -->
+   <?php include('../includes/inc/topbar.php');?>
+
+       <!-- side bar call  php function -->
+
     <?php include('../includes/inc/sidebar.php');?>
 
-    <!-- Sidebar Toggle Button for mobile -->
-    <button id="sidebarToggle" class="btn btn-primary d-md-none" style="margin: 10px 20px;">
-        <i class="fas fa-bars"></i>
-    </button>
 
-    <!-- Main Content -->
-    <div class="main-content px-5">
-        <!-- Top Navbar -->
-        <?php include('../includes/inc/topbar.php');?>
+    
+    <!-- Row1 Main Content -->
+    <div class="main-content  ">
+     
+
+
+     <?php include('../includes/inc/breadcrumb.php');?>
+
+
+
+
+
+
+     
+
 
         <!-- Site Configuration Section -->
-        <div class="card  pb-4" style="margin-left: 62px; margin-right: 62px;">
+        <div class="setting card  pb-4" >
             <div class="card-header bg-light d-flex justify-content-between align-items-center py-3">
                 <div>
                     <h5 class="mb-0 fw-bold">General Settings</h5>
@@ -121,7 +131,7 @@
         
 
 <!-- Theme Change -->
-<div class="card my-4" style="margin-left: 62px; margin-right: 62px;">
+<div class="card my-4" >
     <div class="card-header">
         <h5 class="mb-0">Theme Settings</h5>
     </div>
