@@ -100,7 +100,7 @@
 
 </ul>
 
-<!-- Tab Content acount -->
+<!-- Tab Content -->
 <div class="tab-content" id="pills-tabContent">
   <!-- Account Tab Content -->
  <div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">

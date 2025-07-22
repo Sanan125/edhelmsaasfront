@@ -1,5 +1,5 @@
 <div class="top-bar">
-<nav class="navbar py-3">
+<nav class="navbar px-2 py-3">
   <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
 
     <!-- Left Side: Title + Notification + Profile (Stack on mobile, inline on desktop) -->
@@ -9,10 +9,12 @@
       <div class="d-flex justify-content-between align-items-center w-100 mb-2 mb-md-0">
         <!-- Dashboard / Admin Title -->
         <!-- Logo – sirf mobile par nazar aaye, md aur us se bade screens par gayab  -->
+         <a href="../dashboard/">
 <img src="../assests/images/edhelm-logo-1024x465.png"
      alt="Logo"
      class="img-fluid mb-2 d-block "
      style="max-height: 38px;">
+</a>
 
         <!-- Toggle Button: Mobile Only --> 
         <div class="d-md-none">

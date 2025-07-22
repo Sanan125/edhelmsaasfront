@@ -7,6 +7,8 @@
     --danger-color: #F1630F;
     --warning-color: #ffc107;
     --info-color: #4DB6AC;
+    --sidebar-width-collapsed: 70px; /* As per your .collapsed width */
+    --transition-speed: 0.3s;
 }
 
 .table>tbody{
@@ -55,7 +57,7 @@ body {
     background: var(--sidebar-bg);
     color: var(--sidebar-color);
     position: fixed;
-    transition: all 0.3s ease;
+    transition: width 0.3s ease;
     z-index: 1000;
     /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); */
     font-family: 'Inter', sans-serif;  /* Inter font applied */
@@ -100,6 +102,46 @@ body {
 .sidebar ul li.active > a {
     background: var(--primary-color);
 }
+.sidebar.collapsed {
+     width: var(--sidebar-width-collapsed);
+}
+
+.sidebar.collapsed .nav-text {
+    display: none;
+}
+
+
+/* Main content when sidebar is collapsed */
+.sidebar.collapsed ~ .main-content {
+      margin-left: var(--sidebar-collapsed-width, 70px);
+    width: calc(100% - var(--sidebar-collapsed-width, 70px));
+}
+#toggleArrow {
+position: absolute;
+    top: 20px;
+    right: 0; /* or adjust as needed */
+    width: 30px;
+    height: 30px;
+    color: var(--sidebar-bg);
+    background: white;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease, transform 0.3s ease;
+}
+.sidebar.collapsed #toggleArrow {
+    right: -20px !important; /* adjust as needed */
+     transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+.sidebar.collapsed .nav-text {
+display: none;
+}
+
 .navbar.py-3{
     background-color:rgba(0, 0, 0, 0.2);
 }
@@ -107,17 +149,14 @@ body {
     background-color: var(--sidebar-bg);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); position:sticky; top:0; z-index:10;
 }
-
 .main-content {
     margin-left: var(--sidebar-width);
-    /* padding: 20px; */
     width: calc(100% - var(--sidebar-width));
     min-height: 100vh;
-    transition: all 0.3s;
-    font-family: 'Inter', sans-serif;  /* Inter font applied */
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
-
 .dashboard-card {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

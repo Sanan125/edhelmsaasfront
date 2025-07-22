@@ -24,7 +24,7 @@
        
  <?php include('../includes/inc/breadcrumb.php');?>
  <!-- Announcement and Upcoming Exams Sections -->
-<div class="exams row mt-4 mx-5 ">
+<div class="exams row mt-4 mx-4 ">
     <div class="exams-overview d-flex flex-row gap-4">
         <!-- Announcement Section -->
         <div class="card shadow-md rounded border-light" style="flex: 1;">

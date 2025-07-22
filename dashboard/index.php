@@ -33,7 +33,7 @@
 
         
         <!-- Row 2: New Sections -->
-     <div class="calendar row mx-5 mb-5">
+     <div class="calendar row mx-4 mb-5">
     <!-- Calendar Section -->
     <div class="col-md-4 mb-4 w-50">
         <div class="card dashboard-card shadow-sm">

@@ -10,7 +10,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent mb-0 p-0">
             <li class="breadcrumb-item">
-                <a href="dashboard.php" class="text-white text-decoration-none">Dashboard</a>
+                <a href="../dashboard/" class="text-white text-decoration-none">Dashboard</a>
             </li>
             <li class="breadcrumb-item active text-white" aria-current="page">Admin</li>
         </ol>
