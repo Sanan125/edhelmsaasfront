@@ -46,7 +46,7 @@
     <!-- Right Side: Download and Add Buttons -->
     <div class="d-flex gap-2">
       <div class="add-container">
-            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
+            <button class="add-btn" onclick="window.location.href='../add-new-student/'">
             <i class="fas fa-plus"></i>
             <span class="btn-text">Add New Student</span>
         </button>
@@ -306,12 +306,12 @@
   </div>
 </div>
 
-  <!-- Add New Student Modal -->
+  <!-- Add New Student Modal
   <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
       <form class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addTeacherModalLabel">Add New Teacher</h5>
+          <h5 class="modal-title" id="addTeacherModalLabel">Add New Student</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -340,11 +340,11 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Add Teacher</button>
+          <button type="submit" class="btn btn-success">Add Student</button>
         </div>
       </form>
     </div>
-  </div>     
+  </div>      -->
 
     <?php include('../includes/inc/footer.php');?>
 </body>

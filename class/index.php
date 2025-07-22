@@ -119,7 +119,6 @@
 
 
 
-
 <!-- table data -->
 <table class="table ps-3 pe-3" id="myTable" data-toggle="table" data-sortable="true" data-classes="table">
     <thead>

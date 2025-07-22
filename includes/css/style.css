@@ -269,6 +269,7 @@ button.btn.btn-outline-primary:active {
     left: 50px; /* Start appearing just after the + */
 }
 
+
 .add-btn:hover {
     width: 215px;
     justify-content: flex-start;
