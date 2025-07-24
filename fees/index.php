@@ -392,10 +392,10 @@
 
   <!-- Add New Student Modal -->
   <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
       <form class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addTeacherModalLabel">Add New Teacher</h5>
+          <h5 class="modal-title" id="addTeacherModalLabel">Add New Student</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

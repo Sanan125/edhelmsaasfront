@@ -228,7 +228,7 @@
 
   <!-- Add New Teacher Modal -->
   <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
       <form class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="addTeacherModalLabel">Add New Teacher</h5>

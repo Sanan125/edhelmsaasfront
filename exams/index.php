@@ -234,7 +234,7 @@
 
     <!-- Add New Exam Modal -->
     <div class="modal fade" id="addExamModal" tabindex="-1" aria-labelledby="addExamModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
             <form class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addExamModalLabel">Add New Exam</h5>
@@ -278,7 +278,7 @@
 
     <!-- Add Announcement Modal -->
     <div class="modal fade" id="addAnnouncementModal" tabindex="-1" aria-labelledby="addAnnouncementModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
             <form class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addAnnouncementModalLabel">Add New Announcement</h5>

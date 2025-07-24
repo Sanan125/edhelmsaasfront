@@ -16,13 +16,65 @@
      style="max-height: 38px;">
 </a>
 
-        <!-- Toggle Button: Mobile Only --> 
+<!-- annnouncement marki  -->
+
+<!-- Announcement Scrolling Banner -->
+<<div class="text-center py-2 w-75 me-5">
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="color: white; font-weight:500px; font-size: 16px;">
+    <i class="fas fa-bullhorn me-2" style="color: white;"></i>
+  ADMISSIONS ARE OPEN FOR 2025! | APPLY NOW TO SECURE YOUR SEAT IN OUR TOP-RATED PROGRAMS. LIMITED SLOTS AVAILABLE!
+  </marquee>
+</div>
+
+
+
+<style>
+.announcement-bar {
+  background-color: #0d6dfd; /* Bootstrap Primary */
+  color: #fff;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  font-weight: 500;
+}
+
+.announcement-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+</style>
+
+
+
+
+
+
+
+<!-- Toggle Button: Mobile Only --> 
         <div class="d-md-none">
         <button id="sidebarToggle" class="btn btn-primary">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
+
+
+<!-- Settings Icon -->
+  <a href="../settings" class="text-light text-decoration-none d-flex align-items-center me-3">
+    <i class="fas fa-cog fs-5"></i>
+  </a>
+
 
       <!-- Bottom Row: Notifications + Profile (below title on mobile, inline on desktop) -->
       <div class="d-flex align-items-center gap-4 ms-md-auto">
@@ -66,7 +118,7 @@
             </li>
             <li><hr class="dropdown-divider"></li>
             <li class="text-center">
-              <a class="dropdown-item view d-flex justify-content-center align-items-center" href="#">
+              <a class="dropdown-item view d-flex justify-content-center align-items-center" href="../notification/">
                 <b>View all notifications</b> <i class="fas fa-arrow-right ms-2"></i>
               </a>
             </li>
@@ -82,6 +134,7 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
             <li><a class="dropdown-item" href="../profile">Profile</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="../sign-in/">Sign-in</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
@@ -119,7 +172,7 @@
   <ul class="nav flex-column p-2">
     <li class="nav-item"><a class="nav-link" href="../dashboard"><i class="fas fa-users me-2"></i> Dashboard</a></li>
     <li class="nav-item"><a class="nav-link" href="../student"><i class="fas fa-users me-2"></i> Students</a></li>
-    <li class="nav-item"><a class="nav-link" href="../parent"><i class="fas fa-users me-2"></i> Parents</a></li>
+    <li class="nav-item"><a class="nav-link" href="../parent"><i class="fa-user-friends"></i> Parents</a></li>
     <li class="nav-item"><a class="nav-link" href="../teacher"><i class="fas fa-chalkboard-teacher me-2"></i> Teachers</a></li>
     <li class="nav-item"><a class="nav-link" href="../class"><i class="fas fa-school me-2"></i> Classes</a></li>
     <li class="nav-item"><a class="nav-link" href="../subject"><i class="fas fa-calendar-alt me-2"></i> Subject</a></li>

@@ -57,7 +57,7 @@
      data-bs-toggle="pill"
      href="#role-permissions"
      role="tab" aria-controls="role-permissions" aria-selected="false">
-    <i class="bi bi-people"></i> User Roles & Permissions
+    <i class="bi bi-people"></i> Users 
   </a>
    </li>
 
@@ -71,6 +71,7 @@
         </a>
       </li>
     </ul>
+    
 
     <!-- ───── Tabs content ───── -->
     <div class="tab-content" id="pills-tabContent">
@@ -238,12 +239,12 @@
       </div>
 
 
-<!-- User Roles &amp; Permissions -->
+<!-- User Roles  -->
 
    <div class="tab-pane fade" id="role-permissions" role="tabpanel" aria-labelledby="role-permissions-tab">
   <div class="card my-4 shadow-sm ">
     <div class="card-header d-flex justify-content-between align-items-center">
-      <h5 class="mb-0">User Roles &amp; Permissions</h5>
+      <h5 class="mb-0">Users  &amp; Role</h5>
 
 
 
@@ -252,7 +253,7 @@
             <div class="add-container">
                 <button class="add-btn" data-bs-toggle="modal" data-bs-target="#roleModal">
                     <i class="fas fa-plus"></i>
-                    <span class="btn-text">Add New Role</span>
+                    <span class="btn-text">Add New User</span>
                 </button>
             </div>
 
@@ -284,10 +285,10 @@
         <tr class="custom-header">
             <!-- Checkbox for Select All -->
             <th class="ps-3 pe-4"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()" /></th>
+            <th class="ps-3 pe-4">User</th>
+            <th class="ps-3 pe-4" data-sortable="true">Email</th>
+            <th class="ps-3 pe-4" data-sortable="true">Phone</th>
             <th class="ps-3 pe-4">Role</th>
-            <th class="ps-3 pe-4" data-sortable="true">Description</th>
-            <th class="ps-3 pe-4" data-sortable="true">Assigned Users</th>
-            <th class="ps-3 pe-4">Permissions</th>
             <th class="ps-3 pe-4">Action</th>
         </tr>
     </thead>
@@ -295,10 +296,10 @@
         <!-- Row 1 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
-            <td class="ps-4 pe-4">Administrator</td>
-            <td class="ps-4 pe-4">Full access to all features</td>
-            <td class="ps-4 pe-4">5</td>
-            <td class="ps-4 pe-4"><span class="badge bg-success">All Access</span></td>
+            <td class="ps-4 pe-4">Sanan</td>
+            <td class="ps-4 pe-4">sanan@gmail.com</td>
+            <td class="ps-4 pe-4">+923 456 8889</td>
+            <td class="ps-4 pe-4"><span class="badge bg-success"> Super Admin</span></td>
             <td class="ps-4 pe-4">
                 <div class="dropdown">
                     <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -315,10 +316,10 @@
         <!-- Row 2 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
-            <td class="ps-4 pe-4">Editor</td>
-            <td class="ps-4 pe-4">Can modify content but limited settings access</td>
-            <td class="ps-4 pe-4">8</td>
-            <td class="ps-4 pe-4"><span class="badge bg-warning">Limited Access</span></td>
+            <td class="ps-4 pe-4">Sarosh</td>
+            <td class="ps-4 pe-4">sarosh@gmail.com</td>
+            <td class="ps-4 pe-4">+923 456 7898</td>
+            <td class="ps-4 pe-4"><span class="badge bg-warning">Admin</span></td>
             <td class="ps-4 pe-4">
                 <div class="dropdown">
                     <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -335,10 +336,29 @@
         <!-- Row 3 -->
         <tr>
             <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
-            <td class="ps-4 pe-4">Viewer</td>
-            <td class="ps-4 pe-4">Read-only access</td>
-            <td class="ps-4 pe-4">15</td>
-            <td class="ps-4 pe-4"><span class="badge bg-secondary">View Only</span></td>
+            <td class="ps-4 pe-4">Asad</td>
+            <td class="ps-4 pe-4">asad@gmail.com</td>
+            <td class="ps-4 pe-4">+923 425 2489</td>
+            <td class="ps-4 pe-4"><span class="badge bg-secondary">Editor</span></td>
+            <td class="ps-4 pe-4">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Overview</a></li>
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+         <tr>
+            <td class="ps-4 pe-4"><input type="checkbox" class="selectRow" onclick="toggleDeleteButton()" /></td>
+            <td class="ps-4 pe-4">Araiz</td>
+            <td class="ps-4 pe-4">araiz@gmail.com</td>
+            <td class="ps-4 pe-4">+923 425 2489</td>
+            <td class="ps-4 pe-4"><span class="badge bg-secondary">Contributor</span></td>
             <td class="ps-4 pe-4">
                 <div class="dropdown">
                     <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -391,59 +411,65 @@
   <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- 💡 Added modal-dialog-centered -->
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="roleModalLabel">Create / Edit Role</h5>
+        <h5 class="modal-title" id="roleModalLabel">Add / Edit User</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
  <form action="#" method="post" class="px-4 py-3"> 
         <div class="mb-3">
-          <label for="roleName" class="form-label">Role Name</label>
-          <input type="text" class="form-control" id="roleName" name="roleName" required>
+          <label for="roleName" class="form-label">User Name</label>
+          <input type="text" class="form-control" id="userName" name="userName" required>
         </div>
+       
+        <div class="mb-3">
+  <label for="email" class="form-label">Email</label>
+  <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  
 
-        <label class="form-label mb-2">Permissions</label>
+<div class="mb-3">
+  <label for="password" class="form-label">Password</label>
+  <input type="password" class="form-control" id="password" name="password" required>
+</div>
+
+<div class="mb-3">
+  <label for="phone" class="form-label">Phone (optional)</label>
+  <input type="tel" class="form-control" id="phone" name="phone">
+</div>
+
+
+        <label class="form-label mb-2">Role</label>
         <div class="row g-2">
           <div class="col-6 col-md-4">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="students" id="permStudents">
-              <label class="form-check-label" for="permStudents">Manage Students</label>
+              <label class="form-check-label" for="permStudents">Super Admin </label>
             </div>
           </div>
 
           <div class="col-6 col-md-4">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="attendance" id="permAttendance">
-              <label class="form-check-label" for="permAttendance">Attendance</label>
+              <label class="form-check-label" for="permAttendance">Admin</label>
             </div>
           </div>
 
           <div class="col-6 col-md-4">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="fees" id="permFees">
-              <label class="form-check-label" for="permFees">Fees & Billing</label>
+              <label class="form-check-label" for="permFees">Editor</label>
             </div>
           </div>
 
           <div class="col-6 col-md-4">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="exams" id="permExams">
-              <label class="form-check-label" for="permExams">Exams</label>
+              <label class="form-check-label" for="permExams">Contributor</label>
             </div>
           </div>
 
-          <div class="col-6 col-md-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="library" id="permLibrary">
-              <label class="form-check-label" for="permLibrary">Library</label>
-            </div>
-          </div>
+         
 
-          <div class="col-6 col-md-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="transport" id="permTransport">
-              <label class="form-check-label" for="permTransport">Transport</label>
-            </div>
-          </div>
-        </div>
+          
 
         <div class="mt-4 text-end">
           <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>

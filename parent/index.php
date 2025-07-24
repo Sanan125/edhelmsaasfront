@@ -298,7 +298,7 @@
 <!-- Add New Parent Modal -->
 <!-- Add New Parent Modal -->
 <div class="modal fade" id="addParentModal" tabindex="-1" aria-labelledby="addParentModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <form class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="addParentModalLabel">Add New Parent</h5>

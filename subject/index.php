@@ -333,7 +333,7 @@
 
 <!-- Add New Subject Modal -->
 <div class="modal fade" id="addSubjectModal" tabindex="-1" aria-labelledby="addSubjectModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
         <form class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addSubjectModalLabel">Add New Subject</h5>
