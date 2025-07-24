@@ -61,7 +61,7 @@ body {
     z-index: 1000;
     /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); */
     font-family: 'Inter', sans-serif;  /* Inter font applied */
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .sidebar-header {
@@ -77,7 +77,7 @@ body {
 }
 
 .sidebar ul li a {
-    padding: 12px 20px;
+    padding: 14px 20px;
     color: var(--sidebar-color);
     display: block;
     text-decoration: none;
@@ -117,8 +117,9 @@ body {
     width: calc(100% - var(--sidebar-collapsed-width, 70px));
 }
 #toggleArrow {
-position: absolute;
-    top: 20px;
+    position: absolute;
+    top: 50% !important;
+    left: 90%;
     right: 0; /* or adjust as needed */
     width: 30px;
     height: 30px;
@@ -133,8 +134,12 @@ position: absolute;
     justify-content: center;
     transition: right 0.3s ease, transform 0.3s ease;
 }
+#toggleArrow:hover{
+        background: var(--primary-color);
+        color:var(--sidebar-color);
+}
 .sidebar.collapsed #toggleArrow {
-    right: -20px !important; /* adjust as needed */
+        margin-left: -8px !important;
      transform: rotate(180deg);
     transition: transform 0.3s ease;
 }
@@ -144,6 +149,9 @@ display: none;
 
 .navbar.py-3{
     background-color:rgba(0, 0, 0, 0.2);
+}
+.nav-text {
+    margin-left: 10px;
 }
 .top-bar{
     background-color: var(--sidebar-bg);
@@ -493,10 +501,10 @@ i.bi.bi-three-dots-vertical:hover{
 }
 
 /* Smaller form control */
-.bulk-upload-section .form-control-sm {
-    font-size: 13px; /* Smaller input field */
-    padding: 8px; /* Adjust padding for smaller size */
-}
+/* .bulk-upload-section .form-control-sm {
+    font-size: 13px; 
+    padding: 8px;
+} */
 
 /* Button styling */
 .bulk-upload-section .btn-sm {

@@ -109,9 +109,30 @@
               </div>
 
               <div class="mb-3">
-                <label for="currencySymbol" class="form-label">Currency Symbol</label>
-                <input type="text" class="form-control" id="currencySymbol" name="currencySymbol"
-                       value="$" required>
+                <label for="currencySymbol" class="form-label">Currency</label>
+                <select class="form-select" id="currencySymbol" name="currencySymbol" required>
+                  <option value="$">$ - USD</option>
+                  <option value="€">€ - EUR</option>
+                  <option value="£">£ - GBP</option>
+                  <option value="¥">¥ - JPY</option>
+                  <option value="₹">₹ - INR</option>
+                  <option value="₨">₨ - PKR</option>
+                  <option value="₽">₽ - RUB</option>
+                  <option value="₩">₩ - KRW</option>
+                  <option value="₪">₪ - ILS</option>
+                  <option value="₫">₫ - VND</option>
+                  <option value="₱">₱ - PHP</option>
+                  <option value="₦">₦ - NGN</option>
+                  <option value="฿">฿ - THB</option>
+                  <option value="₴">₴ - UAH</option>
+                  <option value="₲">₲ - PYG</option>
+                  <option value="₵">₵ - GHS</option>
+                  <option value="د.إ">د.إ - AED</option>
+                  <option value="ر.س">ر.س - SAR</option>
+                  <option value="₡">₡ - CRC</option>
+                  <option value="kr">kr - SEK</option>
+                  <option value="zł">zł - PLN</option>
+                </select>
               </div>
 
               <div class="mb-3">
