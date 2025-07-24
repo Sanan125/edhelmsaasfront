@@ -19,7 +19,7 @@
 <!-- annnouncement marki  -->
 
 <!-- Announcement Scrolling Banner -->
-<<div class="text-center py-2 w-75 me-5">
+<div class="text-center py-2 w-75 me-5">
   <marquee behavior="scroll" direction="left" scrollamount="5" style="color: white; font-weight:500px; font-size: 16px;">
     <i class="fas fa-bullhorn me-2" style="color: white;"></i>
   ADMISSIONS ARE OPEN FOR 2025! | APPLY NOW TO SECURE YOUR SEAT IN OUR TOP-RATED PROGRAMS. LIMITED SLOTS AVAILABLE!

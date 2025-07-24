@@ -5,81 +5,76 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
 ?>
 
 <div class="sidebar">
-    <div class="position-absolute top-0 end-0 m-2 btn btn-secondary btn-sm" id="toggleArrow" data-bs-toggle="tooltip" title="Collapse Sidebar">
+    <div class="position-absolute top-0 end-0 m-2 btn btn-secondary btn-sm" id="toggleArrow">
         <i class="fas fa-angle-left" id="arrowIcon"></i>
     </div>
 
     <ul class="nav flex-column">
-        <li class="nav-item <?php echo ($current_folder == 'dashboard') ? 'active' : ''; ?>">
-            <a class="nav-link" href="../dashboard" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
-                <i class="fas fa-users"></i> <span class="nav-text">Dashboard</span>
-            </a>
-        </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'dashboard') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'dashboard') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
         <a class="nav-link" href="../dashboard">
-<img src="../assests/images/dashboard.svg" alt="Dashboard Icon" width="18" height="18" style="margin-right: 8px;">
+<img src="../assests/images/dashboard.svg" alt="Dashboard Icon" width="18" height="18" style="margin-right: 8px;" >
              <span class="nav-text">Dashboard</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'student') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'student') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Students">
         <a class="nav-link" href="../student">
 <img src="../assests/images/student.svg" alt="Students Icon" width="18" height="18" style="margin-right: 8px;">
              <span class="nav-text">Students</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'parent') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'parent') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Parents">
         <a class="nav-link" href="../parent">
 <img src="../assests/images/parents.svg" alt="Parents Icon" width="18" height="18" style="margin-right: 8px;">
 <span class="nav-text">Parents</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'teacher') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'teacher') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Teachers">
         <a class="nav-link" href="../teacher">
 <img src="../assests/images/teacher.svg" alt="Teachers Icon" width="18" height="18" style="margin-right: 8px;">
             <span class="nav-text">Teachers</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'class') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'class') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Classes">
         <a class="nav-link" href="../class">
 <img src="../assests/images/classes.svg" alt="Classes Icon" width="18" height="18" style="margin-right: 8px;">
              <span class="nav-text">Classes</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'subject') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'subject') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Subject">
         <a class="nav-link" href="../subject">
 <img src="../assests/images/subject.svg" alt="Subject Icon" width="18" height="18" style="margin-right: 8px;">
             <span class="nav-text">Subject</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'attendance') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'attendance') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Attendance">
         <a class="nav-link" href="../attendance">
 <img src="../assests/images/attendance.svg" alt="Attendance Icon" width="18" height="18" style="margin-right: 8px;">
             <span class="nav-text">Attendance</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'fees') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'fees') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Fees">
         <a class="nav-link" href="../fees">
 <img src="../assests/images/fees.svg" alt="Fees Icon" width="18" height="18" style="margin-right: 8px;">
             <span class="nav-text">Fees</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'exams') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'exams') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Exams">
         <a class="nav-link" href="../exams">
 <img src="../assests/images/exam.svg" alt="Exams Icon" width="18" height="18" style="margin-right: 8px;">
             <span class="nav-text">Exams</span>
         </a>
     </li>
 
-    <li class="nav-item <?php echo ($current_folder == 'announcements') ? 'active' : ''; ?>">
+    <li class="nav-item <?php echo ($current_folder == 'announcements') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Announcement">
         <a class="nav-link" href="../announcements">
 <img src="../assests/images/anouncment.svg" alt="Announcements Icon" width="18" height="18" style="margin-right: 8px;">
              <span class="nav-text">Announcements</span>
@@ -99,14 +94,6 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
         </a>
     </li> -->
 
-</ul>
-
-        <li class="nav-item <?php echo ($current_file == 'logout.php') ? 'active' : ''; ?>">
-            <a class="nav-link" href="../admin/logout.php" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
-                <i class="fas fa-sign-out-alt"></i> <span class="nav-text">Logout</span>
-            </a>
-        </li>
-    </ul>
 </div>
 
 <script>
