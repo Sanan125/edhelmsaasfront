@@ -1,3 +1,161 @@
+    
+  // notification page tab
+    const tabs = document.querySelectorAll(".tab-box");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove("active"));
+      // Hide all content
+      contents.forEach(c => c.classList.add("d-none"));
+
+      // Set active tab
+      tab.classList.add("active");
+      const selectedTab = tab.getAttribute("data-tab");
+      document.querySelector(`.tab-content[data-tab="${selectedTab}"]`).classList.remove("d-none");
+    });
+  });
+
+    
+    //   dashboard page school time table
+
+    const calendar = document.getElementById("calendar");
+    const eventDetails = document.getElementById("eventDetails");
+
+    const classEvents = {
+        january: {
+            3: [
+                { subject: "English", time: "9:00 - 10:00", instructor: "Mr. Khan" },
+                { subject: "Math", time: "10:15 - 11:15", instructor: "Ms. Sara" },
+                { subject: "Science", time: "11:30 - 12:30", instructor: "Dr. Ali" },
+                { subject: "History", time: "1:00 - 2:00", instructor: "Mr. Omar" },
+                { subject: "Computer", time: "2:15 - 3:15", instructor: "Ms. Nida" }
+            ],
+            5: [
+                { subject: "Physics", time: "9:00 - 10:00", instructor: "Dr. Ahmed" },
+                { subject: "Chemistry", time: "10:15 - 11:15", instructor: "Dr. Zeeshan" },
+                { subject: "Biology", time: "11:30 - 12:30", instructor: "Ms. Sana" },
+                { subject: "Islamiyat", time: "1:00 - 2:00", instructor: "Mr. Adeel" },
+                { subject: "Art", time: "2:15 - 3:15", instructor: "Ms. Bushra" }
+            ]
+        }
+    };
+
+    function renderCalendar(month) {
+        calendar.innerHTML = "";
+        eventDetails.innerHTML = "";
+
+        const daysInMonth = new Date(2025, getMonthIndex(month) + 1, 0).getDate();
+        const firstDay = new Date(2025, getMonthIndex(month), 1).getDay();
+
+        const grid = document.createElement("div");
+        grid.className = "calendar-grid";
+
+        const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        dayNames.forEach(day => {
+            const cell = document.createElement("div");
+            cell.innerHTML = `<strong>${day}</strong>`;
+            grid.appendChild(cell);
+        });
+
+        for (let i = 0; i < firstDay; i++) {
+            const emptyCell = document.createElement("div");
+            emptyCell.className = "calendar-cell";
+            grid.appendChild(emptyCell);
+        }
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const cell = document.createElement("div");
+            cell.className = "calendar-cell";
+            cell.textContent = i;
+
+            if (classEvents[month] && classEvents[month][i]) {
+                const dot = document.createElement("div");
+                dot.className = "event-dot";
+                cell.appendChild(dot);
+
+                cell.addEventListener("click", () => {
+                    const events = classEvents[month][i];
+                    const date = new Date(2025, getMonthIndex(month), i);
+                    const dayName = dayNames[date.getDay()];
+
+                    let html = `
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                    Date: ${i} ${capitalize(month)} | Day: ${dayName}
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Time</th>
+                                <th>Instructor</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+                    events.forEach(ev => {
+                        html += `<tr>
+                            <td>${ev.subject}</td>
+                            <td>${ev.time}</td>
+                            <td>${ev.instructor}</td>
+                        </tr>`;
+                    });
+
+                    html += `</tbody></table>`;
+                    eventDetails.innerHTML = html;
+                });
+            }
+
+            grid.appendChild(cell);
+        }
+
+        calendar.appendChild(grid);
+    }
+
+    function getMonthIndex(monthName) {
+        return ["january","february","march","april","may","june","july","august","september","october","november","december"].indexOf(monthName);
+    }
+
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    document.getElementById("monthSelector").addEventListener("change", function () {
+        renderCalendar(this.value);
+    });
+
+    renderCalendar(document.getElementById("monthSelector").value);
+
+
+
+
+
+
+
+
+
+//   dashboard page calendar 
+
+ document.addEventListener('DOMContentLoaded', function () {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+
+
+
+  
+
+
+
+  
+
+
+
 // Global Theme Change JS
 document.addEventListener("DOMContentLoaded", function () {
     const themes = {
@@ -370,3 +528,5 @@ function previewImage(event) {
         }
     }
     
+
+  

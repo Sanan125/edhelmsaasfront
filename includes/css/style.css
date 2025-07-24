@@ -972,3 +972,57 @@ button {
       display: none !important;
     }
 }
+
+
+/* notification  page  tab style  */
+  .tab-box {
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tab-box.active {
+    border-bottom: 2px solid #0977D6;
+    padding-bottom: 5px;
+  }
+
+ 
+
+  .notification-item {
+    position: relative;
+  }
+
+  .notification-item i {
+    font-size: 1.2rem;
+  }
+
+  .notification-item span {
+    font-size: 16px;
+  }
+
+
+  /* dasboard page school calendar */
+   .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        text-align: center;
+    }
+    .calendar-cell {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 4px;
+        position: relative;
+        cursor: pointer;
+        min-height: 50px;
+    }
+    .event-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 2px solid #4caf50;
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
