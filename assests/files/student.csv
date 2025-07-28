@@ -1,0 +1,28 @@
+Index,Name,Brand,Category,Price,Currency,Availability,Internal ID
+1,Compact Printer Air Advanced Digital,"Garner, Boyle and Flynn",Books & Stationery,265,USD,pre_order,56
+2,Tablet,Mueller Inc,Shoes & Footwear,502,USD,in_stock,29
+3,Smart Blender Cooker,"Lawson, Keller and Winters",Kitchen Appliances,227,USD,in_stock,70
+4,Advanced Router Rechargeable,Gallagher and Sons,Kitchen Appliances,121,USD,discontinued,31
+5,Portable Mouse Monitor Phone,Irwin LLC,Kids' Clothing,1,USD,discontinued,10
+6,Radio,"Benjamin, Nelson and Hancock",Skincare,426,USD,pre_order,60
+7,Ultra Projector Oven Thermostat Prime Advanced,"Mccoy, Waters and Rose",Laptops & Computers,68,USD,discontinued,86
+8,Webcam Stove Grill,Morrow and Sons,Automotive,159,USD,pre_order,50
+9,Eco Radio,"Edwards, Odonnell and Conley",Skincare,454,USD,pre_order,88
+10,Ultra Powerbank Brush Charger Max,"Brennan, Archer and Rosales",Fitness Equipment,845,USD,discontinued,88
+11,Wireless Dock,Russo-West,Health & Wellness,257,USD,pre_order,30
+12,Fast Camera Router Fan Smart,Vazquez and Sons,Cleaning Supplies,221,USD,pre_order,32
+13,Heater Radio,Delgado-Blackwell,Cycling,689,USD,pre_order,57
+14,Smart Trimmer Webcam Heater,Contreras PLC,Automotive,279,USD,pre_order,66
+15,Webcam Dock Heater,"Juarez, Powell and Travis",Cleaning Supplies,101,USD,pre_order,88
+16,Automatic Watch Lite Sense,"Reid, Chase and Ballard",Team Sports,316,USD,limited_stock,44
+17,Eco Iron Monitor Air,Barker-Murphy,Automotive,982,USD,out_of_stock,79
+18,Digital Tablet Router Printer Lite,Vazquez-Smith,Health & Wellness,3,USD,backorder,87
+19,Eco Freezer Powerbank Watch,"Pruitt, Higgins and Barnett",Cleaning Supplies,340,USD,limited_stock,21
+20,Cooler Fan,Bray LLC,Smartphones,529,USD,backorder,22
+21,Portable Camera Plus Air Ultra,Wang-Valenzuela,Women's Clothing,197,USD,in_stock,96
+22,Wireless Powerbank 360 Advanced Ultra,Carney Ltd,Bedding & Bath,677,USD,out_of_stock,90
+23,Rechargeable Lamp Speakerphone Headphones,"Gallegos, Osborne and Carpenter",Skincare,664,USD,pre_order,26
+24,Mini Scooter Microphone,"Douglas, Thornton and Soto",Grooming Tools,784,USD,backorder,55
+25,Rechargeable Webcam Stove Grill,Horn-Pope,Health & Wellness,900,USD,out_of_stock,47
+26,Mini Iron Drone Wireless Pro,Khan-Parrish,Cycling,909,USD,limited_stock,93
+27,Portable Freezer Phone Automatic Smart,Burton PLC,Automotive,350,USD,pre_order,61
