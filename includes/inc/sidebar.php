@@ -23,6 +23,8 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
 <img src="../assests/images/student.svg" alt="Students Icon" width="18" height="18" style="margin-right: 8px;">
              <span class="nav-text">Students</span>
         </a>
+        <!-- drop down title Add New Student
+        pagelink: add-new-student -->
     </li>
 
     <li class="nav-item <?php echo ($current_folder == 'parent') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Parents">
@@ -62,7 +64,7 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
 
     <li class="nav-item <?php echo ($current_folder == 'fees') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Fees">
         <a class="nav-link" href="../fees">
-<img src="../assests/images/fees.svg" alt="Fees Icon" width="18" height="18" style="margin-right: 8px;">
+<img src="../assests/images/fees.svg" alt="Fees Icon" width="25" height="25" style="margin-right: 8px;">
             <span class="nav-text">Fees</span>
         </a>
     </li>
@@ -73,13 +75,30 @@ $current_folder = basename(dirname($_SERVER['PHP_SELF']));
             <span class="nav-text">Exams</span>
         </a>
     </li>
+<!-- Announcements Dropdown -->
+<li class="nav-item dropdown position-relative <?php echo ($current_folder == 'announcements' || $current_folder == 'manage-Announcements') ? 'active' : ''; ?>">
+    <a class="nav-link d-flex justify-content-between align-items-center text-white" href="#" id="announcementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background: transparent;">
+        <div>
+            <img src="../assests/images/anouncment.svg" alt="Announcements Icon" width="18" height="18" style="margin-right: 8px;">
+            <span class="nav-text">Announcements</span>
+        </div>
 
-    <li class="nav-item <?php echo ($current_folder == 'announcements') ? 'active' : ''; ?>" data-bs-toggle="tooltip" data-bs-placement="right" title="Announcement">
-        <a class="nav-link" href="../announcements">
-<img src="../assests/images/anouncment.svg" alt="Announcements Icon" width="18" height="18" style="margin-right: 8px;">
-             <span class="nav-text">Announcements</span>
+<span class="text-white plus-icon" style="font-size: 18px;">+</span>
+    </a>
+    <ul class="dropdown-menu no-radius text-center custom-dropdown-below" aria-labelledby="announcementDropdown">
+    <li class="dropdown-item-view-announcements">
+        <a class="dropdown-item text-white view-announcements-link <?php echo ($current_folder == 'announcements') ? 'active' : ''; ?>" href="../announcements">
+            View Announcements
         </a>
     </li>
+    <li class="dropdown-item-manage-announcements">
+        <a class="dropdown-item text-white manage-announcements-link <?php echo ($current_folder == 'manage-announcements') ? 'active' : ''; ?>" href="../manage-announcements">
+            Manage Announcements
+        </a>
+    </li>
+</ul>
+
+
 
     <!-- <li class="nav-item <?php echo ($current_folder == 'settings') ? 'active' : ''; ?>
         <a class="nav-link" href="../settings">

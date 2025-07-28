@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Teachers</title>
 
            <!--  call  php function -->
       <?php 
@@ -35,7 +35,10 @@
  <div class="card-header d-flex justify-content-between align-items-center bg-white">
         <!-- Left Side: Section Title and Suboptions -->
         <div>
-            <h5 class="mb-0 fw-bold">All Teachers</h5>
+  <h5 class="mb-0 fw-bold">
+<img src="../assests/images/teacher2.svg" alt="Bullhorn Icon" width="20" height="20" style="margin-right: 8px;">All Teachers
+  
+</h5>
             <small class="fw-normal">Manage your teachers from start to finish with complete control.</small>
             <ul class="list-unstyled mt-2">
             </ul>

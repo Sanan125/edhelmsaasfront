@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Management</title>
+    <title>Exams</title>
 
     <!-- header call php function -->
     <?php 
@@ -66,7 +66,11 @@
         <div class="card pt-4 pb-4 mt-5">
             <div class="card-header d-flex justify-content-between align-items-center bg-white">
                 <div>
-                    <h5 class="mb-0 fw-bold">All Exams</h5>
+
+                      <h5 class="mb-0 fw-bold">
+<img src="../assests/images/exam2.svg" alt="Exams Icon" width="20" height="20" style="margin-right: 8px;">All Exams
+  
+</h5>
                     <small class="fw-normal">Manage your exams from start to finish with complete control.</small>
                 </div>
                 <div class="d-flex gap-2">

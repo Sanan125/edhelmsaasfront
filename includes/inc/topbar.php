@@ -132,11 +132,27 @@
             <span class="text-light">Mr. Admin</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-            <li><a class="dropdown-item" href="../profile">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="../sign-in/">Sign-in</a></li>
+<li>
+  <a class="dropdown-item" href="../profile">
+    <i class="fas fa-user me-2"></i> Profile
+  </a>
+</li>
+<li>
+  <a class="dropdown-item" href="../settings">
+    <i class="fas fa-cog me-2"></i> Settings
+  </a>
+</li>
+<li>
+  <a class="dropdown-item" href="../sign-in/">
+    <i class="fas fa-sign-in-alt me-2"></i> Sign-in
+  </a>
+</li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+<li>
+  <a class="dropdown-item" href="#">
+    <i class="fas fa-sign-out-alt me-2"></i> Logout
+  </a>
+</li>
           </ul>
         </div>
       </div>

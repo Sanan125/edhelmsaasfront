@@ -77,6 +77,7 @@
       <i class="bi bi-person"></i> Account
     </a>
   </li>
+
   <li class="nav-item" role="presentation">
     <a class="nav-link" id="pills-security-tab" data-bs-toggle="pill" href="#pills-security" role="tab" aria-controls="pills-security" aria-selected="false">
       <i class="bi bi-shield-lock"></i> Security
@@ -100,6 +101,7 @@
 
 </ul>
 
+
 <!-- Tab Content -->
 <div class="tab-content" id="pills-tabContent">
   <!-- Account Tab Content -->
@@ -107,14 +109,14 @@
   <div class="row pt-3 pb-3">
 
     <!-- Left Column: Personal Info -->
-    <div class="col-12 col-md-4 mb-3 mb-md-0">
-      <div class="personal-info">
-        <h4>Personal Information</h4>
+    <div class="col-12 col-md-4 mb-3 mb-md-0 ">
+      <div class="personal-info pb-3">
+        <h5>Personal Information</h5>
       </div>
     </div>
 
     <!-- Right Column: Profile Form -->
-    <div class="col-12 col-md-8">
+<div class="col-12 col-md-auto w-80">
       <form>
         <div class="row">
 
@@ -196,19 +198,20 @@
 </div>
 
   <!--  Security tab-2 -->
+
    
 
  <div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab">
-  <div class="row pt-3 pb-3">
+  <div class="row pt-3 pb-4">
     <!-- Left Column: Heading (Full width on mobile, 2/12 on medium+) -->
-    <div class="col-12 col-md-2 mb-3 mb-md-0">
-      <div class="security-info">
-        <h4>Security</h4>
+    <div class="col-12 col-md-2 mb-3 mb-md-0 ">
+      <div class="security-info pb-4">
+        <h5>Security</h5>
       </div>
     </div>
 
     <!-- Right Column: Form (Full width on mobile, 10/12 on medium+) -->
-    <div class="col-12 col-md-10">
+<div class="col-12 col-md-11">         
       <form>
         <!-- Password Change Section -->
         <div class="mb-3">
