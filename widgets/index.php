@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Widgets</title>
 
               <!-- header call  php function -->
             
@@ -133,7 +133,7 @@
           </table>
         </div>
 
-       
+
         <!-- Legend -->
        <!-- Legend with Icons -->
 <div class="mt-3 d-flex align-items-center gap-4">
@@ -153,6 +153,8 @@
     <small>Holiday</small>
   </div>
 </div>
+
+
       </div>
     </div>
   </div>
