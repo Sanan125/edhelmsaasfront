@@ -25,7 +25,6 @@
     <!-- Breadcrumb -->
     <?php include('../includes/inc/breadcrumb.php'); ?>
 
-
     <!-- ───── Tabs navigation ───── -->
     <ul class="nav nav-pills mb-3 mt-5 ms-5" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -60,9 +59,7 @@
     <i class="bi bi-people"></i> Users 
   </a>
    </li>
-
-
-
+   
       <li class="nav-item" role="presentation">
         <a class="nav-link" id="logs-tab"
            data-bs-toggle="pill" href="#logs"
@@ -79,7 +76,7 @@
       <!-- ▸ General Settings (default open) -->
       <div class="tab-pane fade show active" id="general-settings" role="tabpanel"
            aria-labelledby="general-settings-tab">
-        <div class="setting card pb-4 mt-3">
+        <div class="setting card mt-3">
 
           <div class="card-header bg-light d-flex justify-content-between align-items-center py-3">
             <div>
@@ -210,7 +207,7 @@
       <!-- ▸ Theme Settings (default hidden) -->
       <div class="tab-pane fade" id="theme-settings" role="tabpanel"
            aria-labelledby="theme-settings-tab">
-        <div class="card my-4">
+        <div class="card ">
           <div class="card-header"><h5 class="mb-0">Theme Settings</h5></div>
 
           <div class="card-body">
@@ -244,7 +241,7 @@
       <!-- ▸ Activity -->
       <div class="tab-pane fade" id="activity" role="tabpanel"
            aria-labelledby="activity-tab">
-        <div class="card my-4">
+        <div class="card">
           <div class="card-header"><h5 class="mb-0">Activity</h5></div>
           <div class="card-body">
             <!-- placeholder table -->
@@ -259,11 +256,9 @@
         </div>
       </div>
 
-
 <!-- User Roles  -->
-
    <div class="tab-pane fade" id="role-permissions" role="tabpanel" aria-labelledby="role-permissions-tab">
-  <div class="card my-4 shadow-sm ">
+  <div class="card shadow-sm ">
     <div class="card-header d-flex justify-content-between align-items-center">
       <h5 class="mb-0">Users  &amp; Role</h5>
 
@@ -297,7 +292,6 @@
             </button>   
 
     </div>
-    
     </div>
 
     <!-- role table -->
@@ -396,8 +390,6 @@
     </tbody>
 </table>
 
-
-
 <!-- Pagination Controls -->
 <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 pt-4 px-4 ">
   
@@ -456,8 +448,6 @@
   <label for="phone" class="form-label">Phone (optional)</label>
   <input type="tel" class="form-control" id="phone" name="phone">
 </div>
-
-
         <label class="form-label mb-2">Role</label>
         <div class="row g-2">
           <div class="col-6 col-md-4">
@@ -488,10 +478,6 @@
             </div>
           </div>
 
-         
-
-          
-
         <div class="mt-4 text-end">
           <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
           <button type="submit" class="btn btn-primary">Save Role</button>
@@ -500,18 +486,9 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-    
-
   </div><!-- /.main-content -->
-
   <!-- Footer -->
   <?php include('../includes/inc/footer.php'); ?>
-
   <!-- Make sure Bootstrap JS is included (usually in footer.php) -->
 </body>
 </html>

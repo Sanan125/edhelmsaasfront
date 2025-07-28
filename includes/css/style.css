@@ -7,7 +7,7 @@
     --danger-color: #F1630F;
     --warning-color: #ffc107;
     --info-color: #4DB6AC;
-    --sidebar-width-collapsed: 70px; /* As per your .collapsed width */
+    --sidebar-width-collapsed: 76px; /* As per your .collapsed width */
     --transition-speed: 0.3s;
 }
 
@@ -91,6 +91,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-left: 3px solid var(--primary-color);
     color: #d3d3d3;
+    border-radius: 0px;
 }
 
 .sidebar ul li a i {
@@ -550,7 +551,7 @@ input[type="search"] {
 
 /* Optional: Active Tab Styling */
 .tab-pane.show.active {
-    box-shadow: 0px 0px 8px 1px rgb(0 0 0 / 9%); /* Stronger shadow for active tab */
+    box-shadow: none; /* Stronger shadow for active tab */
     border-radius: 12px;
 }
 
@@ -673,6 +674,7 @@ input[type="search"] {
 /* Only show the active tab's content */
 .tab-pane.show {
   display: block;
+    box-shadow: none;
 }
 
 /* Profile picture wrapper to position the pencil icon */
@@ -709,7 +711,9 @@ input[type="search"] {
 /* .profile-picture-wrapper:hover .profile-picture {
   transform: scale(1.1);  Slight zoom effect on hover
 } */
-
+.breadcrumb-item+.breadcrumb-item::before{
+    color:white;
+}
 
 /* Profile Cover Image */
 .profile-cover {
