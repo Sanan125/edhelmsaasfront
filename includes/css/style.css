@@ -1065,3 +1065,73 @@ button {
 .manage-announcements-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Make it look consistent with dashboard cards */
+.widget-form-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Custom ON/OFF Toggle Switch */
+    .toggle-switch {
+      display: inline-block;
+      position: relative;
+    }
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 50px;
+      height: 25px;
+      background: #e4e4e4;
+      border-radius: 30px;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.3s ease;
+      padding: 3px;
+    }
+
+    .toggle .icon {
+      width: 19px;
+      height: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      background: #d32f2f; /* OFF = Red */
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      font-size: 12px;
+    }
+
+    .toggle .icon.on {
+      background: #388e3c; /* ON = Green */
+      left: auto;
+      right: 3px;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .toggle-switch input {
+      display: none;
+    }
+
+    .toggle-switch input:checked + .toggle {
+      background: #c8e6c9;
+    }
+
+    .toggle-switch input:checked + .toggle .icon.off {
+      opacity: 0;
+      transform: translateX(-20px) scale(0.8);
+    }
+
+    .toggle-switch input:checked + .toggle .icon.on {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
