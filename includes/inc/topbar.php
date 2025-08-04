@@ -138,6 +138,13 @@
   </a>
 </li>
 <li>
+
+<li>
+  <a class="dropdown-item" href="../profile-details">
+    <i class="fas fa-file-alt me-2"></i> Profile details
+  </a>
+</li>
+<li>
   <a class="dropdown-item" href="../settings">
     <i class="fas fa-cog me-2"></i> Settings
   </a>

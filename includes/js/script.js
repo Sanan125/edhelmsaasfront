@@ -1,4 +1,4 @@
-    
+
   // notification page tab
     const tabs = document.querySelectorAll(".tab-box");
   const contents = document.querySelectorAll(".tab-content");
@@ -20,62 +20,78 @@
     
     //   dashboard page school time table
 
-    const calendar = document.getElementById("calendar");
-    const eventDetails = document.getElementById("eventDetails");
+const calendar = document.getElementById("calendar");
+const eventDetails = document.getElementById("eventDetails");
 
-    const classEvents = {
-        january: {
-            3: [
-                { subject: "English", time: "9:00 - 10:00", instructor: "Mr. Khan" },
-                { subject: "Math", time: "10:15 - 11:15", instructor: "Ms. Sara" },
-                { subject: "Science", time: "11:30 - 12:30", instructor: "Dr. Ali" },
-                { subject: "History", time: "1:00 - 2:00", instructor: "Mr. Omar" },
-                { subject: "Computer", time: "2:15 - 3:15", instructor: "Ms. Nida" }
-            ],
-            5: [
-                { subject: "Physics", time: "9:00 - 10:00", instructor: "Dr. Ahmed" },
-                { subject: "Chemistry", time: "10:15 - 11:15", instructor: "Dr. Zeeshan" },
-                { subject: "Biology", time: "11:30 - 12:30", instructor: "Ms. Sana" },
-                { subject: "Islamiyat", time: "1:00 - 2:00", instructor: "Mr. Adeel" },
-                { subject: "Art", time: "2:15 - 3:15", instructor: "Ms. Bushra" }
-            ]
-        }
-    };
+const classEvents = {
+    january: {
+        3: [
+            { subject: "English", time: "9:00 - 10:00", instructor: "Mr. Khan" },
+            { subject: "Math", time: "10:15 - 11:15", instructor: "Ms. Sara" },
+            { subject: "Science", time: "11:30 - 12:30", instructor: "Dr. Ali" },
+            { subject: "History", time: "1:00 - 2:00", instructor: "Mr. Omar" },
+            { subject: "Computer", time: "2:15 - 3:15", instructor: "Ms. Nida" }
+        ],
+        5: [
+            { subject: "Physics", time: "9:00 - 10:00", instructor: "Dr. Ahmed" },
+            { subject: "Chemistry", time: "10:15 - 11:15", instructor: "Dr. Zeeshan" },
+            { subject: "Biology", time: "11:30 - 12:30", instructor: "Ms. Sana" },
+            { subject: "Islamiyat", time: "1:00 - 2:00", instructor: "Mr. Adeel" },
+            { subject: "Art", time: "2:15 - 3:15", instructor: "Ms. Bushra" }
+        ]
+    }
+};
 
-    function renderCalendar(month) {
-        calendar.innerHTML = "";
-        eventDetails.innerHTML = "";
+let lastSelectedDate = null; // 🔁 Track last selected date
 
-        const daysInMonth = new Date(2025, getMonthIndex(month) + 1, 0).getDate();
-        const firstDay = new Date(2025, getMonthIndex(month), 1).getDay();
+function renderCalendar(month) {
+    calendar.innerHTML = "";
+    eventDetails.innerHTML = "";
+    lastSelectedDate = null;
 
-        const grid = document.createElement("div");
-        grid.className = "calendar-grid";
+    const daysInMonth = new Date(2025, getMonthIndex(month) + 1, 0).getDate();
+    const firstDay = new Date(2025, getMonthIndex(month), 1).getDay();
 
-        const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-        dayNames.forEach(day => {
-            const cell = document.createElement("div");
-            cell.innerHTML = `<strong>${day}</strong>`;
-            grid.appendChild(cell);
-        });
+    const grid = document.createElement("div");
+    grid.className = "calendar-grid";
 
-        for (let i = 0; i < firstDay; i++) {
-            const emptyCell = document.createElement("div");
-            emptyCell.className = "calendar-cell";
-            grid.appendChild(emptyCell);
-        }
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    dayNames.forEach(day => {
+        const cell = document.createElement("div");
+        cell.innerHTML = `<strong>${day}</strong>`;
+        grid.appendChild(cell);
+    });
 
-        for (let i = 1; i <= daysInMonth; i++) {
-            const cell = document.createElement("div");
-            cell.className = "calendar-cell";
-            cell.textContent = i;
+    for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement("div");
+        emptyCell.className = "calendar-cell";
+        grid.appendChild(emptyCell);
+    }
 
-            if (classEvents[month] && classEvents[month][i]) {
-                const dot = document.createElement("div");
-                dot.className = "event-dot";
-                cell.appendChild(dot);
+    for (let i = 1; i <= daysInMonth; i++) {
+        const cell = document.createElement("div");
+        cell.className = "calendar-cell";
+        cell.textContent = i;
 
-                cell.addEventListener("click", () => {
+        if (classEvents[month] && classEvents[month][i]) {
+            const dot = document.createElement("div");
+            dot.className = "event-dot";
+            cell.appendChild(dot);
+
+            cell.addEventListener("click", () => {
+                const selectedKey = `${month}-${i}`;
+
+                if (lastSelectedDate === selectedKey) {
+                    // ✅ Same date clicked again: hide the data
+                    eventDetails.innerHTML = "";
+                    document.querySelectorAll(".calendar-cell").forEach(c => c.classList.remove("active-date"));
+                    lastSelectedDate = null;
+                } else {
+                    // ✅ New date clicked: show new, replace old
+                    document.querySelectorAll(".calendar-cell").forEach(c => c.classList.remove("active-date"));
+                    cell.classList.add("active-date");
+                    lastSelectedDate = selectedKey;
+
                     const events = classEvents[month][i];
                     const date = new Date(2025, getMonthIndex(month), i);
                     const dayName = dayNames[date.getDay()];
@@ -106,28 +122,31 @@
 
                     html += `</tbody></table>`;
                     eventDetails.innerHTML = html;
-                });
-            }
-
-            grid.appendChild(cell);
+                }
+            });
         }
 
-        calendar.appendChild(grid);
+        grid.appendChild(cell);
     }
 
-    function getMonthIndex(monthName) {
-        return ["january","february","march","april","may","june","july","august","september","october","november","december"].indexOf(monthName);
-    }
+    calendar.appendChild(grid);
+}
 
-    function capitalize(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+function getMonthIndex(monthName) {
+    return ["january", "february", "march", "april", "may", "june",
+            "july", "august", "september", "october", "november", "december"]
+            .indexOf(monthName);
+}
 
-    document.getElementById("monthSelector").addEventListener("change", function () {
-        renderCalendar(this.value);
-    });
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-    renderCalendar(document.getElementById("monthSelector").value);
+document.getElementById("monthSelector").addEventListener("change", function () {
+    renderCalendar(this.value);
+});
+
+renderCalendar(document.getElementById("monthSelector").value);
 
 
 

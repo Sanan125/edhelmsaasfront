@@ -196,12 +196,21 @@
             <div id="eventDetails" class="mt-3"></div>
         </div>
     </div>
-</div>    
-  <div class="final-exam container">
+</div> 
+
+
+
+
+
+
+  <div class="container d-flex justify-content-left mb-4 ">
+  <div class="final-exam w-50">
     <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h5 class=" text-center mb-0"style="font-size:16px;">School Final Exam Date Sheet - 2025</h5>
-        </div>
+      <div class="card-header bg-primary text-white">
+        <h5 class="text-center mb-0" style="font-size:16px;">
+          School Final Exam Date Sheet - 2025
+        </h5>
+      </div>
         <div class="card-body">
             <div class="table-responsive">
            <table class="table table-bordered table-hover">
@@ -270,11 +279,54 @@
         </tr>
     </tbody>
 </table>
-           
+        
  </div>
 </div>
+
 </div>
 </div>
+
+
+
+
+
+    <!-- Student Time Table -->
+   <div class="calendar-table col-md-4 mb-4 w-50">
+    <div class="card dashboard-card shadow-sm">
+        <div class="card-header text-white" style="background-color: #4caf50;">
+            <h5 class="mb-0 d-flex align-items-center ">
+                <i class="fas fa-calendar-alt me-2 pt-2"></i> Student Time Table
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="monthSelector" class="form-label">Select Month:</label>
+                <select id="monthSelector" class="form-select">
+                    <option value="january" selected>January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                </select>
+            </div>
+
+            <div id="calendar"></div>
+            <div id="eventDetails" class="mt-3"></div>
+        </div>
+    </div>
+</div> 
+
+
+
+
+
 
 <?php 
   include('../includes/inc/footer.php'); 

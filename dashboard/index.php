@@ -160,15 +160,12 @@
 
 
 
-
-
-
     <!-- Student Time Table -->
    <div class="calendar-table col-md-4 mb-4 w-50">
     <div class="card dashboard-card shadow-sm">
         <div class="card-header text-white" style="background-color: #4caf50;">
-            <h5 class="mb-0 d-flex align-items-center ">
-                <i class="fas fa-calendar-alt me-2 pt-2"></i> Student Time Table
+            <h5 class="mb-0 d-flex align-items-center pt-2 pb-1">
+                <i class="fas fa-calendar-alt me-2 "></i> Student Time Table
             </h5>
         </div>
         <div class="card-body">
